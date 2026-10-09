@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI use policy timeline | Hampton Bank</title>
+<meta name="description" content="The eight steps from first draft to approved use of Compass Assist, with the moved sign-off gate on Fri 9 Apr 2027 and the three reviews behind it.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+.tl{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));position:relative;max-width:none}
+.tl::before{content:"";position:absolute;left:6%;right:6%;top:16px;height:6px;background:var(--line);border-radius:3px}
+.tl::after{content:"";position:absolute;left:6%;top:16px;height:6px;width:5%;background:var(--green);border-radius:3px}
+.tl li{position:relative;text-align:center;padding:0 4px;margin:0;font-size:13px}
+.dot{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:26px;height:26px;margin:4px auto 8px;border-radius:50%;border:3px solid var(--green);background:var(--paper);color:var(--green);font-weight:700;font-size:13px}
+.dot.done{background:var(--green);color:#F8F5EE}
+.dot.loop{border-style:dashed;background:var(--mist)}
+.dot.live{width:34px;height:34px;margin:0 auto 4px;background:var(--sand);border-color:var(--green2);box-shadow:0 0 0 4px var(--mist)}
+.tl b{display:block;line-height:1.25}
+.tl .dt{color:var(--muted);font-size:12px;display:block;margin-top:2px}
+.tl .was{display:block;font-size:12px;color:var(--amber);font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.tiles .tile{border-top-width:4px;padding:12px 14px}
+.tiles .tile.done{border-top-color:var(--green)}
+.tiles .tile.planned{border-top-color:var(--sage)}
+.tiles .tile.live{border-top-color:var(--green2);background:var(--sand)}
+.tiles .tile h3{font-size:15px;margin-bottom:.2em}
+.tiles .tile .d{font-size:12px;color:var(--muted);margin:0 0 6px}
+.tiles ul{padding-left:1.1em;margin:0}
+.tiles li{font-size:13px;margin-bottom:.25em}
+.badge{display:inline-block;font-size:11px;font-weight:700;background:var(--mist);color:var(--green);border-radius:999px;padding:3px 8px;margin-bottom:6px;text-decoration:none}
+.flow{display:flex;gap:4px;flex-wrap:wrap;margin:6px 0;font-size:12px}
+.flow span{background:var(--mist);border:1px solid var(--sage);border-radius:6px;padding:3px 6px}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:6px}
+.mini span{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:3px 5px;font-size:11px;text-align:center}
+.chev{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:12px 0 14px}
+.chev div{background:var(--green);color:#F8F5EE;padding:12px 26px 12px 34px;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,0 100%,20px 50%);font-size:14px;text-align:center}
+.chev div:first-child{clip-path:polygon(0 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,0 100%);padding-left:16px}
+.chev div:nth-child(2){background:var(--green2)}
+.chev div:nth-child(3){background:var(--sage);color:var(--ink)}
+.chev b{display:block;font:700 24px/1.1 Gambetta,Georgia,serif}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 12px}
+.stats3 .stat{text-align:center;border-top-width:5px}
+.stats3 .stat.g{border-top:5px solid var(--ok);background:var(--ok-bg)}
+.stats3 .stat.a{border-top:5px solid var(--amber-line);background:var(--amber-bg)}
+.stats3 .stat.r{border-top:5px solid var(--red);background:var(--red-bg)}
+.stats3 .stat.g b{color:var(--ok)} .stats3 .stat.a b{color:var(--amber)} .stats3 .stat.r b{color:var(--red)}
+.stats3 .stat b{font-size:34px}
+.rv{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.rv ul{margin:0 0 .6em}
+@media (max-width:1000px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){
+ .tl{grid-template-columns:1fr;gap:12px}
+ .tl::before,.tl::after{display:none}
+ .tl li{text-align:left;display:flex;gap:12px;align-items:flex-start}
+ .tl .dot,.tl .dot.live{margin:0;flex:0 0 auto}
+ .tiles{grid-template-columns:1fr}
+ .rv{grid-template-columns:1fr}
+ .chev div{font-size:12px;padding:10px 18px 10px 24px}
+ .stats3 .stat b{font-size:26px}
+ table.stack thead{display:none}
+ table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+ table.stack tr{border-bottom:2px solid var(--line);padding:6px 0}
+ table.stack td{border:0;padding:4px 12px}
+ table.stack td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;color:var(--green)}
+}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass | AI use policy</p><h1>AI use policy timeline for Compass Assist</h1>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple | Policy owner: Fatima Haddad, Head of compliance</p>
+  <p class="lede">Compass Assist cannot go live for any group until Risk and Compliance approves the policy and its guardrails. This page shows the eight steps, which are done, and where the sign-off gate now sits.</p></div>
+
+  <div class="note"><b>Changed in v0.2</b> <span class="upd">Updated v0.2</span>
+    <ul>
+      <li>The guardrails sign-off gate moves from Fri 26 Mar 2027 to Fri 9 Apr 2027, ten days before go-live. The test set cannot be complete before UAT closes (<a href="../sources/t5.html">T5</a>, change C-3).</li>
+      <li>Training demonstrates Compass Assist with the approved guardrails only (<a href="../sources/t5.html">T5</a>).</li>
+      <li>Q-05 is answered: Compass Assist may draft written complaint responses, and the complaints officer must edit and send them. Drafts are labelled (<a href="../sources/t5.html">T5</a>, change C-5).</li>
+      <li>Compass Assist is off for business bankers at go-live and offered in week 3 as opt-in (<a href="../sources/t4.html">T4</a>).</li>
+    </ul></div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="timeline" aria-selected="true">Timeline</button>
+    <button role="tab" data-tab="gives" aria-selected="false">What the policy gives</button>
+    <button role="tab" data-tab="reviews" aria-selected="false">The three reviews</button>
+  </div>
+
+  <section class="panel" id="timeline">
+    <div class="card">
+      <h3>Where the policy stands</h3>
+      <ul>
+        <li>The draft policy was written after the Risk and Compliance session on Tue 19 Jan 2027 and issued as v0.1 on Fri 22 Jan. Three desk reviews have since checked it against guidance, the assistant's set-up and Hampton Bank's other policies.</li>
+        <li>The formal Risk and Compliance review runs from Mon 1 Feb to Fri 19 Feb 2027, with a second draft back to the reviewers inside that window. The guardrails test set is built alongside and run after UAT closes on Wed 17 Mar.</li>
+        <li>Fatima Haddad approves at the sign-off gate on Fri 9 Apr 2027. Training uses the approved guardrails only, Victoria goes live on Mon 19 Apr, and NSW sign-off is confirmed before Mon 7 Jun.</li>
+      </ul>
+      <p class="small">Policy owner: <span class="chip">Fatima Haddad</span> Reviewers: <span class="chip">Ben Okafor</span> <span class="chip">Priya Raman</span> Executive sponsor for the policy: <span class="tbc">Name to be assigned by compliance</span></p>
+    </div>
+
+    <h2>Eight steps</h2>
+    <ol class="tl" aria-label="Policy timeline">
+      <li><span class="dot done">1</span><b>Policy draft</b><span class="dt">Fri 22 Jan 2027</span></li>
+      <li><span class="dot loop">&#8635;</span><b>Risk and Compliance review</b><span class="dt">Mon 1 to Fri 19 Feb</span></li>
+      <li><span class="dot">3</span><b>Guardrails test set</b><span class="dt">Mon 15 Feb to Thu 8 Apr</span></li>
+      <li><span class="dot">4</span><b>Sign-off gate</b><span class="dt">Fri 9 Apr 2027</span><span class="was">was Fri 26 Mar <span class="upd">Updated v0.2</span></span></li>
+      <li><span class="dot">5</span><b>Training, approved guardrails only</b><span class="dt">Tue 30 Mar to Fri 16 Apr</span></li>
+      <li><span class="dot live">6</span><b>Victoria go-live</b><span class="dt">Mon 19 Apr 2027</span></li>
+      <li><span class="dot">7</span><b>Review after hypercare</b><span class="dt">Mon 3 to Fri 14 May</span></li>
+      <li><span class="dot">8</span><b>NSW sign-off confirmation</b><span class="dt">Before Mon 7 Jun 2027</span></li>
+    </ol>
+    <p class="small">Filled dot: done. Hollow dot: planned. Dashed dot: in the feedback loop. Large dot: go-live. The green line runs to the last done step.</p>
+
+    <div class="tiles">
+      <div class="tile done"><h3>1. Policy draft</h3><p class="d">Fri 22 Jan 2027 | done</p>
+        <ul><li>v0.1 written from the T3 decisions of Tue 19 Jan.</li><li>Human review of every drafted text is a written rule.</li><li>No customer personal data in prompts outside Salesforce.</li></ul></div>
+      <div class="tile planned"><h3>2. Risk and Compliance review</h3><p class="d">Mon 1 to Fri 19 Feb | in the feedback loop</p>
+        <a class="badge" href="#reviews" data-go="reviews">See the three reviews</a>
+        <div class="flow"><span>Comments in</span><span>Draft revised</span><span>Re-review</span></div>
+        <div class="chips"><span class="chip">Fatima Haddad</span> <span class="chip">Ben Okafor</span> <span class="chip">Priya Raman</span></div>
+        <ul><li>Second draft due Fri 19 Feb.</li><li>Loop avoids the school holidays and Easter.</li></ul></div>
+      <div class="tile planned"><h3>3. Guardrails test set</h3><p class="d">Mon 15 Feb to Thu 8 Apr | planned</p>
+        <ul><li>Ben Okafor drafts the test set outline by Fri 12 Feb.</li><li>The set is run after UAT closes on Wed 17 Mar.</li><li>Easter, Fri 26 to Mon 29 Mar, is excluded.</li></ul></div>
+      <div class="tile planned updated"><h3>4. Sign-off gate <span class="upd">Updated v0.2</span></h3><p class="d">Fri 9 Apr 2027 (was Fri 26 Mar) | planned</p>
+        <ul><li>Fatima Haddad confirms the date in writing by Fri 5 Feb (A-27).</li><li>Ten days before go-live on Mon 19 Apr.</li><li>Risk R-14 covers the narrower margin.</li></ul></div>
+      <div class="tile planned updated"><h3>5. Training <span class="upd">Updated v0.2</span></h3><p class="d">Tue 30 Mar to Fri 16 Apr | planned</p>
+        <ul><li>Compass Assist is shown with approved guardrails only.</li><li>Compass Assist blocks run from Mon 12 Apr, after the gate. <span class="tbc">Sam Petrovic to confirm the blocks</span></li><li>Make-up sessions on Wed 14 and Thu 15 Apr.</li><li>Bankers see Compass Assist in week 3, as opt-in.</li></ul></div>
+      <div class="tile live"><h3>6. Victoria go-live</h3><p class="d">Mon 19 Apr 2027 | planned</p>
+        <div class="mini"><span>Comms</span><span>Site</span><span>Training</span></div>
+        <ul><li>Wave 1 groups start with Compass Assist, except business bankers.</li><li>Hypercare runs to Fri 30 Apr.</li></ul></div>
+      <div class="tile planned"><h3>7. Review after hypercare</h3><p class="d">Mon 3 to Fri 14 May | planned</p>
+        <ul><li>Fatima Haddad's team reads the Compass Assist logs.</li><li>Policy changes found are made before NSW training.</li><li>Prompt-change ownership (Q-02) is settled here.</li></ul></div>
+      <div class="tile planned"><h3>8. NSW sign-off confirmation</h3><p class="d">Before Mon 7 Jun 2027 | planned</p>
+        <ul><li>Risk and Compliance confirms the policy still holds for Wave 2.</li><li>NSW training runs from Mon 17 May.</li><li>Confirm NSW school calendar once for the plan.</li></ul></div>
+    </div>
+
+    <div class="trap"><b>Trap:</b> The new gate date leaves ten days between sign-off and go-live, and Wave 1 training starts on Tue 30 Mar, before the gate. If a training session shows Compass Assist before Fri 9 Apr, staff see guardrails that are not yet approved. Keep every Compass Assist block after the gate.</div>
+  </section>
+
+  <section class="panel" id="gives" hidden>
+    <div class="rv">
+      <div class="card">
+        <h3>What the policy solves</h3>
+        <ul>
+          <li><b>One rule for who may use Compass Assist.</b> Each group in Wave 1 and Wave 2 knows whether it has the assistant at go-live.</li>
+          <li><b>A human review rule.</b> An agent reviews all drafted text before saving, and a complaints officer edits and sends any complaint response.</li>
+          <li><b>A clear data boundary.</b> No customer personal data goes into prompts outside Salesforce.</li>
+          <li><b>Logging and a gate.</b> Use is logged, and Risk and Compliance approves before each wave.</li>
+        </ul>
+        <p><b>End outcome:</b> staff use Compass Assist inside rules they can state in a sentence, and Fatima Haddad can show the board how each rule is checked.</p>
+      </div>
+      <div>
+        <table class="stack">
+          <thead><tr><th>Question</th><th>Policy that answers it</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Question">Who may use Compass Assist, and when?</td><td data-label="Policy">The AI use policy, which sets groups and the approval gate.</td></tr>
+            <tr><td data-label="Question">May it draft a complaint response? <span class="upd">Updated v0.2</span></td><td data-label="Policy">The AI use policy: yes, labelled, then edited and sent by the complaints officer.</td></tr>
+            <tr><td data-label="Question">Can customer personal data go into a prompt?</td><td data-label="Policy">The privacy policy, read with the AI use policy: not outside Salesforce.</td></tr>
+            <tr><td data-label="Question">Who owns prompt changes after go-live?</td><td data-label="Policy">Not covered yet. <span class="tbc">Q-02 open</span></td></tr>
+            <tr><td data-label="Question">How long are AI-drafted notes kept?</td><td data-label="Policy">The records policy, which does not yet name Compass Assist.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <h2>Where policies disagree</h2>
+    <div class="tile amber">
+      <p>Four points are listed once here and settled in the feedback loop.</p>
+      <ol>
+        <li><b>Complaint responses.</b> The complaints handling procedure has staff write responses; the AI use policy allows drafts. Settled in <a href="../sources/t5.html">T5</a>: drafts are allowed, labelled, and edited and sent by the complaints officer.</li>
+        <li><b>Personal data in prompts.</b> The privacy policy allows approved tools; the AI use policy allows none outside Salesforce. Priya Raman is checking the wording with security (A-12). Open.</li>
+        <li><b>Prompt changes.</b> No policy names an owner. Q-02 is with Fatima Haddad and Anika Rao. Open.</li>
+        <li><b>Record keeping.</b> The records policy names the author of a case note, and a Compass Assist draft has two. Owner: Fatima Haddad. <span class="tbc">Wording to be agreed</span></li>
+      </ol>
+    </div>
+    <p class="small">All Hampton Bank policies on this page are fictional. See <a href="02-open-questions.html">open questions</a> and <a href="14-solution-overview.html">solution overview</a>, process 5.</p>
+  </section>
+
+  <section class="panel" id="reviews" hidden>
+    <p class="lede">Three desk reviews of draft v0.1 were prepared for the Risk and Compliance review. Each reads documents, not the live system, and each is re-run after UAT. Counts are from the review pages.</p>
+
+    <h2>Review A: against published AI governance guidance</h2>
+    <div class="chev"><div><b>6</b>inputs</div><div><b>14</b>checks</div><div><b>5</b>actions</div></div>
+    <div class="rv">
+      <div>
+        <h3>Inputs</h3>
+        <ul><li>Draft AI use policy v0.1</li><li>T3 decisions, Tue 19 Jan</li><li>Hampton risk appetite statement</li><li>Guidance set used by compliance <span class="tbc">Set to be named</span></li><li>Salesforce public documentation on AI assistant features</li><li>Privacy policy</li></ul>
+        <div class="note">Limit: this review reads the written material only and does not test the configured system. Repeat it once UAT closes.</div>
+      </div>
+      <div>
+        <h3>Outputs</h3>
+        <div class="stats3"><div class="stat g"><b>9</b><span>aligned</span></div><div class="stat a"><b>4</b><span>partly aligned</span></div><div class="stat r"><b>1</b><span>missing</span></div></div>
+        <ul><li><b>Human review</b> is covered in full.</li><li><b>Logging</b> is partly covered and needs a retention period.</li><li><b>Incident handling</b> is the one missing item.</li></ul>
+      </div>
+    </div>
+
+    <h2>Review B: against the Compass Assist configuration</h2>
+    <div class="chev"><div><b>4</b>inputs</div><div><b>12</b>checks</div><div><b>7</b>actions</div></div>
+    <div class="rv">
+      <div>
+        <h3>Inputs</h3>
+        <ul><li>Draft AI use policy v0.1</li><li>Northgate Digital configuration notes</li><li>Salesforce public documentation on AI assistant features</li><li>Solution overview, process 5</li></ul>
+        <div class="note">Limit: the assistant is not yet configured for Hampton Bank. This check compares the policy with the plan. Re-run after UAT.</div>
+      </div>
+      <div>
+        <h3>Outputs</h3>
+        <div class="stats3"><div class="stat g"><b>5</b><span>aligned</span></div><div class="stat a"><b>5</b><span>partly aligned</span></div><div class="stat r"><b>2</b><span>missing</span></div></div>
+        <ul><li><b>Draft labelling</b> for complaint responses is a build item for Jorge Alvarez.</li><li><b>Logging fields</b> are partly planned.</li><li><b>Group-level switch</b> for bankers is missing and needed at go-live.</li></ul>
+      </div>
+    </div>
+
+    <h2>Review C: against Hampton Bank's other policies</h2>
+    <div class="chev"><div><b>8</b>inputs</div><div><b>10</b>checks</div><div><b>3</b>actions</div></div>
+    <div class="rv">
+      <div>
+        <h3>Inputs</h3>
+        <ul><li>Draft AI use policy v0.1</li><li>Privacy policy</li><li>Records policy</li><li>Complaints handling procedure</li><li>Information security policy</li><li>Outsourcing policy</li><li>Conduct and ethics policy</li><li>Training and competency policy</li></ul>
+        <div class="note">Limit: the policies are read as written. Where two disagree, the point goes to the list of four on the previous tab.</div>
+      </div>
+      <div>
+        <h3>Outputs</h3>
+        <div class="stats3"><div class="stat g"><b>7</b><span>aligned</span></div><div class="stat a"><b>2</b><span>partly aligned</span></div><div class="stat r"><b>1</b><span>missing</span></div></div>
+        <ul><li><b>Complaints</b> wording is settled after T5.</li><li><b>Records</b> policy does not yet name AI-drafted notes.</li><li><b>Training</b> policy needs a line on approved guardrails.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="pn"><a href="10-kpi-scorecard.html">Previous: KPI scorecard</a><a href="04-weekly-status.html">Next: weekly status</a></div>
+  <p class="sources">Sources: <a href="../sources/t3.html">T3 risk and compliance session</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>. Related: <a href="08-plan-on-a-page.html">plan on a page</a>, <a href="22-go-no-go.html">go/no-go</a>, <a href="09-phased-rollout.html">phased rollout</a>, <a href="03-risk-register.html">risk register</a>, <a href="05-shared-facts.html">shared facts</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script>
+<script>
+document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var b=document.querySelector('.tabs button[data-tab="'+a.getAttribute('data-go')+'"]');if(b)b.click();window.scrollTo(0,0);});});
+</script></body></html>

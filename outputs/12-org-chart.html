@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Org chart | Hampton Bank</title>
+<meta name="description" content="Reporting lines for the people and teams in scope for Project Compass, with headcounts, wave colours, search and collapse.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+[hidden]{display:none!important}
+.updbox{background:var(--mist);border:1px solid var(--sage);border-left:5px solid var(--green2);border-radius:var(--radius);padding:12px 16px;margin:0 0 18px}
+.updbox h3{margin:0 0 6px;font-size:16px}
+.updbox ul{margin:0;padding-left:1.1em;max-width:none}
+.updbox li{font-size:14px}
+.nav{position:sticky;top:56px;z-index:10;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 14px;box-shadow:var(--shadow)}
+.nav button,.nav input{font:500 13px "General Sans",sans-serif;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
+.nav input{border-radius:8px;cursor:text;min-width:220px;flex:0 1 260px}
+.nav button:hover{background:var(--mist)}
+.nav a{font-size:13px;margin-left:6px}
+.nav .mc{font-size:13px;color:var(--muted)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:0 0 20px;align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--faint)}
+.dot.w1{background:var(--green2)} .dot.w2{background:var(--amber)} .dot.wb{background:conic-gradient(var(--green2) 0 50%,var(--amber) 0 100%)}
+.ln{display:inline-block;width:26px;border-top:2px solid var(--green2)} .ln.d{border-top-style:dashed;border-color:var(--amber)}
+.bx{display:inline-block;width:26px;height:14px;border:1px solid var(--faint);border-radius:4px;background:var(--paper)} .bx.d{border:2px dashed var(--amber)} .bx.g{border-color:var(--faint);background:var(--sand)}
+.sec h2{margin-top:1.2em}
+.chief{display:flex;justify-content:center;margin:0 0 6px}
+.chief::after{content:"";}
+.stub{width:0;height:18px;border-left:2px solid var(--sage);margin:0 auto}
+.execs{display:flex;flex-wrap:wrap;gap:20px 16px;justify-content:center;align-items:flex-start;border-top:2px solid var(--sage);padding-top:16px;position:relative}
+.exec{flex:1 1 230px;max-width:290px;min-width:0}
+.box{position:relative;display:block;width:100%;text-align:left;font:inherit;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 36px 8px 12px;cursor:pointer;min-width:0;box-shadow:var(--shadow)}
+.box:hover{border-color:var(--green2)}
+.box:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+.box .nm{display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;line-height:1.25}
+.box .tt{display:block;font-size:12.5px;color:var(--muted);line-height:1.3;margin-top:2px}
+.box .bd{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.bd i{font-style:normal;font-size:11px;font-weight:700;border-radius:999px;padding:2px 7px;background:var(--mist);color:var(--green);border:1px solid var(--sage)}
+.bd i.am{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-line)}
+.cnt{position:absolute;top:-8px;right:-8px;min-width:30px;height:24px;padding:0 6px;border-radius:999px;background:var(--green);color:#F8F5EE;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--cream)}
+.box.vac{border:2px dashed var(--amber);background:var(--amber-bg)}
+.box.unk{border-color:var(--faint);background:var(--sand)}
+.box.hit{outline:3px solid var(--green2);background:var(--mist)}
+.box.dim{opacity:.45}
+.box.tog::after{content:"";position:absolute;right:11px;bottom:9px;width:7px;height:7px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg)}
+li.open>.box.tog::after{transform:rotate(-135deg);bottom:5px}
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{padding-left:16px;margin-top:2px}
+.tree li{position:relative;padding:8px 0 0 14px;margin:0;border-left:2px solid var(--sage)}
+.tree li::before{content:"";position:absolute;left:-2px;top:0;width:14px;height:26px;border-left:2px solid var(--sage);border-bottom:2px solid var(--sage);border-bottom-left-radius:6px}
+.tree li:last-child{border-left:0}
+.tree li:last-child::before{left:0}
+.tree li.u::before{border-bottom-style:dashed;border-bottom-color:var(--amber)}
+.tree>li{border-left:0;padding-left:0;padding-top:0}
+.tree>li::before{display:none}
+.tree li:not(.open)>ul{display:none}
+.tree li:not(.has)>.box::after{display:none}
+.grid-boxes{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.note2{font-size:13px;color:var(--muted);margin:0 0 10px}
+@media(max-width:600px){.nav{position:static}.exec{max-width:none;flex-basis:100%}.execs{border-top:0}}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+<div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Org chart</h1>
+<p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+<p class="lede">Reporting lines for the people and teams in scope: about 1,250 staff under Margaret Oyelaran, Chief Executive. Select a box to show or hide the team beneath it, or search for a name, team or role.</p></div>
+
+<div class="updbox"><h3>Changed in v0.2</h3>
+<ul>
+<li>Isla Fraser, Dev and Karina are added under Victorian business bankers as champions. Dev and Karina are known by first name only, so their boxes are dashed. From <a href="../sources/t4.html">T4</a>.</li>
+<li>Richard Vance is shown as Conditional in the <a href="11-stakeholder-list.html">stakeholder list</a>. His reporting line is unchanged.</li>
+</ul></div>
+
+<div class="nav" role="search">
+<input id="q" type="search" placeholder="Search name, team or role" aria-label="Search the org chart">
+<button id="exp" type="button">Expand all</button>
+<button id="col" type="button">Collapse to heads</button>
+<span class="mc" id="mc" aria-live="polite"></span>
+<span class="sp" style="flex:1"></span>
+<a href="#main">Main organisation</a><a href="#other">Other groups</a><a href="#unplaced">To be confirmed</a><a href="#rest">Remaining staff</a>
+</div>
+<div class="legend">
+<span><i class="dot w1"></i>Wave 1 Victoria and head office</span><span><i class="dot w2"></i>Wave 2 New South Wales</span><span><i class="dot wb"></i>Both waves</span>
+<span><i class="ln"></i>Confirmed line</span><span><i class="ln d"></i>Line not confirmed</span><span><i class="bx d"></i>Vacant or placeholder</span><span><i class="bx g"></i>Not yet known to the change lead</span>
+<span><i class="cnt" style="position:static;min-width:28px;height:20px;border:0">350</i>People in that team</span>
+</div>
+
+<div class="sec" id="main"><h2 style="margin-top:0">Main organisation</h2>
+<p class="note2">Executives below the Chief Executive, then heads of function. Teams below the head level are closed to start with.</p>
+<div class="chief" id="chief"></div>
+<div class="stub"></div>
+<div class="execs" id="execs"></div></div>
+
+<div class="sec" id="other"><h2>Other groups</h2>
+<p class="note2">Groups that sit outside the line management above.</p>
+<div class="grid-boxes" id="othergrid"></div></div>
+
+<div class="sec" id="unplaced"><h2>Not placed yet</h2>
+<p class="note2">Seats and groups on the lists with no known position. They are not drawn under a guessed manager.</p>
+<div class="grid-boxes" id="unplacedgrid"></div></div>
+
+<div class="sec" id="rest"><h2>Everyone else</h2>
+<p class="note2">Nobody sits here at v0.2. Operations (120) is drawn under the Chief Operating Officer as a best guess, with a dashed line, until the line is confirmed.</p></div>
+
+<h2>Totals</h2>
+<div class="strip">
+<div class="stat"><b>1,253</b><span>people in the chart, about 1,250</span></div>
+<div class="stat"><b>808</b><span>Wave 1 people</span></div>
+<div class="stat"><b>445</b><span>Wave 2 people</span></div>
+<div class="stat"><b>5</b><span>executive lines under the Chief Executive</span></div>
+</div>
+<p>Counts are the team headcounts from the project fact sheet. They do not include the Project Compass team, Northgate Digital or Change Made Simple.</p>
+
+<script id="orgdata" type="application/json">
+{"n":"Margaret Oyelaran","t":"Chief Executive","w":"b","k":[
+ {"n":"Helen Marchetti","t":"Chief Customer Officer, project sponsor","w":"b","b":["Sponsor"],"k":[
+   {"n":"Tom Gallagher","t":"Head of contact centre","w":"b","k":[
+     {"n":"Docklands contact centre","t":"Victoria, shift-based","w":"1","c":200,"k":[
+        {"n":"Marcus Obi","t":"Team leader, Docklands","w":"1"},
+        {"n":"Mei Tan","t":"Workforce planner, contact centre","w":"b"}]},
+     {"n":"Parramatta contact centre","t":"New South Wales, shift-based","w":"2","c":150}]},
+   {"n":"Aroha Williams","t":"Head of branch network, 60 branches","w":"b","k":[
+     {"n":"Victoria branches","t":"34 branches: 22 metro, 12 regional","w":"1","c":340},
+     {"n":"New South Wales branches","t":"26 branches: 18 metro, 8 regional","w":"2","c":260,"k":[
+        {"n":"Callum Reid","t":"Regional branch manager, NSW","w":"2"}]}]},
+   {"n":"Richard Vance","t":"Head of business banking","w":"b","b":["Conditional"],"k":[
+     {"n":"Victoria business bankers","t":"Business banking, Victoria","w":"1","c":45,"k":[
+        {"n":"Isla Fraser","t":"Business banker and champion","w":"1","b":["Champion"]},
+        {"n":"Dev","t":"Business banker, champion. Surname TBC","w":"1","b":["Champion"],"v":1},
+        {"n":"Karina","t":"Business banker, champion. Surname TBC","w":"1","b":["Champion"],"v":1}]},
+     {"n":"New South Wales business bankers","t":"Business banking, NSW","w":"2","c":35,"k":[
+        {"n":"Champions not yet named","t":"New South Wales","w":"2","v":1}]}]},
+   {"n":"Louise Chen","t":"Complaints manager, complaints and advocacy","w":"1","c":40,"u":1}]},
+ {"n":"Priya Raman","t":"Chief Information Officer","w":"b","k":[
+   {"n":"Anika Rao","t":"Salesforce platform lead, CRM platform team","w":"1","c":30,"b":["Becomes admin"]}]},
+ {"n":"Chief Operating Officer","t":"Name to be confirmed","w":"1","v":1,"k":[
+   {"n":"Head of operations","t":"Operations team, head office. Name to be confirmed","w":"1","c":120,"v":1,"u":1}]},
+ {"n":"Chief Risk Officer","t":"Name to be confirmed","w":"1","v":1,"u":1,"k":[
+   {"n":"Fatima Haddad","t":"Head of compliance, risk and compliance","w":"1","c":25,"b":["Approver"],"k":[
+      {"n":"Ben Okafor","t":"Risk analyst, compliance","w":"1"}]}]},
+ {"n":"Chief People Officer","t":"Name to be confirmed","w":"1","v":1,"u":1,"k":[
+   {"n":"Sam Petrovic","t":"L&D lead, learning and development","w":"1","c":8}]}
+]}
+</script>
+<script id="orgother" type="application/json">
+[{"n":"Daniel Nguyen","t":"Program director, Project Compass. Runs the steering committee","w":"b","b":["Steerco chair"]},
+ {"n":"Jorge Alvarez","t":"Implementation partner lead, Northgate Digital","w":"b","k":1},
+ {"n":"Change lead","t":"Change Made Simple. Author of the change artefacts","w":"b"}]
+</script>
+<script id="orgunplaced" type="application/json">
+[{"n":"Wave 2 trainers","t":"Source to be confirmed (Q-06)","w":"2","v":1},
+ {"n":"Wave 2 branch and contact centre champions","t":"Not yet named","w":"2","v":1},
+ {"n":"Regional branch managers, Victoria","t":"Not yet known to the change lead","w":"1","g":1}]
+</script>
+
+<p class="pn"><a href="11-stakeholder-list.html">Stakeholder list</a><a href="08-plan-on-a-page.html">Next: Plan on a page</a></p>
+<p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t2.html">T2</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5</a>, <a href="../sources/e2.html">E2</a>. The Chief Executive and the executive titles marked to be confirmed are placeholders for the demo. Related: <a href="11-stakeholder-list.html">03 Stakeholder list</a>, <a href="07-change-plan.html">01 Change plan</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var data=JSON.parse(document.getElementById('orgdata').textContent);
+  var other=JSON.parse(document.getElementById('orgother').textContent);
+  var unpl=JSON.parse(document.getElementById('orgunplaced').textContent);
+  var boxes=[];
+  function total(n){ if(typeof n.c==='number') return n.c; var s=0; (n.k||[]).forEach(function(c){ if(typeof c==='object') s+=total(c); }); return s; }
+  function el(t,c,x){var e=document.createElement(t); if(c) e.className=c; if(x!==undefined) e.textContent=x; return e;}
+  function mkBox(n,hasKids){
+    var b=el('button','box'+(n.v?' vac':'')+(n.g?' unk':'')+(hasKids?' tog':'')); b.type='button';
+    var nm=el('span','nm'); var d=el('i','dot w'+(n.w||'b')); d.setAttribute('aria-hidden','true'); nm.appendChild(d); nm.appendChild(el('span','',n.n)); b.appendChild(nm);
+    b.appendChild(el('span','tt',n.t));
+    if(n.b&&n.b.length){var bd=el('span','bd'); n.b.forEach(function(x){bd.appendChild(el('i',x==='Conditional'?'am':'',x));}); b.appendChild(bd);}
+    var tc=total(n); if(tc>0) b.appendChild(el('span','cnt',tc.toLocaleString('en-AU')));
+    b.setAttribute('data-text',(n.n+' '+n.t+' '+(n.b||[]).join(' ')).toLowerCase());
+    boxes.push(b); return b;
+  }
+  function branch(n,depth){
+    var kids=(n.k&&typeof n.k==='object')?n.k:[];
+    var li=el('li',(kids.length?'has':'')+(n.u?' u':'')+(depth<2&&kids.length?' open':''));
+    var b=mkBox(n,kids.length>0); li.appendChild(b);
+    if(kids.length){ var ul=el('ul'); kids.forEach(function(k){ul.appendChild(branch(k,depth+1));}); li.appendChild(ul);
+      b.addEventListener('click',function(){ li.classList.toggle('open'); }); b.setAttribute('aria-expanded',li.classList.contains('open')); }
+    li._b=b; return li;
+  }
+  document.getElementById('chief').appendChild((function(){var b=mkBox({n:data.n,t:data.t,w:'b'},false); b.style.maxWidth='300px'; b.classList.remove('tog'); return b;})());
+  var ex=document.getElementById('execs');
+  data.k.forEach(function(e){ var w=el('div','exec'); var ul=el('ul','tree'); ul.appendChild(branch(e,1)); w.appendChild(ul); ex.appendChild(w); });
+  function fill(id,arr){ var g=document.getElementById(id); arr.forEach(function(n){ var m={n:n.n,t:n.t,w:n.w,b:n.b,v:n.v,g:n.g}; var b=mkBox(m,false); b.classList.remove('tog'); g.appendChild(b); }); }
+  fill('othergrid',other); fill('unplacedgrid',unpl);
+  var lis=[].slice.call(document.querySelectorAll('.tree li.has'));
+  function setAll(open){ lis.forEach(function(l){ l.classList.toggle('open',open); }); }
+  document.getElementById('exp').onclick=function(){ setAll(true); };
+  document.getElementById('col').onclick=function(){ lis.forEach(function(l){ var depth=0,p=l; while(p&&p.parentNode){ if(p.tagName==='LI') depth++; p=p.parentNode; } l.classList.toggle('open',depth<=1); }); };
+  var q=document.getElementById('q'), mc=document.getElementById('mc');
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(); var hits=0;
+    boxes.forEach(function(b){ b.classList.remove('hit','dim'); });
+    if(!v){ mc.textContent=''; return; }
+    boxes.forEach(function(b){ if(b.getAttribute('data-text').indexOf(v)!==-1){ b.classList.add('hit'); hits++; var p=b.parentNode; while(p){ if(p.tagName==='LI') p.classList.add('open'); p=p.parentNode; } } else b.classList.add('dim'); });
+    mc.textContent=hits+(hits===1?' match':' matches');
+  });
+  lis.forEach(function(l){ var b=l._b; if(b){ b.addEventListener('click',function(){ b.setAttribute('aria-expanded',l.classList.contains('open')); }); } });
+})();
+</script>
+</body></html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weekly status report | Hampton Bank</title>
+<meta name="description" content="Project Compass steering weekly status report for the weeks ending Fri 29 Jan 2027 (v0.2) and Fri 22 Jan 2027 (v0.1).">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+.mast{background:var(--green);color:#F8F5EE;border-radius:var(--radius);padding:16px 20px;margin:0 0 16px}
+.mast .sc{font:700 12px/1 "General Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin:0 0 8px;max-width:none}
+.mast h2{color:#F8F5EE;margin:0 0 4px;font-size:26px}
+.mast p{margin:0;color:#E9EEEC;max-width:none}
+.strip .stat.zero b{color:var(--faint)}
+.strip .stat.od b{color:var(--red)}
+.boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+.bx{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--green);border-radius:var(--radius);padding:12px 16px;box-shadow:var(--shadow)}
+.bx h3{font-size:17px;margin-bottom:.4em}
+.bx p{font-size:14px;max-width:none}
+.bx.ok{border-top-color:var(--ok)}
+.bx.nx{border-top-color:var(--amber-line)}
+.bx.es{border-top-color:var(--red)}
+.bx.es h3{color:var(--red)}
+.bx.empty{border-top-color:var(--line)} .bx.empty h3{color:var(--muted)}
+.flag{background:var(--red-bg);border:1px solid var(--red-line);border-radius:6px;padding:8px 12px;margin:0 0 10px;font-size:14px}
+.foot{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;margin-top:10px}
+.mv td:nth-child(2),.mv td:nth-child(3){white-space:nowrap}
+@media (max-width:760px){
+ .boxes{grid-template-columns:1fr}
+ table.stack thead{display:none}
+ table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+ table.stack tr{border-bottom:2px solid var(--line);padding:6px 0}
+ table.stack td{border:0;padding:4px 12px}
+ table.stack td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;color:var(--green)}
+}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass | Steering committee</p><h1>Weekly status report</h1>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+  <p class="lede">A one-page read of the week for the steering committee. Counts come from the registers, not from reading rows. Each box holds five sentences at most.</p></div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="v02" aria-selected="true">Week ending Fri 29 Jan 2027 (v0.2)</button>
+    <button role="tab" data-tab="v01" aria-selected="false">Week ending Fri 22 Jan 2027 (v0.1)</button>
+  </div>
+
+  <section class="panel" id="v02">
+    <div class="mast"><p class="sc">Project Compass weekly status report</p><h2>Week ending Fri 29 Jan 2027</h2><p>Mon 25 Jan to Fri 29 Jan 2027 | Change lead, Change Made Simple | 2 sessions this week | v0.2</p></div>
+
+    <div class="note"><b>Changed in v0.2</b> <span class="upd">Updated v0.2</span>
+      <ul>
+        <li>This is the first report issued after the checking loop. It adds two risks, five actions and two go/no-go criteria compared with the week ending Fri 22 Jan.</li>
+        <li>The guardrails gate shows Fri 9 Apr 2027, moved from Fri 26 Mar (<a href="../sources/t5.html">T5</a>, change C-3).</li>
+        <li>The school-holiday flag is under Escalations with the steerco decision from <a href="../sources/t5.html">T5</a> (change C-4).</li>
+        <li>Q-05 is answered and removed; Q-07 is new (<a href="../sources/t4.html">T4</a>, change C-5).</li>
+      </ul></div>
+
+    <div class="strip">
+      <div class="stat"><b>14</b><span>Risks</span></div>
+      <div class="stat"><b>28</b><span>Actions</span></div>
+      <div class="stat"><b>10</b><span>Actions done</span></div>
+      <div class="stat"><b>15</b><span>Actions open</span></div>
+      <div class="stat od"><b>3</b><span>Actions overdue</span></div>
+      <div class="stat"><b>6</b><span>Open questions</span></div>
+      <div class="stat"><b>16</b><span>Go/no-go criteria</span></div>
+    </div>
+
+    <h2>Status by workstream</h2>
+    <table class="stack">
+      <thead><tr><th>Workstream</th><th>Status</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Workstream">UAT</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">Kick-off sessions run Mon 8 to Fri 12 Feb. Louise Chen's complaint categories must be mapped by Fri 5 Feb, moved from Fri 29 Jan.</td></tr>
+        <tr><td data-label="Workstream">Training <span class="upd">Updated v0.2</span></td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">The plan changed after the school-holiday check. Risk R-03 on shift cover is now High. Sam Petrovic confirms the early and late Docklands blocks by Fri 12 Feb.</td></tr>
+        <tr><td data-label="Workstream">Comms</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">On track. A bankers' message and a school-holiday roster reminder are being added to the plan.</td></tr>
+        <tr><td data-label="Workstream">Readiness</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">Go/no-go now has 16 criteria. Anika Rao scopes the banker pipeline pre-load by Fri 12 Feb, and three actions are overdue.</td></tr>
+        <tr><td data-label="Workstream">AI approval <span class="upd">Updated v0.2</span></td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">The gate is Fri 9 Apr, ten days before go-live. Fatima Haddad confirms the date and test set in writing by Fri 5 Feb.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="boxes">
+      <div class="bx"><h3>Change lead's review</h3>
+        <p>The week added two risks (R-13 and R-14) and raised one (R-03 to High). The school-holiday overlap is the largest change to the Wave 1 plan since the baseline, and it was found by checking the programme calendar against official 2027 calendars, not raised by the business. Richard Vance moved from refusing to release bankers for a full day to agreeing 90-minute sessions, on the condition that the pipeline view is better on day one. Fatima Haddad agreed the new gate date in the room, and I treat it as confirmed once A-27 arrives in writing. The three overdue actions are the same three as last week and none has moved.</p></div>
+      <div class="bx ok"><h3>This period</h3>
+        <p>The business banking workshop on Tue 26 Jan agreed 90-minute sessions from 7:30am, a two-week spreadsheet pre-load into the pipeline, and Compass Assist off for bankers at go-live and opt-in in week 3. Isla Fraser offered to champion with two other bankers. The steering catch-up on Thu 28 Jan kept go-live on Mon 19 Apr and set training to start Tue 30 Mar with early and late Docklands sessions. It added a first branch block in the week of 12 Apr and make-up sessions on Wed 14 and Thu 15 Apr. Q-05 was answered: Compass Assist may draft complaint responses that the complaints officer edits and sends.</p></div>
+      <div class="bx nx"><h3>Next period</h3>
+        <p>Five actions fall due on Fri 5 Feb: complaint categories (A-14), two banker champions by name (A-24), the written gate date (A-27), the personal-data wording (A-12) and the legacy CRM data scope (A-13). UAT kick-off sessions start Mon 8 Feb. Trainer blocks (A-26) and the pipeline pre-load scope (A-25) are due Fri 12 Feb, and the customer-experience scorecard outline (A-28) is due Fri 19 Feb. No public holiday falls in the period. The next one is Labour Day on Mon 8 Mar, and Good Friday starts the school-holiday stretch on Fri 26 Mar.</p></div>
+      <div class="bx es"><h3>Escalations</h3>
+        <div class="flag"><b>School-holiday flag.</b> Victorian school holidays and Easter, Fri 26 Mar to Sun 11 Apr 2027, cover the first two of the three Wave 1 training weeks, while go-live on Mon 19 Apr does not clash. The steering committee decided on Thu 28 Jan to keep go-live with the training changes listed above. <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></div>
+        <p>Tom Gallagher and Aroha Williams are asked to confirm rosters against that plan by Fri 12 Feb. Marcus Obi (A-06), Aroha Williams (A-15) and Richard Vance (A-17) are asked to close their overdue actions by Fri 5 Feb. The NSW school calendar is confirmed once for Wave 2.</p></div>
+    </div>
+
+    <h2>What moved since the last report</h2>
+    <table class="stack mv">
+      <thead><tr><th>Count</th><th>Fri 22 Jan (v0.1)</th><th>Fri 29 Jan (v0.2)</th><th>Why it moved</th></tr></thead>
+      <tbody>
+        <tr class="updated"><td data-label="Count">Risks</td><td data-label="v0.1">12</td><td data-label="v0.2">14</td><td data-label="Why">R-13 and R-14 were added from <a href="../sources/t4.html">T4</a> and <a href="../sources/t5.html">T5</a>. See the <a href="03-risk-register.html">risk register</a>.</td></tr>
+        <tr class="updated"><td data-label="Count">Actions</td><td data-label="v0.1">23</td><td data-label="v0.2">28</td><td data-label="Why">A-24 to A-28 were raised on 26 and 28 Jan. See the <a href="01-action-list.html">action list</a>.</td></tr>
+        <tr class="updated"><td data-label="Count">Actions done</td><td data-label="v0.1">8</td><td data-label="v0.2">10</td><td data-label="Why">A-09 and A-11 were closed by T5 and the go/no-go change.</td></tr>
+        <tr class="updated"><td data-label="Count">Actions open</td><td data-label="v0.1">12</td><td data-label="v0.2">15</td><td data-label="Why">Five new actions, less the two closed.</td></tr>
+        <tr><td data-label="Count">Actions overdue</td><td data-label="v0.1">3</td><td data-label="v0.2">3</td><td data-label="Why">The same three actions as last week.</td></tr>
+        <tr class="updated"><td data-label="Count">Open questions</td><td data-label="v0.1">6</td><td data-label="v0.2">6</td><td data-label="Why">Q-05 was answered and removed. Q-07 was added. See <a href="02-open-questions.html">open questions</a>.</td></tr>
+        <tr class="updated"><td data-label="Count">Go/no-go criteria</td><td data-label="v0.1">14</td><td data-label="v0.2">16</td><td data-label="Why">Two criteria added, and the guardrails date moved. See <a href="22-go-no-go.html">go/no-go</a>.</td></tr>
+      </tbody>
+    </table>
+    <p class="foot">Figures computed from the risk register, action list, open questions register and go/no-go page. Drafted Fri 29 Jan 2027 and corrected by the Change lead.</p>
+  </section>
+
+  <section class="panel" id="v01" hidden>
+    <div class="mast"><p class="sc">Project Compass weekly status report</p><h2>Week ending Fri 22 Jan 2027</h2><p>Mon 18 Jan to Fri 22 Jan 2027 | Change lead, Change Made Simple | 1 session this week | v0.1 baseline</p></div>
+    <p class="small">This is the earlier report, kept as issued. It shows the baseline before the checking loop.</p>
+
+    <div class="strip">
+      <div class="stat"><b>12</b><span>Risks</span></div>
+      <div class="stat"><b>23</b><span>Actions</span></div>
+      <div class="stat"><b>8</b><span>Actions done</span></div>
+      <div class="stat"><b>12</b><span>Actions open</span></div>
+      <div class="stat od"><b>3</b><span>Actions overdue</span></div>
+      <div class="stat"><b>6</b><span>Open questions (Q-01 to Q-06)</span></div>
+      <div class="stat"><b>14</b><span>Go/no-go criteria</span></div>
+    </div>
+
+    <h2>Status by workstream</h2>
+    <table class="stack">
+      <thead><tr><th>Workstream</th><th>Status</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Workstream">UAT</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">Jorge Alvarez shared the UAT script list. Kick-off sessions are planned for Mon 8 Feb.</td></tr>
+        <tr><td data-label="Workstream">Training</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">Sam Petrovic confirmed trainer capacity. The calendar has not yet been checked against school terms (A-08).</td></tr>
+        <tr><td data-label="Workstream">Comms</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">The comms plan outline is due Fri 12 Feb.</td></tr>
+        <tr><td data-label="Workstream">Readiness</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">Fourteen go/no-go criteria are drafted and three actions are overdue.</td></tr>
+        <tr><td data-label="Workstream">AI approval</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">The guardrails gate is Fri 26 Mar and the date is not yet confirmed (A-09, due Fri 29 Jan).</td></tr>
+      </tbody>
+    </table>
+
+    <div class="boxes">
+      <div class="bx"><h3>Change lead's review</h3>
+        <p>The baseline artefacts are issued at v0.1, and every page carries the same dates. The risk and compliance session set the firmest rules so far: a written approval gate, no personal data in prompts outside Salesforce, and review of all drafted text. Richard Vance's reply on spreadsheets was short and sceptical, and business banking is where adoption is most at risk. The three overdue actions sit with Marcus Obi, Aroha Williams and Richard Vance.</p></div>
+      <div class="bx ok"><h3>This period</h3>
+        <p>The risk and compliance session on Tue 19 Jan with Fatima Haddad, Ben Okafor and Priya Raman agreed a written approval gate for Compass Assist. It also left Q-05 open on whether Compass Assist may draft written complaint responses. Daniel Nguyen sent the programme calendar on Thu 21 Jan. The stakeholder list, risk register and the other baseline pages were issued at v0.1 on Fri 22 Jan.</p></div>
+      <div class="bx nx"><h3>Next period</h3>
+        <p>Fatima Haddad confirms the guardrails sign-off date by Fri 29 Jan (A-09). Louise Chen supplies the complaint category list by Fri 29 Jan (A-14). The Change lead checks the programme calendar against the Victorian public holidays and school terms (A-08). Two further workshops are planned with business banking and the steering committee.</p></div>
+      <div class="bx es"><h3>Escalations</h3>
+        <p>Three actions are overdue: A-06 (Marcus Obi), A-15 (Aroha Williams) and A-17 (Richard Vance). Each owner is asked to close or re-date the action by Fri 29 Jan. Nothing else needs the steering committee this week.</p></div>
+    </div>
+    <p class="foot">Figures computed from the baseline registers. Drafted Fri 22 Jan 2027.</p>
+  </section>
+
+  <div class="pn"><a href="15-policy-timeline.html">Previous: policy timeline</a><a href="01-action-list.html">Next: action list</a></div>
+  <p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e3.html">E3 programme calendar</a>. School terms and holidays: <a href="https://www.vic.gov.au/school-term-dates-and-holidays-victoria">Victorian Government</a>. Public holidays: <a href="https://business.vic.gov.au/business-information/public-holidays/victorian-public-holidays-2027">Business Victoria</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script></body></html>

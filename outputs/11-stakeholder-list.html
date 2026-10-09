@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stakeholder list | Hampton Bank</title>
+<meta name="description" content="Who is affected by Project Compass, how many people are in each group, and a detailed list of the ten stakeholders and three banker champions.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+[hidden]{display:none!important}
+.updbox{background:var(--mist);border:1px solid var(--sage);border-left:5px solid var(--green2);border-radius:var(--radius);padding:12px 16px;margin:0 0 18px}
+.updbox h3{margin:0 0 6px;font-size:16px}
+.updbox ul{margin:0;padding-left:1.1em;max-width:none}
+.updbox li{font-size:14px}
+.lbl{display:block;font:700 11px/1 "General Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin:8px 0 3px}
+.mapgrid{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:980px){.mapgrid{grid-template-columns:1fr}}
+.pops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:780px){.pops{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.pops{grid-template-columns:1fr}}
+.pop{position:relative;border-radius:26px;padding:16px 16px 14px;border:2px solid var(--green2);background:color-mix(in srgb,var(--mist) 70%,var(--paper));min-width:0}
+.pop.w2{border-color:var(--amber-line);background:color-mix(in srgb,var(--amber-bg) 60%,var(--paper))}
+.pop.both{border-color:var(--sage);background:color-mix(in srgb,var(--sand) 60%,var(--paper))}
+.pop.unsure{border-style:dashed;border-color:var(--amber);background:var(--amber-bg)}
+.pop .n{font:700 34px/1 Gambetta,Georgia,serif;color:var(--green);display:block}
+.pop.unsure .n{color:var(--amber)}
+.pop .nm{font:700 12px/1.3 "General Sans",sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);display:block;margin:4px 0 8px}
+.pop ul{list-style:none;margin:0 0 8px;padding:0}
+.pop li{display:flex;justify-content:space-between;gap:8px;font-size:13px;margin:0;border-top:1px solid var(--line);padding:3px 0}
+.gate{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;background:var(--paper);border:2px solid var(--green);color:var(--green);border-radius:999px;padding:3px 10px 3px 4px;margin:2px 4px 0 0}
+.gate i{display:inline-block;width:16px;height:16px;border-radius:50%;border:2px solid var(--green);background:var(--paper)}
+.gate.dash{border-style:dashed;border-color:var(--amber);color:var(--amber)}
+.gate.dash i{border-color:var(--amber)}
+.nest{border:2px dashed var(--amber);border-radius:18px;background:var(--paper);padding:8px 10px;margin-top:8px;font-size:13px}
+.key{list-style:none;margin:0;padding:0}
+.key li{display:grid;grid-template-columns:14px 44px 1fr;gap:8px;align-items:start;font-size:13px;margin:0 0 9px}
+.key .sw{width:14px;height:14px;border-radius:50%;border:2px solid var(--green2);margin-top:3px}
+.key .sw.w2{border-color:var(--amber-line);background:var(--amber-bg)}
+.key .sw.both{border-color:var(--sage);background:var(--sand)}
+.key .sw.un{border:2px dashed var(--amber)}
+.key b{font-family:Gambetta,Georgia,serif;font-size:16px;color:var(--green)}
+.key .pill{display:inline-block;font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;margin-left:4px;background:var(--mist);color:var(--green);border:1px solid var(--sage)}
+.key .pill.am{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-line)}
+.stat.am{background:var(--amber-bg);border-color:var(--amber-line)}
+.stat.am b{color:var(--amber)}
+.det td{font-size:13.5px}
+.det td.nm b{display:block}
+@media(max-width:1100px){
+ .det thead{display:none}
+ .det,.det tbody,.det tr,.det td{display:block;width:100%}
+ .det tr{border-bottom:3px solid var(--line);padding:8px 0}
+ .det td{border:0;padding:4px 12px;background:none!important}
+ .det td[data-label]::before{content:attr(data-label);display:block;font:700 11px/1.4 "General Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+}
+.filters .grp{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-left:6px}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+<div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Stakeholder list</h1>
+<p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+<p class="lede">The map shows which groups of people are affected and how many are in each. The detailed list names the ten stakeholders and three banker champions, with stance, what each needs and who engages them next.</p></div>
+
+<div class="updbox"><h3>Changed in v0.2</h3>
+<ul>
+<li>Richard Vance, Head of business banking, moves from Resistant to Conditional. He will engage if the pipeline view is better than the spreadsheets on day one. From <a href="../sources/t4.html">T4</a>.</li>
+<li>Three champions are added: Isla Fraser, Dev and Karina, all business bankers in Victoria. Dev and Karina are known by first name only, so their surnames and teams are <span class="tbc">TBC</span>. From <a href="../sources/t4.html">T4</a>.</li>
+<li>Louise Chen's next contact is tied to the complaint category list, which moved from Fri 29 Jan to Fri 5 Feb. From <a href="../sources/t5.html">T5</a>.</li>
+</ul></div>
+
+<div class="tabs" role="tablist">
+<button role="tab" data-tab="map" aria-selected="true">Stakeholder map</button>
+<button role="tab" data-tab="list" aria-selected="false">Detailed list</button>
+</div>
+
+<section class="panel" id="map">
+<div class="mapgrid">
+<div>
+<div class="pops">
+<div class="pop"><span class="n">350</span><span class="nm">Contact centre</span><ul><li><span>Docklands, Victoria</span><b>200</b></li><li><span>Parramatta, NSW</span><b>150</b></li></ul><span class="chip">Wave 1 and 2</span></div>
+<div class="pop both"><span class="n">600</span><span class="nm">Branch network</span><ul><li><span>Victoria, 34 branches</span><b>340</b></li><li><span>New South Wales, 26 branches</span><b>260</b></li></ul><span class="chip">Wave 1 and 2</span></div>
+<div class="pop"><span class="n">80</span><span class="nm">Business bankers</span><ul><li><span>Victoria</span><b>45</b></li><li><span>New South Wales</span><b>35</b></li></ul><span class="chip">Wave 1 and 2</span> <span class="upd">Updated v0.2</span><span class="gate dash"><i></i>Richard Vance: Conditional</span></div>
+<div class="pop"><span class="n">40</span><span class="nm">Complaints and advocacy</span><ul><li><span>Head office</span><b>40</b></li></ul><span class="chip">Wave 1</span><span class="gate"><i></i>Regulated time limits</span></div>
+<div class="pop"><span class="n">120</span><span class="nm">Operations</span><ul><li><span>Head office</span><b>120</b></li></ul><span class="chip">Wave 1</span></div>
+<div class="pop"><span class="n">25</span><span class="nm">Risk and compliance</span><ul><li><span>Head office</span><b>25</b></li></ul><span class="chip">Wave 1</span><span class="gate"><i></i>Approves Compass Assist, Fri 9 Apr</span></div>
+<div class="pop"><span class="n">30</span><span class="nm">CRM platform team</span><ul><li><span>Head office, become admins</span><b>30</b></li></ul><span class="chip">Wave 1</span></div>
+<div class="pop"><span class="n">8</span><span class="nm">Learning and development</span><ul><li><span>Head office, deliver training</span><b>8</b></li></ul><span class="chip">Wave 1</span></div>
+<div class="pop unsure"><span class="n">?</span><span class="nm">Compass Assist users</span><p style="font-size:13px;margin:0 0 6px">Nested inside the customer-facing groups. Bankers are off at go-live and opt in from week 3.</p><span class="tbc">TBC: user count by group</span></div>
+</div>
+<p class="small" style="margin-top:12px">Teams total 1,253 people: 808 in Wave 1 and 445 in Wave 2. Rings with a gate are approvers. Approval is a gate, so approvers are shown as small circles on the group, not as a group of their own. Dashed amber means not settled.</p>
+<div class="grid g3" style="margin-top:8px">
+<div class="tile"><h3>Gate 1: UAT sign-off</h3><p>Wed 17 Mar 2027. Daniel Nguyen at the steering committee.</p></div>
+<div class="tile updated"><h3>Gate 2: Compass Assist guardrails <span class="upd">Updated v0.2</span></h3><p>Fri 9 Apr 2027, moved from Fri 26 Mar. Fatima Haddad for Risk and Compliance.</p></div>
+<div class="tile"><h3>Gate 3: go/no-go</h3><p>Before each go-live. Helen Marchetti as sponsor, on the advice of the steering committee. Criteria in <a href="22-go-no-go.html">15 Go/no-go</a>.</p></div>
+</div>
+</div>
+
+<aside>
+<div class="strip" style="grid-template-columns:1fr 1fr">
+<div class="stat"><b>13</b><span>named stakeholders: 10 plus 3 champions</span></div>
+<div class="stat am"><b>2</b><span>champions known by first name only</span></div>
+</div>
+<div class="card"><h3>Key</h3>
+<ul class="key">
+<li><span class="sw"></span><b>808</b><span>Wave 1: Victoria and head office. Docklands, 34 branches, 45 bankers and all head office teams. <span class="pill">Track: Wave 1</span></span></li>
+<li><span class="sw w2"></span><b>445</b><span>Wave 2: New South Wales. Parramatta, 26 branches, 35 bankers. <span class="pill">Track: Wave 2</span></span></li>
+<li><span class="sw both"></span><b>600</b><span>Branch network, split across both waves.</span></li>
+<li><span class="sw un"></span><b>?</b><span>Not yet settled. Compass Assist user count and New South Wales champions. <span class="pill am">Not yet scoped</span></span></li>
+</ul>
+<p class="small">Counts come from the project team counts. See <a href="05-shared-facts.html">shared facts</a> and the <a href="12-org-chart.html">org chart</a>.</p></div>
+<div class="trap" style="margin-top:14px"><b>Trap:</b> Richard Vance's 80 bankers are the group most likely to carry on as before. Conditional means his support depends on the pipeline view being better on day one. If the pre-load is late, the stance returns to Resistant.</div>
+</aside>
+</div>
+</section>
+
+<section class="panel" id="list" hidden>
+<p>One row per person. Stance is the person's position on the change at 29 January 2027. Next contact dates are planned, not yet held.</p>
+<div class="filters" data-filter-group="#people">
+<span class="grp">Wave</span>
+<button data-filter="wave:1" aria-pressed="false">Wave 1</button>
+<button data-filter="wave:both" aria-pressed="false">Both waves</button>
+<span class="grp">Stance</span>
+<button data-filter="stance:Champion" aria-pressed="false">Champion</button>
+<button data-filter="stance:Supportive" aria-pressed="false">Supportive</button>
+<button data-filter="stance:Conditional" aria-pressed="false">Conditional</button>
+<button data-filter="stance:Cautious" aria-pressed="false">Cautious</button>
+<input data-search placeholder="Search names or roles" aria-label="Search stakeholders">
+</div>
+<p class="small">Showing <span data-count>13</span> of 13 stakeholders.</p>
+<table class="det"><thead><tr><th>Name and role</th><th>Team</th><th>Wave</th><th>Influence</th><th>Impact</th><th>Stance</th><th>What they need</th><th>Engagement owner</th><th>Next contact</th></tr></thead>
+<tbody id="people">
+<tr data-row data-wave="both" data-stance="Champion"><td class="nm" data-label="Name and role"><b>Helen Marchetti</b>Chief Customer Officer, sponsor</td><td data-label="Team">Executive</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Impact"><span class="bar3"><i class="on"></i><i></i><i></i></span> Low</td><td data-label="Stance"><span class="chip green">Champion</span></td><td data-label="What they need">A visible customer-experience win by June, and a one-page scorecard before Wave 2.</td><td data-label="Engagement owner">Daniel Nguyen with the Change lead</td><td data-label="Next contact">Fri 19 Feb 2027, scorecard outline (A-28)</td></tr>
+<tr data-row data-wave="both" data-stance="Supportive"><td class="nm" data-label="Name and role"><b>Priya Raman</b>CIO</td><td data-label="Team">Technology</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Impact"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Stance"><span class="chip">Supportive</span></td><td data-label="What they need">One platform rather than two, and a clear owner for technology risk including Compass Assist.</td><td data-label="Engagement owner">Change lead</td><td data-label="Next contact">Wed 3 Feb 2027</td></tr>
+<tr data-row data-wave="both" data-stance="Supportive"><td class="nm" data-label="Name and role"><b>Daniel Nguyen</b>Program director</td><td data-label="Team">Program office</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Impact"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Stance"><span class="chip">Supportive</span></td><td data-label="What they need">An accurate plan with dates that change once, and early warning of anything that threatens a go-live.</td><td data-label="Engagement owner">Change lead</td><td data-label="Next contact">Fri 5 Feb 2027, weekly status</td></tr>
+<tr data-row data-wave="both" data-stance="Supportive"><td class="nm" data-label="Name and role"><b>Tom Gallagher</b>Head of contact centre</td><td data-label="Team">Contact centre, Docklands and Parramatta</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Impact"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Stance"><span class="chip amber">Supportive, worried about shift cover</span></td><td data-label="What they need">Training blocks that fit shifts, and cover plans that hold in the school holidays.</td><td data-label="Engagement owner">Change lead</td><td data-label="Next contact">Mon 8 Feb 2027, with Sam Petrovic on blocks</td></tr>
+<tr data-row data-wave="both" data-stance="Supportive"><td class="nm" data-label="Name and role"><b>Aroha Williams</b>Head of branch network</td><td data-label="Team">Branch network, 60 branches</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Impact"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Stance"><span class="chip">Supportive</span></td><td data-label="What they need">Less admin for branches, rosters that respect Easter trading, and a decision on where training happens (Q-03).</td><td data-label="Engagement owner">Change lead</td><td data-label="Next contact">Tue 9 Feb 2027</td></tr>
+<tr class="updated" data-row data-wave="both" data-stance="Conditional"><td class="nm" data-label="Name and role"><b>Richard Vance</b>Head of business banking</td><td data-label="Team">Business banking, 80 bankers</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Impact"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Stance"><span class="chip amber">Conditional</span> <span class="upd">Updated v0.2 from <a href="../sources/t4.html">T4</a></span><br><small>Was Resistant at v0.1.</small></td><td data-label="What they need">A pipeline view that is better than the spreadsheets on day one, sessions of 90 minutes before client calls, and no full-day release of bankers.</td><td data-label="Engagement owner">Change lead, with Isla Fraser</td><td data-label="Next contact">Wed 10 Feb 2027, pipeline pre-load plan (A-25)</td></tr>
+<tr data-row data-wave="1" data-stance="Cautious"><td class="nm" data-label="Name and role"><b>Fatima Haddad</b>Head of compliance</td><td data-label="Team">Risk and compliance, 25 people</td><td data-label="Wave">Wave 1, gate for both</td><td data-label="Influence"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Impact"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Stance"><span class="chip amber">Cautious on AI</span></td><td data-label="What they need">A written approval gate, no customer personal data in prompts outside Salesforce, and a human review of every draft. Gate is Fri 9 Apr.</td><td data-label="Engagement owner">Change lead, with Ben Okafor</td><td data-label="Next contact">Fri 5 Feb 2027, test set in writing (A-27)</td></tr>
+<tr data-row data-wave="1" data-stance="Supportive"><td class="nm" data-label="Name and role"><b>Louise Chen</b>Complaints manager</td><td data-label="Team">Complaints and advocacy, 40 people</td><td data-label="Wave">Wave 1</td><td data-label="Influence"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Impact"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Stance"><span class="chip">Supportive</span></td><td data-label="What they need">Complaint categories mapped before UAT, and drafts that are labelled and editable. Her category list is now due Fri 5 Feb.</td><td data-label="Engagement owner">Change lead</td><td data-label="Next contact">Fri 5 Feb 2027</td></tr>
+<tr data-row data-wave="both" data-stance="Supportive"><td class="nm" data-label="Name and role"><b>Sam Petrovic</b>L&amp;D lead</td><td data-label="Team">Learning and development, 8 people</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Impact"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Stance"><span class="chip amber">Supportive, stretched</span></td><td data-label="What they need">A decision on where New South Wales trainers come from (Q-06), and confirmed early and late blocks for Docklands (A-26).</td><td data-label="Engagement owner">Change lead</td><td data-label="Next contact">Fri 12 Feb 2027</td></tr>
+<tr data-row data-wave="both" data-stance="Supportive"><td class="nm" data-label="Name and role"><b>Jorge Alvarez</b>Implementation partner lead</td><td data-label="Team">Northgate Digital</td><td data-label="Wave">Both</td><td data-label="Influence"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Impact"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Stance"><span class="chip">Supportive</span></td><td data-label="What they need">Testers released for UAT, an answer on legacy data scope (Q-01), and a named hypercare roster.</td><td data-label="Engagement owner">Daniel Nguyen</td><td data-label="Next contact">Mon 8 Feb 2027, UAT kick-off</td></tr>
+<tr class="updated" data-row data-wave="1" data-stance="Champion"><td class="nm" data-label="Name and role"><b>Isla Fraser</b>Business banker and champion <span class="upd">New v0.2</span></td><td data-label="Team">Business banking, Victoria</td><td data-label="Wave">Wave 1</td><td data-label="Influence"><span class="bar3 md"><i class="on"></i><i class="on"></i><i></i></span> Medium</td><td data-label="Impact"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Stance"><span class="chip green">Champion</span> <small>From <a href="../sources/t4.html">T4</a></small></td><td data-label="What they need">Early access to the pipeline and time in the roster to coach two other bankers.</td><td data-label="Engagement owner">Change lead</td><td data-label="Next contact">Fri 5 Feb 2027, names the other two champions (A-24)</td></tr>
+<tr class="updated" data-row data-wave="1" data-stance="Champion"><td class="nm" data-label="Name and role"><b>Dev</b>Business banker, champion named by Richard Vance <span class="upd">New v0.2</span></td><td data-label="Team">Business banking, Victoria. <span class="tbc">TBC: surname and team</span></td><td data-label="Wave">Wave 1</td><td data-label="Influence"><span class="bar3"><i class="on"></i><i></i><i></i></span> Low</td><td data-label="Impact"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Stance"><span class="chip green">Champion</span> <small>Not yet met. From <a href="../sources/t4.html">T4</a></small></td><td data-label="What they need">An introduction to the role and the 7:30am session plan.</td><td data-label="Engagement owner">Isla Fraser</td><td data-label="Next contact"><span class="tbc">TBC: after A-24, due Fri 5 Feb</span></td></tr>
+<tr class="updated" data-row data-wave="1" data-stance="Champion"><td class="nm" data-label="Name and role"><b>Karina</b>Business banker, champion named by Richard Vance <span class="upd">New v0.2</span></td><td data-label="Team">Business banking, Victoria. <span class="tbc">TBC: surname and team</span></td><td data-label="Wave">Wave 1</td><td data-label="Influence"><span class="bar3"><i class="on"></i><i></i><i></i></span> Low</td><td data-label="Impact"><span class="bar3 hi"><i class="on"></i><i class="on"></i><i class="on"></i></span> High</td><td data-label="Stance"><span class="chip green">Champion</span> <small>Not yet met. From <a href="../sources/t4.html">T4</a></small></td><td data-label="What they need">An introduction to the role and the 7:30am session plan.</td><td data-label="Engagement owner">Isla Fraser</td><td data-label="Next contact"><span class="tbc">TBC: after A-24, due Fri 5 Feb</span></td></tr>
+</tbody></table>
+<p class="small">Influence and impact use High, Medium and Low as defined in the <a href="07-change-plan.html#appendices">change plan appendix</a>. New South Wales champions are not yet named; <span class="tbc">TBC: NSW champions</span>.</p>
+</section>
+
+<p class="pn"><a href="03-risk-register.html">Risk register</a><a href="12-org-chart.html">Next: Org chart</a></p>
+<p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t2.html">T2</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e1.html">E1</a>, <a href="../sources/e2.html">E2</a>, <a href="../sources/e4.html">E4 Richard Vance</a>. Related: <a href="12-org-chart.html">04 Org chart</a>, <a href="03-risk-register.html">02 Risk register</a>, <a href="17-comms-plan.html">13 Comms plan</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script></body></html>

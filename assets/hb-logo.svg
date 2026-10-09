@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 64" role="img" aria-label="Hampton Bank">
+  <title>Hampton Bank</title>
+  <rect width="64" height="64" rx="14" fill="#0E4A47"/>
+  <g fill="none" stroke-width="6">
+    <path d="M13 14V50M13 32H30" stroke="#F8F5EE"/>
+    <path d="M30 14V50M30 17H40a8 8 0 0 1 0 15H30M30 32H42a9 9 0 0 1 0 18H30" stroke="#E9806A" stroke-linejoin="round"/>
+  </g>
+  <text x="80" y="41" font-family="Georgia,'Times New Roman',serif" font-size="29" font-weight="700" fill="#0E4A47">Hampton Bank</text>
+</svg>

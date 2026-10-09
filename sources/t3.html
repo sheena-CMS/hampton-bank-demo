@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T3 Risk and compliance session | Hampton Bank</title>
+<meta name="description" content="Transcript of the risk and compliance session on Compass Assist, 19 January 2027.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>.meta{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:var(--radius);padding:14px 16px;margin:0 0 22px}.meta dl{margin:0;display:grid;grid-template-columns:130px 1fr;gap:6px 12px;font-size:14px}.meta dt{font-weight:600;color:var(--muted)}.meta dd{margin:0}.tx p{max-width:80ch;margin:0 0 .8em}.ts{color:var(--faint);font-size:13px;margin-right:6px}@media(max-width:600px){.meta dl{grid-template-columns:1fr}}</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Source | Meeting transcript T3</p><h1>Risk and compliance session</h1>
+  <p class="verline">Tue 19 January 2027 | 60 minutes | Transcript, lightly cleaned</p></div>
+  <div class="meta"><dl>
+    <dt>Meeting</dt><dd>Compass Assist risk and compliance session</dd>
+    <dt>Date</dt><dd>Tue 19 Jan 2027, 60 minutes</dd>
+    <dt>Attendees</dt><dd>Fatima Haddad (Head of compliance); Ben Okafor (Risk analyst, compliance); Priya Raman (CIO); Change lead (Change Made Simple)</dd>
+    <dt>Where this fed</dt><dd><a href="../outputs/03-risk-register.html">Risk register</a>, <a href="../outputs/11-stakeholder-list.html">Stakeholder list</a>, <a href="../outputs/14-solution-overview.html">Solution overview</a>, <a href="../outputs/02-open-questions.html">Open questions</a>, <a href="../outputs/22-go-no-go.html">Go/no-go checklist</a>, <a href="../outputs/15-policy-timeline.html">Policy timeline</a>, <a href="../outputs/01-action-list.html">Action list</a></dd>
+  </dl></div>
+
+  <div class="tx">
+<p><span class="ts">[00:00]</span><b>Priya Raman:</b> Sorry, I'm on mute. Can you hear me? Right. Fatima, I'll hand to you in a second, I just wanted to say why I asked for this session.</p>
+<p><b>Fatima Haddad:</b> Please, go.</p>
+<p><b>Priya Raman:</b> I've got a technology risk sign-off coming and Compass Assist is the thing I can't explain yet. I want one platform, not two. But I don't want a surprise in front of the board risk committee.</p>
+<p><b>Fatima Haddad:</b> Neither do I. So can I be direct? I'm not against it. I'm cautious. Ben's been reading the vendor's public documentation all week and we have a lot of questions.</p>
+<p><b>Ben Okafor:</b> A lot. Mostly short ones.</p>
+<p><b>Change lead:</b> That's helpful. I'd like to leave today with the rules written down, not just the concerns. Can we go through what the assistant does, then what you need to see before you'd say yes?</p>
+<p><span class="ts">[00:06]</span><b>Change lead:</b> In plain terms. In the contact centre, the assistant suggests an answer from approved knowledge articles and drafts a case note. In branches, it summarises a customer's history for the person on the counter. For bankers, it helps prepare for a meeting. It never sends anything or changes a record on its own.</p>
+<p><b>Fatima Haddad:</b> That last sentence is the one I care about. Never on its own.</p>
+<p><b>Ben Okafor:</b> The question I keep asking is where the prompt goes. When an agent asks the assistant something, what leaves the building?</p>
+<p><b>Priya Raman:</b> This is the architectural question. From what Jorge's team has said, it runs inside the Salesforce environment we're contracted to. The prompt and the customer record it's using don't go to a public model.</p>
+<p><b>Ben Okafor:</b> Contracted. Documented. I want it written in our policy, not just in a slide.</p>
+<p><span class="ts">[00:14]</span><b>Fatima Haddad:</b> Let me say what I'd want as rules. First, no customer personal data goes into a prompt anywhere outside Salesforce. So, nobody pastes a customer's details into a free chatbot because the official one is slow. That has to be in the staff guidance, and it has to be in the training.</p>
+<p><b>Change lead:</b> I'll make that a line in the training content and the solution overview. No customer personal data in prompts outside Salesforce.</p>
+<p><b>Fatima Haddad:</b> Second, every drafted piece of text is reviewed by the person before it's used. Every one. I don't want a version where after three months people just click accept.</p>
+<p><b>Ben Okafor:</b> We can't stop people clicking accept. But we can log it.</p>
+<p><b>Fatima Haddad:</b> Log what was suggested and what was saved. Then we can look at it. Yes.</p>
+<p><b>Change lead:</b> The contact centre workshop on last Thursday made the same point, Tom Gallagher asked for the review step as a rule rather than a setting. So you'll have consistent language from both sides.</p>
+<p><b>Fatima Haddad:</b> Good to hear. Third, and this is the structural one. A written approval gate. A formal sign-off from Risk and Compliance before it goes live to anybody. With a test set. We write the test cases, we run them, we see what comes back.</p>
+<p><b>Priya Raman:</b> What would the test cover?</p>
+<p><b>Ben Okafor:</b> Wrong answers, answers that sound right but aren't from the knowledge base, anything that looks like advice, anything that shows information from the wrong customer. Plus tone.</p>
+<p><span class="ts">[00:26]</span><b>Priya Raman:</b> Timing, though. The test set can only be as good as the configuration we give you. When can we hand you something that's close to final?</p>
+<p><b>Ben Okafor:</b> We'd need it for a few weeks.</p>
+<p><b>Fatima Haddad:</b> And I don't want to sign off while UAT is still running and the guardrails are still moving. But I also don't want to do it the week before go-live.</p>
+<p><b>Change lead:</b> The current plan has UAT closing mid-March and Wave 1 go-live on Monday 19 April. If the gate sits at the end of March, you get UAT outputs and about three weeks before go-live. Is that a fair working assumption?</p>
+<p><b>Fatima Haddad:</b> It's a working assumption. I'm not going to confirm a date in a meeting. Let me go away and look at what the test set needs and then I'll confirm. By the end of next week, the twenty-ninth.</p>
+<p><b>Change lead:</b> The twenty-ninth of January. And I'll put the approval gate onto the go/no-go checklist as a criterion, with the date as a placeholder until you've confirmed it. That'll be done by Friday.</p>
+<p><span class="ts">[00:37]</span><b>Ben Okafor:</b> Can I ask something that's not on your list? Complaints.</p>
+<p><b>Fatima Haddad:</b> Go on.</p>
+<p><b>Ben Okafor:</b> The contact centre team mentioned wanting the assistant to help with complaint letters. A written response to a complaint is a regulated communication. It has to be accurate, it has to be consistent with our obligations, and if it's wrong we've got a problem with the regulator, not just the customer.</p>
+<p><b>Priya Raman:</b> So is the assistant allowed to draft written complaint responses?</p>
+<p><b>Fatima Haddad:</b> That's a real question and I can't answer it today. It's a policy decision, not a technical one. I don't want to say yes because it'd save time and I don't want to say no because I haven't thought it through. Can we hold it as an open question and I'll bring a position?</p>
+<p><b>Change lead:</b> I'll log it as Q-05, owner Risk and Compliance. Do you want a date on it?</p>
+<p><b>Fatima Haddad:</b> No. Not yet. I'd rather get the approval gate sorted first. They're related.</p>
+<p><span class="ts">[00:45]</span><b>Priya Raman:</b> Anything on prompt changes after go-live? Who owns them?</p>
+<p><b>Ben Okafor:</b> Good point. If someone in the platform team edits the instructions the assistant works from, that's effectively a change to the control.</p>
+<p><b>Fatima Haddad:</b> It is. We'd want to see a change process for that. Who. How. Who signs it.</p>
+<p><b>Change lead:</b> That's already on the register in draft as an ownership question. I'll keep it there.</p>
+<p><b>Priya Raman:</b> Fine. We don't have to resolve it today.</p>
+<p><span class="ts">[00:52]</span><b>Fatima Haddad:</b> One more, on the staff side. Some of my team are nervous that the assistant means fewer people in the contact centre. I'd rather the programme got ahead of that.</p>
+<p><b>Change lead:</b> Understood. I'd suggest the first communications are specific about what the assistant does and doesn't do, and that Helen says something about it directly.</p>
+<p><b>Priya Raman:</b> I'll mention it to Helen.</p>
+<p><span class="ts">[00:56]</span><b>Change lead:</b> Read-back. Three rules. No customer personal data in prompts outside Salesforce. Agents review all drafted text. A written approval gate from Risk and Compliance before go-live. Q-05 is open with Risk and Compliance. Fatima confirms the sign-off date by Friday 29 January. I add the gate to the go/no-go checklist by Friday 22 January.</p>
+<p><b>Fatima Haddad:</b> That matches my notes.</p>
+<p><b>Ben Okafor:</b> Mine too. Thanks for getting the rules on paper.</p>
+<p><b>Priya Raman:</b> Thanks all. Right, I've got a board paper I haven't started.</p>
+  </div>
+  <div class="pn"><a href="t2.html">&larr; T2 Contact centre process workshop</a><a href="t4.html">T4 Business banking workshop &rarr;</a></div>
+  <p class="sources">This is an invented source for the Hampton Bank demo. <a href="index.html">Back to sources</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script></body></html>

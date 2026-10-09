@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Go / no-go checklist | Hampton Bank</title>
+<meta name="description" content="The 16-criterion go / no-go checklist for Wave 1 go-live on Monday 19 April 2027, with a calculated GO or NOT YET verdict.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+.chg{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--green2);border-radius:var(--radius);padding:14px 18px;margin:0 0 22px;box-shadow:var(--shadow)}
+.chg h2{margin:0 0 8px;font-size:19px}.chg ul{margin:0;max-width:none}
+[data-checklist] .banner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;position:sticky;top:58px;z-index:10;box-shadow:var(--shadow)}
+[data-checklist] .banner h2{font-size:24px;margin:0}
+[data-checklist] .banner p{margin-top:2px}
+[data-verdict]{font-size:18px!important;padding:10px 18px!important;letter-spacing:.06em}
+.gtab{margin:0 0 8px}
+.gtab th.n,.gtab td.n{width:44px;text-align:center}
+.gtab th.ck,.gtab td.ck{width:70px;text-align:center}
+.gtab td label{cursor:pointer}
+input.chk,input.tm{appearance:none;-webkit-appearance:none;width:22px;height:22px;border:2px solid var(--muted);border-radius:6px;background:var(--paper);cursor:pointer;vertical-align:middle;margin:0;display:inline-grid;place-content:center}
+input.chk:checked,input.tm:checked{background:var(--ok-bg);border-color:var(--ok)}
+input.chk:checked::after,input.tm:checked::after{content:"";width:6px;height:11px;border:solid var(--ok);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+input.chk:focus-visible,input.tm:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+.runs{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 22px}
+.mat tr.tot td{background:var(--mist)}
+h2.sec{margin-top:30px}
+@media (max-width:700px){
+ .runs{grid-template-columns:1fr}
+ .gtab thead{display:none}
+ .gtab,.gtab tbody,.gtab tr,.gtab td{display:block;width:100%}
+ .gtab tr{border-bottom:2px solid var(--line);padding:6px 0}
+ .gtab td{border:0;padding:4px 12px;background:none!important}
+ .gtab td.n,.gtab td.ck{width:auto;text-align:left}
+ .gtab td.n::before{content:"Criterion ";color:var(--muted)}
+ .gtab td:nth-child(3)::before{content:"Owner: ";font-weight:700;color:var(--muted)}
+ .mat td:nth-child(2)::before{content:"People: ";font-weight:700;color:var(--muted)}
+ .mat td:nth-child(3)::before{content:"Training at least 90 percent: ";font-weight:700;color:var(--muted)}
+ .mat td:nth-child(4)::before{content:"Cover confirmed: ";font-weight:700;color:var(--muted)}
+ [data-checklist] .banner{position:static}
+}
+@media print{[data-checklist] .banner{position:static}}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Go / no-go checklist</h1>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p><p class="lede">Wave 1 Victoria goes live on Mon 19 Apr 2027 only when all 16 criteria below are ticked. Two criteria were added in v0.2.</p></div>
+
+<div class="chg" id="changed"><h2>Changed in v0.2 <span class="upd">Updated v0.2</span></h2><ul>
+<li>The guardrails approval criterion (3) moves from Fri 26 Mar to Fri 9 Apr 2027. From <a href="../sources/t5.html">T5</a> (change C-3).</li>
+<li>Criterion 10 is new: business banker pipelines pre-loaded for at least 90 percent of bankers by Fri 9 Apr. From <a href="../sources/t4.html">T4</a> and <a href="../sources/t5.html">T5</a> (change C-3).</li>
+<li>Criterion 11 is new: complaint response drafts are labelled and editable. It records the answer to Q-05 from <a href="../sources/t5.html">T5</a> (changes C-3 and C-5).</li>
+<li>The count goes from 14 criteria to 16. The gate date also appears in the <a href="09-phased-rollout.html">phased rollout</a> and <a href="08-plan-on-a-page.html">plan on a page</a> (change C-7).</li></ul></div>
+
+<div class="runs">
+<div class="tile"><h3>Run 1: UAT start</h3><p>Before the first kick-off session on Mon 8 Feb. Environment, access, masked data and scripts. Not shown on this page.</p></div>
+<div class="tile ok"><h3>Run 2: Wave 1 go-live</h3><p>This page. Decision meeting before go-live on Mon 19 Apr. <span class="tbc">TBC: decision meeting, proposed Fri 16 Apr</span></p></div>
+<div class="tile"><h3>Run 3: Wave 2 go-live</h3><p>The same list for Mon 7 Jun, with Parramatta 150, NSW branches 260 and NSW bankers 35 (445 people). Decision meeting proposed Fri 4 Jun.</p></div>
+</div>
+
+<div class="trap"><b>Trap:</b> criterion 3 now falls on Fri 9 Apr, and the Compass Assist training demo uses the approved guardrails only. If approval slips past Fri 9 Apr, the criterion and the demo fail on the same day, with ten days left before go-live.</div>
+
+<div data-checklist id="gonogo">
+<div class="banner" role="status"><div><h2><span data-done>0</span> of <span data-total>16</span> items done</h2><p>Every box needs a tick before the verdict changes. The decision is calculated, not typed.</p></div><span data-verdict class="chip amber">NOT YET</span></div>
+
+<h2 class="sec">Before go-live</h2>
+<table class="gtab"><thead><tr><th class="n">No.</th><th>Criterion</th><th>Owner</th><th class="ck">Done</th></tr></thead><tbody><tr><td class="n">1</td><td><label for="c1">UAT is signed off by Helen Marchetti on Wed 17 Mar 2027, on Daniel Nguyen's recommendation, with no open defect rated high.</label></td><td>Daniel Nguyen</td><td class="ck"><input type="checkbox" class="chk" id="c1" aria-label="Criterion 1 done"></td></tr><tr><td class="n">2</td><td><label for="c2">Data migration from the legacy CRM is reconciled: record counts match, a sample of records is checked by the business, and the scope settled under Q-01 is signed off.</label></td><td>Jorge Alvarez, Anika Rao</td><td class="ck"><input type="checkbox" class="chk" id="c2" aria-label="Criterion 2 done"></td></tr><tr class="updated"><td class="n">3</td><td><label for="c3">Compass Assist guardrails are approved in writing by Risk and Compliance by Fri 9 Apr 2027 <small>(was Fri 26 Mar)</small>, ten days before go-live.</label> <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></td><td>Fatima Haddad</td><td class="ck"><input type="checkbox" class="chk" id="c3" aria-label="Criterion 3 done"></td></tr><tr><td class="n">4</td><td><label for="c4">UAT used masked test data, and no real customer data was in the test environment at any point.</label></td><td>Anika Rao</td><td class="ck"><input type="checkbox" class="chk" id="c4" aria-label="Criterion 4 done"></td></tr><tr><td class="n">5</td><td><label for="c5">Integration with the HR system and the core banking system is tested end to end: staff records load and customer balances read correctly.</label></td><td>Jorge Alvarez</td><td class="ck"><input type="checkbox" class="chk" id="c5" aria-label="Criterion 5 done"></td></tr><tr><td class="n">6</td><td><label for="c6">Complaint case categories, timers and reporting are configured and tested against the complaints procedure (risk R-08).</label></td><td>Louise Chen</td><td class="ck"><input type="checkbox" class="chk" id="c6" aria-label="Criterion 6 done"></td></tr><tr><td class="n">7</td><td><label for="c7">Accessibility is checked on the main screens for keyboard use and screen readers, and any gaps have a dated fix.</label></td><td>Anika Rao</td><td class="ck"><input type="checkbox" class="chk" id="c7" aria-label="Criterion 7 done"></td></tr><tr><td class="n">8</td><td><label for="c8">A rollback plan is agreed and rehearsed once, with the decision point and the person who calls it written down.</label></td><td>Priya Raman</td><td class="ck"><input type="checkbox" class="chk" id="c8" aria-label="Criterion 8 done"></td></tr><tr><td class="n">9</td><td><label for="c9">Regulator notification is made, if Risk and Compliance decide the change requires one, before the go-live date.</label></td><td>Fatima Haddad</td><td class="ck"><input type="checkbox" class="chk" id="c9" aria-label="Criterion 9 done"></td></tr><tr class="updated"><td class="n">10</td><td><label for="c10">Business banker pipelines are pre-loaded from each banker's spreadsheet for at least 90 percent of bankers by Fri 9 Apr 2027.</label> <span class="upd">New in v0.2 from <a href="../sources/t5.html">T5</a></span></td><td>Richard Vance, Anika Rao</td><td class="ck"><input type="checkbox" class="chk" id="c10" aria-label="Criterion 10 done"></td></tr><tr class="updated"><td class="n">11</td><td><label for="c11">Compass Assist drafts of written complaint responses are labelled as drafts, and the complaints officer can edit them before sending.</label> <span class="upd">New in v0.2 from <a href="../sources/t5.html">T5</a></span></td><td>Louise Chen, Fatima Haddad</td><td class="ck"><input type="checkbox" class="chk" id="c11" aria-label="Criterion 11 done"></td></tr></tbody></table>
+
+<h2 class="sec">Ready for each team</h2>
+<p>Criterion 12 ticks itself when every team below has reached 90 percent in the training column. The cover column is a tracker and does not change the count.</p>
+<table class="gtab"><thead><tr><th class="n">No.</th><th>Criterion</th><th>Owner</th><th class="ck">Done</th></tr></thead><tbody><tr><td class="n">12</td><td><label for="c12">Training completion is at least 90 percent in every Wave 1 team listed below, read from the learning system on Fri 16 Apr 2027.</label></td><td>Sam Petrovic</td><td class="ck"><input type="checkbox" class="chk" id="c12" aria-label="Criterion 12 done"></td></tr></tbody></table>
+<table class="gtab mat"><thead><tr><th>Team</th><th>People</th><th>Training at least 90 percent</th><th>Leader has confirmed cover</th></tr></thead><tbody><tr><td>Contact centre, Docklands</td><td>200</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="Contact centre, Docklands training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="Contact centre, Docklands cover confirmed"></td></tr><tr><td>Branch network, Victoria</td><td>340</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="Branch network, Victoria training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="Branch network, Victoria cover confirmed"></td></tr><tr><td>Business bankers, Victoria</td><td>45</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="Business bankers, Victoria training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="Business bankers, Victoria cover confirmed"></td></tr><tr><td>Complaints and advocacy</td><td>40</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="Complaints and advocacy training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="Complaints and advocacy cover confirmed"></td></tr><tr><td>Operations</td><td>120</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="Operations training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="Operations cover confirmed"></td></tr><tr><td>Risk and compliance</td><td>25</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="Risk and compliance training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="Risk and compliance cover confirmed"></td></tr><tr><td>CRM platform team</td><td>30</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="CRM platform team training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="CRM platform team cover confirmed"></td></tr><tr><td>L&D</td><td>8</td><td class="ck"><input type="checkbox" class="tm tm-train" aria-label="L&D training at least 90 percent"></td><td class="ck"><input type="checkbox" class="tm" aria-label="L&D cover confirmed"></td></tr><tr class="tot"><td><b>Wave 1 total</b></td><td><b>808</b></td><td colspan="2"></td></tr></tbody></table>
+
+<h2 class="sec">During go-live and hypercare</h2>
+<table class="gtab"><thead><tr><th class="n">No.</th><th>Criterion</th><th>Owner</th><th class="ck">Done</th></tr></thead><tbody><tr><td class="n">13</td><td><label for="c13">The hypercare roster is named for Mon 19 to Fri 30 Apr 2027, with a first and second contact for each team.</label></td><td>Jorge Alvarez</td><td class="ck"><input type="checkbox" class="chk" id="c13" aria-label="Criterion 13 done"></td></tr><tr><td class="n">14</td><td><label for="c14">The contact centre cover plan is agreed for the training weeks and for go-live week, including Docklands early and late shifts.</label></td><td>Tom Gallagher</td><td class="ck"><input type="checkbox" class="chk" id="c14" aria-label="Criterion 14 done"></td></tr><tr><td class="n">15</td><td><label for="c15">Communications are issued as the comms plan sets out, including the countdown note on Mon 12 Apr and the go-live note on Mon 19 Apr.</label></td><td>Change lead</td><td class="ck"><input type="checkbox" class="chk" id="c15" aria-label="Criterion 15 done"></td></tr><tr><td class="n">16</td><td><label for="c16">The support desk is ready: staff are briefed, the known-issues list is live, and the Teams channel has a named responder each day.</label></td><td>Anika Rao</td><td class="ck"><input type="checkbox" class="chk" id="c16" aria-label="Criterion 16 done"></td></tr></tbody></table>
+</div>
+
+<p class="hint small" style="margin-top:14px">Nothing here is saved. Reload the page and every box returns to unticked. Owners are roles or named leads from the <a href="11-stakeholder-list.html">stakeholder list</a>. Training status comes from the <a href="19-training-schedule.html">training schedule</a>, and the risks behind each line are in the <a href="03-risk-register.html">risk register</a>.</p>
+
+  <p class="sources">Sources: <a href="../sources/t1.html">T1 programme planning</a> | <a href="../sources/t3.html">T3 risk and compliance session</a> | <a href="../sources/t4.html">T4 business banking workshop</a> | <a href="../sources/t5.html">T5 steering catch-up</a> | See also <a href="03-risk-register.html">risk register</a>, <a href="21-uat-schedule.html">UAT schedule</a></p>
+  <nav class="pn"><a href="21-uat-schedule.html">&larr; UAT schedule</a><a href="19-training-schedule.html">Training schedule &rarr;</a></nav>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var train=[].slice.call(document.querySelectorAll(".tm-train")),crit=document.getElementById("c12");
+  function sync(){
+    var all=train.every(function(x){return x.checked});
+    if(crit.checked!==all){crit.checked=all;crit.dispatchEvent(new Event("change",{bubbles:true}));}
+  }
+  train.forEach(function(x){x.addEventListener("change",sync)});
+})();
+</script></body></html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UAT kick-off schedule | Hampton Bank</title>
+<meta name="description" content="One UAT kick-off session per team, Monday 8 to Friday 12 February 2027, with status tags, dependencies and a cover note.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+.chg{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--green2);border-radius:var(--radius);padding:14px 18px;margin:0 0 22px;box-shadow:var(--shadow)}
+.chg h2{margin:0 0 8px;font-size:19px}.chg ul{margin:0;max-width:none}
+.istrip{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 22px}
+.istrip>div{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--green);border-radius:var(--radius);padding:12px 16px}
+.istrip small{display:block;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.istrip b{display:block;font-size:17px;font-weight:600;margin-bottom:4px}
+.istrip p{margin:0;font-size:14px}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 24px}
+.scard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.scard.updated{box-shadow:inset 4px 0 0 var(--green2),var(--shadow)}
+.scard header{background:var(--green);color:#F8F5EE;padding:10px 14px}
+.scard header .dayl{font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.9}
+.scard header h3{color:#F8F5EE;font-size:18px;margin:4px 0 2px}
+.scard header .sub{font-size:12px;opacity:.85}
+.scard.tbcc header{background:var(--amber-bg);color:var(--amber);border-bottom:1px solid var(--amber-line)}
+.scard.tbcc header h3{color:var(--amber)}
+.scard .body{padding:12px 14px;flex:1}
+.scard h4{margin:12px 0 6px;font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tm{font-weight:700;margin:0 0 8px;font-size:14px}
+.ag,.ready{list-style:none;margin:0;padding:0}
+.ag li{display:grid;grid-template-columns:58px 1fr;gap:8px;font-size:13px;padding:4px 0;border-top:1px solid var(--line);margin:0}
+.ready li{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:3px 0;margin:0}
+.st{cursor:pointer;font-family:inherit}
+.st:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+.tst{margin:0;padding-left:1.4em;font-size:13px}
+.tst li{margin:0 0 2px}.tst li.fixed{color:var(--muted)}
+.cn{font-size:13px;color:var(--muted);margin:10px 0 0}
+.wk{margin:0 0 8px}
+.wk .blk{white-space:normal}
+.two{display:grid;gap:16px;grid-template-columns:1fr 1fr;margin:0 0 20px}
+.two .tile ul{margin:0;padding-left:1.1em}
+.cover{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;max-width:760px;box-shadow:var(--shadow)}
+.cover p{max-width:none}.cover ol{max-width:none}
+.subj{border-bottom:1px solid var(--line);padding-bottom:8px}
+.hint{font-size:13px;color:var(--muted)}
+@media (max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.istrip{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+@media (max-width:640px){.cards{grid-template-columns:1fr}
+ .wk{grid-template-columns:90px repeat(var(--cols),minmax(0,1fr));font-size:11px}.wk .blk{font-size:10px;padding:3px}}
+@media print{.scard{break-inside:avoid}.st{border:1px solid var(--ink)}.hint{display:none}}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>UAT kick-off schedule</h1>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p><p class="lede">Eight sessions across five days start UAT on Mon 8 Feb 2027. UAT runs to Fri 12 Mar and sign-off is Wed 17 Mar.</p></div>
+
+<div class="chg" id="changed"><h2>Changed in v0.2 <span class="upd">Updated v0.2</span></h2><ul>
+<li>Louise Chen's complaint category list is now due Fri 5 Feb, moved from Fri 29 Jan, and the Complaints and advocacy session on Wed 10 Feb depends on it. From <a href="../sources/t5.html">T5</a> (changes C-6 and C-7).</li>
+<li>Business banker session set at 7:30am for 90 minutes before client calls. From <a href="../sources/t4.html">T4</a> (change C-4).</li>
+<li>The Compass Assist guardrails gate moves from Fri 26 Mar to Fri 9 Apr, so the Risk and compliance session now feeds a gate after UAT closes. From <a href="../sources/t5.html">T5</a> (change C-3).</li>
+<li>Version raised to v0.2 (change C-7).</li></ul></div>
+
+<div class="istrip">
+<div><small>When</small><b>Mon 8 to Fri 12 Feb 2027</b><p>One session per team, at a fixed time for that team. Contact centre sessions are at 10:30am, bankers at 7:30am. All times are AEDT, so Victoria and NSW share the same clock time.</p></div>
+<div><small>Format</small><b>30 minutes, then 1 hour</b><p>A 30-minute overview of how UAT runs, then one hour of hands-on training in the test environment. Offered by video, with a recording the same day.</p></div>
+<div><small>Once the session ends</small><b>Each tester begins their test scripts</b><p>A 30-minute debrief each day at 12:30pm. Weeks 2 to 4 are testing and retest. Week 5 is finish, with sign-off on Wed 17 Mar.</p></div>
+</div>
+
+<h2 style="margin-top:0">UAT at a glance</h2>
+<div class="wk" style="--cols:6">
+<div></div><div class="h">8 Feb</div><div class="h">15 Feb</div><div class="h">22 Feb</div><div class="h">1 Mar</div><div class="h">8 Mar</div><div class="h">15 Mar</div>
+<div class="lane">Kick-off sessions</div><div class="blk" style="grid-column:2/3">Mon 8 to Fri 12 Feb</div>
+<div class="lane">Testing</div><div class="blk sage" style="grid-column:2/7">Scripts run, daily debrief at 12:30pm. Mon 8 Mar paused for Labour Day</div>
+<div class="lane">Retest and finish</div><div class="blk sand" style="grid-column:5/7">Retest, close defects. Ends Fri 12 Mar</div>
+<div class="lane">Sign-off</div><div class="blk amber" style="grid-column:7/8">Wed 17 Mar</div>
+</div>
+<p class="hint">The window is five weeks, Mon 8 Feb to Fri 12 Mar 2027. Labour Day, Mon 8 Mar, is a Victorian public holiday and UAT is paused that day (<a href="https://business.vic.gov.au/business-information/public-holidays/victorian-public-holidays-2027">Victorian public holidays 2027</a>). Victorian Term 1 is under way throughout, so the session week has no school-holiday clash.</p>
+
+<h2>Kick-off sessions by team</h2>
+<p class="hint">Click a status tag to cycle Not yet, Draft and Ready. Your choice is saved in this browser only.</p>
+<div class="cards"><article class="scard"><header><span class="dayl">Day 1, Mon 8 Feb</span><h3>CRM platform team</h3><span class="sub">Wave 1, head office, 30 people</span></header>
+<div class="body"><p class="tm">1:30pm to 3:00pm AEDT </p><ul class="ag"><li><b>1:30pm</b><span>Overview: how UAT runs, how to log a defect, who triages</span></li><li><b>2:00pm</b><span>Training: configure and test a case type and a user role in the test environment</span></li><li><b>3:00pm</b><span>Testers start scripts; first debrief Tue 9 Feb</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="c0t0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c0t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip amber st" data-s="1" data-k="c0t2">Draft</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li>Anika Rao</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">Platform team goes first. They hold the admin access the other sessions depend on.</p></div></article><article class="scard"><header><span class="dayl">Day 2, Tue 9 Feb</span><h3>Contact centre, Docklands</h3><span class="sub">Wave 1, 200 people, shift based</span></header>
+<div class="body"><p class="tm">10:30am to 12:00pm AEDT </p><ul class="ag"><li><b>10:30am</b><span>Overview: UAT rules, defect log, what Compass Assist drafts and what the agent must review</span></li><li><b>11:00am</b><span>Training: identify a customer, log a case, resolve or escalate, review a drafted case note</span></li><li><b>12:00pm</b><span>Testers start scripts; debrief 12:30pm daily</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="c1t0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c1t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip amber st" data-s="1" data-k="c1t2">Draft</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li>Marcus Obi</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">10:30am sits between early-shift breaks and the midday peak in the roster pattern from T2.</p></div></article><article class="scard"><header><span class="dayl">Day 3, Wed 10 Feb</span><h3>Contact centre, Parramatta</h3><span class="sub">Wave 2, 150 people, shift based</span></header>
+<div class="body"><p class="tm">10:30am to 12:00pm AEDT </p><ul class="ag"><li><b>10:30am</b><span>Overview: UAT rules, defect log, what Compass Assist drafts and what the agent must review</span></li><li><b>11:00am</b><span>Training: the same case scripts as Docklands, run by video</span></li><li><b>12:00pm</b><span>Testers start scripts; recording sent the same day</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="c2t0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c2t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip amber st" data-s="1" data-k="c2t2">Draft</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">Parramatta testers join by video at the same clock time. Both states observe daylight saving in February.</p></div></article><article class="scard updated card"><header><span class="dayl">Day 3, Wed 10 Feb</span><h3>Complaints and advocacy</h3><span class="sub">Wave 1, head office, 40 people</span></header>
+<div class="body"><p class="tm">1:30pm to 3:00pm AEDT <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></p><ul class="ag"><li><b>1:30pm</b><span>Overview: complaint case type, timers and reporting</span></li><li><b>2:00pm</b><span>Training: receive, categorise, investigate and respond within the regulated time</span></li><li><b>3:00pm</b><span>Testers start scripts; labelled Compass Assist drafts are edited and sent by the officer</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip red st" data-s="0" data-k="c3t0">Not yet</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c3t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip red st" data-s="0" data-k="c3t2">Not yet</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li>Louise Chen</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">Needs the complaint category list, now due Fri 5 Feb. Without it the categorise script cannot run.</p></div></article><article class="scard updated card"><header><span class="dayl">Day 4, Thu 11 Feb</span><h3>Business bankers</h3><span class="sub">Wave 1 Victoria 45 and Wave 2 NSW 35; testers from Victoria first</span></header>
+<div class="body"><p class="tm">7:30am to 9:00am AEDT <span class="upd">Updated v0.2 from <a href="../sources/t4.html">T4</a></span></p><ul class="ag"><li><b>7:30am</b><span>Overview: UAT rules and the shared pipeline view, before client calls</span></li><li><b>8:00am</b><span>Training: lead to opportunity to credit submission using a pre-loaded sample pipeline</span></li><li><b>9:00am</b><span>Testers start scripts; debrief by Teams message, not a meeting</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="c4t0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c4t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip red st" data-s="0" data-k="c4t2">Not yet</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li>Isla Fraser</li><li>Dev (surname to confirm)</li><li>Karina (surname to confirm)</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">90 minutes starting 7:30am, as agreed in T4. Compass Assist is off for bankers in UAT.</p></div></article><article class="scard"><header><span class="dayl">Day 4, Thu 11 Feb</span><h3>Branch network</h3><span class="sub">Wave 1 Victoria 340 and Wave 2 NSW 260; testers from both states</span></header>
+<div class="body"><p class="tm">2:00pm to 3:30pm AEDT </p><ul class="ag"><li><b>2:00pm</b><span>Overview: UAT rules, defect log, branch scenarios</span></li><li><b>2:30pm</b><span>Training: guided onboarding, update customer details, refer to a banker with an owner</span></li><li><b>3:30pm</b><span>Testers start scripts; Easter trading is not in UAT scope</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="c5t0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c5t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip red st" data-s="0" data-k="c5t2">Not yet</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li>Callum Reid</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">Includes one regional branch tester to cover connectivity (risk R-10).</p></div></article><article class="scard"><header><span class="dayl">Day 5, Fri 12 Feb</span><h3>Operations</h3><span class="sub">Wave 1, head office, 120 people</span></header>
+<div class="body"><p class="tm">10:30am to 12:00pm AEDT </p><ul class="ag"><li><b>10:30am</b><span>Overview: UAT rules and defect log</span></li><li><b>11:00am</b><span>Training: case routing, back-office queues and reporting in Service Cloud</span></li><li><b>12:00pm</b><span>Testers start scripts</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="c6t0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c6t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip red st" data-s="0" data-k="c6t2">Not yet</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">No tester names yet. The team lead nominates five.</p></div></article><article class="scard updated card"><header><span class="dayl">Day 5, Fri 12 Feb</span><h3>Risk and compliance</h3><span class="sub">Wave 1, head office, 25 people</span></header>
+<div class="body"><p class="tm">1:30pm to 3:00pm AEDT <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></p><ul class="ag"><li><b>1:30pm</b><span>Overview: UAT rules and how test findings reach the guardrails test set</span></li><li><b>2:00pm</b><span>Training: logging, reading the audit trail and reviewing drafted text in Compass Assist</span></li><li><b>3:00pm</b><span>Testers start scripts; findings feed the approval gate on Fri 9 Apr</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="c7t0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="c7t1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip red st" data-s="0" data-k="c7t2">Not yet</button></li></ul>
+<h4>Testers</h4><ol class="tst"><li>Ben Okafor</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="na">To be nominated by the team lead</li><li class="fixed">Change lead (attends every session)</li><li class="fixed">Jorge Alvarez, Northgate Digital (attends every session)</li></ol><p class="cn">The gate for Compass Assist guardrails is now Fri 9 Apr. UAT closes before the test set can be complete.</p></div></article><article class="scard tbcc"><header><span class="dayl">Day not fixed</span><h3>Make-up session</h3><span class="sub">For anyone who misses their team session</span></header>
+<div class="body"><p class="tm"><span class="tbc">TBC: day and time</span></p><ul class="ag"><li><b>Option 1</b><span>Fri 12 Feb, 1:30pm to 3:00pm, by video</span></li><li><b>Option 2</b><span>Mon 15 Feb, 10:30am to 12:00pm, by video</span></li></ul>
+<h4>Preparation status</h4><ul class="ready"><li><span>Overview slides</span><button type="button" class="chip amber st" data-s="1" data-k="mu0">Draft</button></li><li><span>Hands-on material</span><button type="button" class="chip red st" data-s="0" data-k="mu1">Not yet</button></li><li><span>Scripts loaded</span><button type="button" class="chip red st" data-s="0" data-k="mu2">Not yet</button></li></ul>
+<p class="cn">The recording of the original session is sent to everyone who misses it. Sam Petrovic confirms one of the two options by Fri 5 Feb.</p></div></article></div>
+
+<h2>What the sessions depend on</h2>
+<p>Four of these inputs fall due on Fri 5 Feb, the Friday before the first session. A late input moves the session it feeds, not the whole week.</p>
+<table><thead><tr><th>Input</th><th>Owner</th><th>Due</th><th>What waits for it</th></tr></thead><tbody>
+<tr class="updated"><td>Complaint category list mapped for Service Cloud</td><td>Louise Chen (action A-14)</td><td>Fri 5 Feb (was Fri 29 Jan)</td><td>Complaints and advocacy session on Wed 10 Feb and the categorise and respond scripts. <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></td></tr><tr><td>Written confirmation of the guardrails test set and the sign-off date</td><td>Fatima Haddad (action A-27)</td><td>Fri 5 Feb</td><td>Risk and compliance session on Fri 12 Feb and the Compass Assist scripts.</td></tr><tr><td>Scope of legacy CRM data that comes across (Q-01)</td><td>Jorge Alvarez</td><td>Fri 5 Feb</td><td>Test data load and the data migration scripts for every team.</td></tr><tr><td>Two more business banker champions named</td><td>Isla Fraser (action A-24)</td><td>Fri 5 Feb</td><td>Banker session on Thu 11 Feb and the Teams message from the champions.</td></tr><tr><td>Masked test data loaded, with no real customer data</td><td>Jorge Alvarez</td><td>Fri 5 Feb</td><td>All sessions; testers start scripts straight after training.</td></tr><tr><td>UAT script list shared</td><td>Jorge Alvarez</td><td>Shared Fri 15 Jan (T1)</td><td>Scripts for each team are checked against the processes in the as-is view.</td></tr>
+</tbody></table>
+<div class="trap" style="margin-top:14px"><b>Trap:</b> Louise Chen's category list is the one input with a moved date and a regulated process behind it. If it lands after Fri 5 Feb the Complaints and advocacy session on Wed 10 Feb has nothing to categorise against, and complaint timers are tested late (risk R-08).</div>
+
+<div class="two">
+<div class="tile"><h3>Approvers for UAT</h3><ul><li>UAT sign-off on Wed 17 Mar is given by Helen Marchetti on Daniel Nguyen's recommendation.</li><li>Fatima Haddad approves the Compass Assist test results separately. That approval is the guardrails gate on Fri 9 Apr, not the UAT sign-off.</li><li>Each team lead confirms their testers' results for their process before sign-off.</li><li>Jorge Alvarez confirms that every defect rated high is closed or has a workaround.</li></ul></div>
+<div class="tile"><h3>Names</h3><ul><li>Names come from team leads and the project team only. Where a team has none, the card says so and the lead is asked to nominate.</li><li>About 50 testers across eight teams, drawn from Victoria and NSW. Each lead confirms their list by Fri 5 Feb, before invitations go out.</li><li>Dev and Karina are first names only until Richard Vance's office confirms the surnames.</li><li>Change lead and Jorge Alvarez are on every list by default.</li></ul></div>
+</div>
+
+<h2>Cover note to the sponsor</h2>
+<div class="cover"><p class="subj"><b>Subject:</b> UAT kick-off sessions, Mon 8 to Fri 12 Feb 2027</p>
+<p>Helen, the UAT kick-off sessions are set for next week, one for each of eight teams. Four items need your attention before they start.</p>
+<ol>
+<li>Each session runs 30 minutes of overview and one hour of training, at a time that suits the team: 10:30am for the contact centre, 7:30am for business bankers, and afternoons for branches and head office.</li>
+<li>About 50 testers take part. Each team lead confirms their list by Fri 5 Feb, and where a team has no names the lead nominates.</li>
+<li>UAT runs to Fri 12 Mar, with no testing on Mon 8 Mar for Labour Day. Sign-off is Wed 17 Mar and needs your decision.</li>
+<li>Three inputs are due Fri 5 Feb: the complaint categories from Louise Chen (moved from Fri 29 Jan), written confirmation of the Compass Assist test set date from Fatima Haddad, and the legacy data scope from Jorge Alvarez.</li>
+<li>The Compass Assist guardrails gate is now Fri 9 Apr, so UAT sign-off does not cover it.</li>
+</ol>
+<p>Please confirm the sign-off date and that testers are released for their sessions by Fri 5 Feb.</p><p>Change lead</p></div>
+<p class="small">Sent with this schedule and the <a href="22-go-no-go.html">go / no-go checklist</a>. A sent version is final. Later changes become a new version.</p>
+
+  <p class="sources">Sources: <a href="../sources/t1.html">T1 programme planning</a> | <a href="../sources/t2.html">T2 contact centre workshop</a> | <a href="../sources/t4.html">T4 business banking workshop</a> | <a href="../sources/t5.html">T5 steering catch-up</a> | <a href="../sources/e3.html">E3 programme calendar</a> | See also <a href="08-plan-on-a-page.html">plan on a page</a>, <a href="09-phased-rollout.html">phased rollout</a>, <a href="01-action-list.html">action list</a></p>
+  <nav class="pn"><a href="17-comms-plan.html">&larr; Comms and engagement plan</a><a href="22-go-no-go.html">Go / no-go checklist &rarr;</a></nav>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var NAMES=["Not yet","Draft","Ready"],CLS=["red","amber","green"],store={};
+  try{store=JSON.parse(localStorage.getItem("hb-uat-status")||"{}")}catch(e){}
+  document.querySelectorAll(".st").forEach(function(b){
+    var k=b.getAttribute("data-k"),v=(k in store)?store[k]:+b.getAttribute("data-s");
+    function paint(){b.textContent=NAMES[v];b.className="chip "+CLS[v]+" st";b.setAttribute("data-s",v);}
+    paint();
+    b.addEventListener("click",function(){v=(v+1)%3;store[k]=v;paint();try{localStorage.setItem("hb-uat-status",JSON.stringify(store))}catch(e){}});
+  });
+})();
+</script></body></html>

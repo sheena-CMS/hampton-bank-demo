@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Action list | Hampton Bank</title>
+<meta name="description" content="The Project Compass action list, A-01 to A-28, with a baseline toggle.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+.views,.fl{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 8px}
+.views b,.fl b{font-size:12px;min-width:56px;text-transform:uppercase}
+.views button,.fl button{font:500 12px "General Sans",sans-serif;padding:5px 10px;border:1px solid var(--line);border-radius:999px;background:var(--paper);cursor:pointer}
+.views button[aria-pressed="true"],.fl button[aria-pressed="true"]{background:var(--green);color:#F8F5EE;border-color:var(--green)}
+.filters{display:block}
+details{font-size:13px;color:var(--muted)}summary{cursor:pointer}
+tr.gone{display:none}
+body.base #alist .upd{display:none}
+.od b{color:var(--red)}
+.dn b{color:var(--ok)}
+del{display:block;font-size:12px}
+@media (max-width:760px){thead{display:none}table,tbody,tr,td{display:block}td{border:0;padding:3px 12px}}
+.tile.updated{margin-bottom:26px}.filters{margin-top:6px}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass | Running ledger</p><h1>Action list</h1>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+  <p class="lede">Every action comes from a meeting or an email and links back to it. Each has one owner and a date. Detail shows the date raised and notes.</p></div>
+
+  <div class="note"><b>Changed in v0.2</b> <span class="upd">Updated v0.2</span><ul>
+      <li>Five new actions, A-24 to A-28, from <a href="../sources/t4.html">T4</a> (Tue 26 Jan) and <a href="../sources/t5.html">T5</a> (Thu 28 Jan). T5 also moved A-14 from Fri 29 Jan to Fri 5 Feb and closed two.</li>
+      <li>Totals: 28 actions, done 10, open 15, overdue 3. The overdue three are the same as the baseline.</li>
+    </ul></div>
+
+  <div class="views" id="views"><b>View</b>
+    <button id="v-new" aria-pressed="true">v0.2 | Fri 29 Jan 2027</button>
+    <button id="v-base">Baseline v0.1 | Fri 22 Jan 2027</button>
+    <span class="small" id="viewnote">Showing all 28 actions.</span>
+  </div>
+
+  <div class="strip">
+    <div class="stat"><b id="n-total">28</b><span>Actions</span></div>
+    <div class="stat dn"><b id="n-done">10</b><span>Done</span></div>
+    <div class="stat"><b id="n-open">15</b><span>Open</span></div>
+    <div class="stat od"><b id="n-over">3</b><span>Overdue</span></div>
+    <div class="stat"><b id="n-chased">1</b><span>Chased twice or more</span></div>
+  </div>
+  <p class="small">Overdue means past its date and not done. T1 to T5 are transcripts and E2 to E4 are emails. E1, the sponsor's kick-off note, set direction and asked for no action, so it has no row here.</p>
+
+  <div class="tile updated">
+    <h3>Closed by evidence <span class="upd">Updated v0.2</span></h3>
+    <p><b>A-09</b> is closed because Fatima Haddad agreed Fri 9 Apr 2027 in <a href="../sources/t5.html">T5</a>, and A-27 asks for it in writing. <b>A-11</b> is closed because the criterion is on the <a href="22-go-no-go.html">go/no-go page</a> with the new date.</p>
+  </div>
+
+  <div class="filters" data-filter-group="#alist">
+    <div class="fl" id="f-owner"><b>Owner</b></div>
+    <div class="fl"><b>Status</b><button data-filter="status:Done">Done</button><button data-filter="status:Open">Open</button><button data-filter="status:Overdue">Overdue</button></div>
+    <div class="fl" id="f-source"><b>Source</b></div>
+    <input data-search placeholder="Search the action list" aria-label="Search the action list">
+  </div>
+
+  <table>
+    <thead><tr><th>Action</th><th>Owner</th><th>Due</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody id="alist">
+<tr data-row data-owner="Sam Petrovic" data-status="Done" data-source="T1"><td><b>A-01</b> Confirm trainer capacity for Wave 1 and Wave 2 with the eight-person L&amp;D team.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Confirmed on Fri 22 Jan.</span></details></td><td>Sam Petrovic</td><td class="due">Fri 22 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr data-row data-owner="Jorge Alvarez" data-status="Done" data-source="T1"><td><b>A-02</b> Share the UAT script list with the Change lead.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Shared on Fri 15 Jan.</span></details></td><td>Jorge Alvarez</td><td class="due">Fri 15 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr data-row data-owner="Change lead" data-status="Done" data-source="T1"><td><b>A-03</b> Draft the stakeholder list.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Issued at v0.1. See the stakeholder list.</span></details></td><td>Change lead</td><td class="due">Fri 22 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr data-row data-owner="Change lead" data-status="Done" data-source="T1"><td><b>A-04</b> Draft the risk register.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Issued at v0.1 with 12 risks.</span></details></td><td>Change lead</td><td class="due">Fri 22 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr data-row data-owner="Mei Tan" data-status="Done" data-source="T2"><td><b>A-05</b> Send the Docklands shift roster pattern.<details><summary>Detail</summary>Raised 14 Jan. <span class="nt">Used for the 90-minute training blocks.</span></details></td><td>Mei Tan</td><td class="due">Wed 20 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t2.html">T2</a></td></tr>
+<tr data-row data-owner="Marcus Obi" data-status="Overdue" data-source="T2"><td><b>A-06</b> List the Docklands team leaders who can host 90-minute training blocks on each shift. <span class="chip red">chased once</span><details><summary>Detail</summary>Raised 14 Jan. <span class="nt">Chased once. Needed for A-26.</span></details></td><td>Marcus Obi</td><td class="due">Wed 20 Jan 2027</td><td class="st"><span class="chip red">Overdue</span></td><td><a href="../sources/t2.html">T2</a></td></tr>
+<tr data-row data-owner="Change lead" data-status="Done" data-source="E2"><td><b>A-07</b> Reply to Aroha Williams on Easter trading and log her roster limits as training constraints.<details><summary>Detail</summary>Raised 13 Jan. <span class="nt">Constraints are in the training schedule.</span></details></td><td>Change lead</td><td class="due">Fri 22 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/e2.html">E2</a></td></tr>
+<tr data-row data-owner="Change lead" data-status="Done" data-source="E3"><td><b>A-08</b> Check the programme calendar against Victorian public holidays and school terms.<details><summary>Detail</summary>Raised 21 Jan. <span class="nt">Check found the school-holiday flag taken to T5.</span></details></td><td>Change lead</td><td class="due">Fri 29 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/e3.html">E3</a></td></tr>
+<tr class="updated" data-row data-owner="Fatima Haddad" data-status="Done" data-source="T3" data-bs="Open" data-bn="Open. Guardrails gate is Fri 26 Mar at baseline."><td><b>A-09</b> Confirm the Compass Assist guardrails sign-off date. <span class="upd">Closed by evidence</span><details><summary>Detail</summary>Raised 19 Jan. <span class="nt">Agreed Fri 9 Apr in T5 and written into go/no-go (C-3).</span></details></td><td>Fatima Haddad</td><td class="due">Fri 29 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t3.html">T3</a></td></tr>
+<tr data-row data-owner="Ben Okafor" data-status="Open" data-source="T3"><td><b>A-10</b> Draft an outline of the Compass Assist guardrails test set.<details><summary>Detail</summary>Raised 19 Jan. <span class="nt">Feeds step 3 of the policy timeline.</span></details></td><td>Ben Okafor</td><td class="due">Fri 12 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t3.html">T3</a></td></tr>
+<tr class="updated" data-row data-owner="Change lead" data-status="Done" data-source="T3" data-bs="Open" data-bn="Open. Go/no-go v0.1 has 14 criteria."><td><b>A-11</b> Add the Compass Assist approval gate to the go/no-go checklist. <span class="upd">Closed by evidence</span><details><summary>Detail</summary>Raised 19 Jan. <span class="nt">Criterion is in go/no-go with the new date (C-3).</span></details></td><td>Change lead</td><td class="due">Fri 22 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t3.html">T3</a></td></tr>
+<tr data-row data-owner="Priya Raman" data-status="Open" data-source="T3"><td><b>A-12</b> Check with security the wording on customer personal data in prompts outside Salesforce.<details><summary>Detail</summary>Raised 19 Jan. <span class="nt">Policy conflict 2 on the policy timeline.</span></details></td><td>Priya Raman</td><td class="due">Fri 5 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t3.html">T3</a></td></tr>
+<tr data-row data-owner="Jorge Alvarez" data-status="Open" data-source="T1"><td><b>A-13</b> Answer Q-01: which legacy CRM data comes across to Salesforce.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Open question Q-01.</span></details></td><td>Jorge Alvarez</td><td class="due">Fri 5 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr class="updated" data-row data-owner="Louise Chen" data-status="Open" data-source="T2" data-bd="Fri 29 Jan 2027" data-bn="Due Fri 29 Jan at baseline. UAT depends on it."><td><b>A-14</b> Supply the complaint category list, mapped to Service Cloud case categories. <span class="upd">Due date moved</span><details><summary>Detail</summary>Raised 14 Jan. <span class="nt">Due date moved from Fri 29 Jan in T5. UAT depends on it.</span></details></td><td>Louise Chen</td><td class="due">Fri 5 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t2.html">T2</a></td></tr>
+<tr data-row data-owner="Aroha Williams" data-status="Overdue" data-source="E2"><td><b>A-15</b> Send the month-end roster pattern for the 60 branches. <span class="chip red">chased once</span><details><summary>Detail</summary>Raised 13 Jan. <span class="nt">Chased once.</span></details></td><td>Aroha Williams</td><td class="due">Wed 20 Jan 2027</td><td class="st"><span class="chip red">Overdue</span></td><td><a href="../sources/e2.html">E2</a></td></tr>
+<tr data-row data-owner="Change lead" data-status="Done" data-source="T2"><td><b>A-16</b> Circulate the as-is notes for processes 1 and 4 for check.<details><summary>Detail</summary>Raised 14 Jan. <span class="nt">Checked by Tom Gallagher and Louise Chen.</span></details></td><td>Change lead</td><td class="due">Fri 22 Jan 2027</td><td class="st"><span class="chip green">Done</span></td><td><a href="../sources/t2.html">T2</a></td></tr>
+<tr data-row data-owner="Richard Vance" data-status="Overdue" data-source="E4"><td><b>A-17</b> Send one banker&#x27;s pipeline spreadsheet as a sample, with client details removed. <span class="chip red">chased twice</span><details><summary>Detail</summary>Raised 15 Jan. <span class="nt">Chased twice. Partly overtaken by A-25.</span></details></td><td>Richard Vance</td><td class="due">Wed 20 Jan 2027</td><td class="st"><span class="chip red">Overdue</span></td><td><a href="../sources/e4.html">E4</a></td></tr>
+<tr data-row data-owner="Sam Petrovic" data-status="Open" data-source="T1"><td><b>A-18</b> Answer Q-06: where NSW gets its Wave 2 trainers.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Open question Q-06.</span></details></td><td>Sam Petrovic</td><td class="due">Fri 12 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr data-row data-owner="Aroha Williams" data-status="Open" data-source="E2"><td><b>A-19</b> Answer Q-03: whether branch staff are trained at their branch or on site.<details><summary>Detail</summary>Raised 13 Jan. <span class="nt">Open question Q-03.</span></details></td><td>Aroha Williams</td><td class="due">Fri 12 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/e2.html">E2</a></td></tr>
+<tr data-row data-owner="Jorge Alvarez" data-status="Open" data-source="T1"><td><b>A-20</b> Confirm the UAT environment is ready for the kick-off sessions from Mon 8 Feb.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Go/no-go criterion.</span></details></td><td>Jorge Alvarez</td><td class="due">Wed 3 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr data-row data-owner="Tom Gallagher" data-status="Open" data-source="T2"><td><b>A-21</b> Nominate the contact centre UAT testers for Docklands and Parramatta.<details><summary>Detail</summary>Raised 14 Jan. <span class="nt">Risk R-11 covers testers pulled back to day jobs.</span></details></td><td>Tom Gallagher</td><td class="due">Wed 3 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t2.html">T2</a></td></tr>
+<tr data-row data-owner="Daniel Nguyen" data-status="Open" data-source="E3"><td><b>A-22</b> Book steering committee slots for the go/no-go reviews before each go-live.<details><summary>Detail</summary>Raised 21 Jan. <span class="nt">Wave 1 review is before Mon 19 Apr.</span></details></td><td>Daniel Nguyen</td><td class="due">Fri 26 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/e3.html">E3</a></td></tr>
+<tr data-row data-owner="Change lead" data-status="Open" data-source="T1"><td><b>A-23</b> Draft the Wave 1 comms plan outline.<details><summary>Detail</summary>Raised 12 Jan. <span class="nt">Adds a bankers&#x27; message and a school-holiday reminder.</span></details></td><td>Change lead</td><td class="due">Fri 12 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr class="updated" data-row data-owner="Isla Fraser" data-status="Open" data-source="T4" data-new="1"><td><b>A-24</b> Confirm two other business banker champions by name. <span class="upd">New v0.2 from <a href="../sources/t4.html">T4</a></span><details><summary>Detail</summary>Raised 26 Jan. <span class="nt">Richard Vance named Dev and Karina, first names only.</span></details></td><td>Isla Fraser</td><td class="due">Fri 5 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t4.html">T4</a></td></tr>
+<tr class="updated" data-row data-owner="Anika Rao" data-status="Open" data-source="T4" data-new="1"><td><b>A-25</b> Scope loading each banker&#x27;s spreadsheet into the pipeline. <span class="upd">New v0.2 from <a href="../sources/t4.html">T4</a></span><details><summary>Detail</summary>Raised 26 Jan. <span class="nt">Two weeks of migration prep before training. Q-07 depends on it.</span></details></td><td>Anika Rao</td><td class="due">Fri 12 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t4.html">T4</a></td></tr>
+<tr class="updated" data-row data-owner="Sam Petrovic" data-status="Open" data-source="T5" data-new="1"><td><b>A-26</b> Confirm early and late trainer blocks for Docklands. <span class="upd">New v0.2 from <a href="../sources/t5.html">T5</a></span><details><summary>Detail</summary>Raised 28 Jan. <span class="nt">Early 6:30am to 8:00am, late 4:30pm to 6:00pm.</span></details></td><td>Sam Petrovic</td><td class="due">Fri 12 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t5.html">T5</a></td></tr>
+<tr class="updated" data-row data-owner="Fatima Haddad" data-status="Open" data-source="T5" data-new="1"><td><b>A-27</b> Confirm the guardrails test set and the sign-off date of Fri 9 Apr in writing. <span class="upd">New v0.2 from <a href="../sources/t5.html">T5</a></span><details><summary>Detail</summary>Raised 28 Jan. <span class="nt">Supports the new gate date.</span></details></td><td>Fatima Haddad</td><td class="due">Fri 5 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t5.html">T5</a></td></tr>
+<tr class="updated" data-row data-owner="Change lead" data-status="Open" data-source="T5" data-new="1"><td><b>A-28</b> Send Helen Marchetti a one-page customer-experience scorecard outline. <span class="upd">New v0.2 from <a href="../sources/t5.html">T5</a></span><details><summary>Detail</summary>Raised 28 Jan. <span class="nt">See the KPI scorecard.</span></details></td><td>Change lead</td><td class="due">Fri 19 Feb 2027</td><td class="st"><span class="chip">Open</span></td><td><a href="../sources/t5.html">T5</a></td></tr>
+    </tbody>
+  </table>
+
+  <div class="pn"><a href="04-weekly-status.html">Previous: weekly status</a><a href="05-shared-facts.html">Next: shared facts</a></div>
+  <p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t2.html">T2</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4</a>, <a href="../sources/t5.html">T5</a>, <a href="../sources/e2.html">E2</a>, <a href="../sources/e3.html">E3</a>, <a href="../sources/e4.html">E4</a>. See also the <a href="03-risk-register.html">risk register</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script>
+(function () {
+  var rows = [].slice.call(document.querySelectorAll('#alist [data-row]'));
+  var chip = { Done: 'chip green', Open: 'chip', Overdue: 'chip red' };
+  rows.forEach(function (r) {
+    r.v2 = { status: r.getAttribute('data-status'), due: r.querySelector('.due').textContent, note: r.querySelector('.nt').innerHTML };
+  });
+  ['owner', 'source'].forEach(function (k) {
+    var seen = {}, box = document.getElementById('f-' + k);
+    rows.forEach(function (r) { seen[r.getAttribute('data-' + k)] = 1; });
+    Object.keys(seen).sort().forEach(function (v) {
+      var b = document.createElement('button');
+      b.setAttribute('data-filter', k + ':' + v); b.textContent = v; box.appendChild(b);
+    });
+  });
+  var vn = document.getElementById('v-new'), vb = document.getElementById('v-base');
+  function text(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function setView(base) {
+    document.body.classList.toggle('base', base);
+    vn.setAttribute('aria-pressed', !base);
+    vb.setAttribute('aria-pressed', base);
+    var t = { Done: 0, Open: 0, Overdue: 0 }, total = 0;
+    rows.forEach(function (r) {
+      var isNew = r.getAttribute('data-new') === '1';
+      r.classList.toggle('gone', base && isNew);
+      var st = base ? (r.getAttribute('data-bs') || r.v2.status) : r.v2.status;
+      r.setAttribute('data-status', st);
+      r.querySelector('.st').innerHTML = '<span class="' + chip[st] + '">' + st + '</span>';
+      var bd = r.getAttribute('data-bd');
+      r.querySelector('.due').innerHTML = text(base && bd ? bd : r.v2.due) + ((!base && bd) ? '<del>was ' + text(bd.replace(' 2027', '')) + '</del>' : '');
+      var bn = r.getAttribute('data-bn');
+      r.querySelector('.nt').innerHTML = (base && bn) ? text(bn) : r.v2.note;
+      if (!(base && isNew)) { t[st]++; total++; }
+    });
+    document.getElementById('n-total').textContent = total;
+    document.getElementById('n-done').textContent = t.Done;
+    document.getElementById('n-open').textContent = t.Open;
+    document.getElementById('n-over').textContent = t.Overdue;
+    document.getElementById('viewnote').textContent = base
+      ? 'Showing the 23 baseline actions. A-24 to A-28 are hidden and A-09 and A-11 are open.'
+      : 'Showing all 28 actions.';
+  }
+  vn.addEventListener('click', function () { setView(false); });
+  vb.addEventListener('click', function () { setView(true); });
+  setView(false);
+})();
+</script><script src="../assets/hb.js"></script></body></html>

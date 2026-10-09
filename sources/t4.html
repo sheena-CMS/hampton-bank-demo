@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T4 Business banking workshop | Hampton Bank</title>
+<meta name="description" content="Transcript of the business banking workshop on 26 January 2027, a loop input for v0.2.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>.meta{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:var(--radius);padding:14px 16px;margin:0 0 22px}.meta dl{margin:0;display:grid;grid-template-columns:130px 1fr;gap:6px 12px;font-size:14px}.meta dt{font-weight:600;color:var(--muted)}.meta dd{margin:0}.tx p{max-width:80ch;margin:0 0 .8em}.ts{color:var(--faint);font-size:13px;margin-right:6px}@media(max-width:600px){.meta dl{grid-template-columns:1fr}}</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Source | Meeting transcript T4</p><h1>Business banking workshop</h1>
+  <p class="verline">Tue 26 January 2027 | 60 minutes | Transcript, lightly cleaned</p></div>
+  <p class="note"><b>New in the v0.2 loop run, Fri 29 Jan 2027.</b> This transcript and <a href="t5.html">T5</a> arrived after the v0.1 baseline and changed the artefacts. See <a href="../loop/index.html">the loop page</a>.</p>
+  <div class="meta"><dl>
+    <dt>Meeting</dt><dd>Business banking workshop</dd>
+    <dt>Date</dt><dd>Tue 26 Jan 2027, 60 minutes</dd>
+    <dt>Attendees</dt><dd>Richard Vance (Head of business banking); Isla Fraser (Business banker and champion, Victoria); Anika Rao (Salesforce platform lead, CRM platform team); Jorge Alvarez (Implementation partner lead, Northgate Digital); Change lead (Change Made Simple)</dd>
+    <dt>Where this fed</dt><dd><a href="../outputs/03-risk-register.html">Risk register</a> (C-2), <a href="../outputs/11-stakeholder-list.html">Stakeholder list</a> (C-1), <a href="../outputs/18-learning-plan.html">Learning plan</a> (C-4), <a href="../outputs/02-open-questions.html">Open questions</a> (C-5), <a href="../outputs/17-comms-plan.html">Comms plan</a> (C-4), <a href="../outputs/19-training-schedule.html">Training schedule</a> (C-4), <a href="../outputs/01-action-list.html">Action list</a> (C-6)</dd>
+  </dl></div>
+
+  <div class="tx">
+<p><span class="ts">[00:00]</span><b>Change lead:</b> Thanks for making time, Richard. I know this is the week before the pipeline reviews.</p>
+<p><b>Richard Vance:</b> It's every week before a pipeline review. I've got you till quarter to eleven, and then I've got a client.</p>
+<p><b>Isla Fraser:</b> He means it. I'm his driver.</p>
+<p><b>Richard Vance:</b> She's not.</p>
+<p><b>Change lead:</b> Understood. Plan is simple. I'd like to hear how your bankers run a pipeline today, what you'd need to see to move, and what we can do about training. Anika and Jorge are here so we can check what's possible.</p>
+<p><span class="ts">[00:04]</span><b>Richard Vance:</b> I'll start with what I said in my email. Eighty bankers. Every one of them has a spreadsheet that took years to get right. They know where everything is. You're going to ask them to put it into a system where they'll have to click through six fields to record a phone call.</p>
+<p><b>Isla Fraser:</b> It's not six fields.</p>
+<p><b>Richard Vance:</b> Isla, I'm not finished. They won't give up the spreadsheet unless the pipeline view in the new system is better than what they've got on the day it goes live. Not better in six months. Day one. If it isn't, the spreadsheet carries on and the system becomes a place where they type things in on a Friday so compliance is happy.</p>
+<p><b>Change lead:</b> That's the condition, then. Better pipeline view on day one.</p>
+<p><b>Richard Vance:</b> Better than their own. Yes. If it is, I'll back it. If it isn't, I won't ask them to use it.</p>
+<p><span class="ts">[00:10]</span><b>Anika Rao:</b> Can I ask what better looks like? Because I can show you the view as we've configured it, but I don't know what your bankers care about.</p>
+<p><b>Isla Fraser:</b> Stage, next action date, and what's the exposure. Three columns. That's what I look at every morning. And I sort by next action date.</p>
+<p><b>Richard Vance:</b> Plus the client's other products. I'd like to see at a glance if they've got a business loan and a transaction account with us.</p>
+<p><b>Anika Rao:</b> That sits in the household and account views. We can put it on the pipeline list as a column.</p>
+<p><b>Jorge Alvarez:</b> And the thing that would make it better than a spreadsheet is that Richard sees all eighty in one place without asking anyone for a file.</p>
+<p><b>Richard Vance:</b> That is a benefit to me, not to them. Don't pretend otherwise.</p>
+<p><b>Isla Fraser:</b> It's a benefit to them if it means they stop being chased for the Thursday email.</p>
+<p><b>Richard Vance:</b> Hm. Fair.</p>
+<p><span class="ts">[00:18]</span><b>Change lead:</b> So here's the question that comes out of that. Is there a way to have each banker's own spreadsheet already in the new system before they sit in front of it? So on day one it already looks like theirs.</p>
+<p><b>Anika Rao:</b> Technically, yes. We'd load each banker's current pipeline from their spreadsheet. It needs a consistent set of columns, and we'd have to map each banker's version because I'd bet they're all slightly different.</p>
+<p><b>Isla Fraser:</b> Mine has a colour code. Green means call back.</p>
+<p><b>Anika Rao:</b> I can't migrate colours. I can add a status field.</p>
+<p><b>Richard Vance:</b> They'll tell you what the colours mean. I'll make sure they do. How long?</p>
+<p><b>Anika Rao:</b> For eighty files? Call it two weeks of prep before the training. I'd want to do it in advance so the bankers see their own data in the session.</p>
+<p><b>Richard Vance:</b> Then that's the agreement. Pre-load every banker's spreadsheet into the pipeline before they get trained. Two weeks of migration prep. If it's their data on the screen, they'll engage. If it's a demo with made-up names, they'll check their phones.</p>
+<p><b>Change lead:</b> Recording it. The pipeline is pre-loaded with each banker's spreadsheet before training, with two weeks of migration prep. Anika, can you scope that?</p>
+<p><b>Anika Rao:</b> I'll scope it and send you the effort. By Friday the twelfth of February.</p>
+<p><span class="ts">[00:28]</span><b>Change lead:</b> Training now. The standard plan was half-day sessions. What works for you?</p>
+<p><b>Richard Vance:</b> Not a half day. And not a full day. I will not release bankers for a full day. They're out with clients. A day of training is a day of no revenue and no one will thank me.</p>
+<p><b>Isla Fraser:</b> What about early? Before client calls?</p>
+<p><b>Richard Vance:</b> That's what I was going to say. Half past seven. We have bankers in the office by then, because they're doing the admin before nine anyway. Ninety minutes. Seven-thirty to nine. Then they're ready for their first call.</p>
+<p><b>Change lead:</b> Ninety-minute sessions starting at 7:30am. How many sessions do we need, Sam's team will have to work it out, but the principle is that it's before client calls.</p>
+<p><b>Richard Vance:</b> I'll accept that. I won't accept anything bigger.</p>
+<p><span class="ts">[00:35]</span><b>Change lead:</b> Champions. Isla, you mentioned something on the phone.</p>
+<p><b>Isla Fraser:</b> I'll do it. I'll champion it. I'm not going to say I love every part of it, but if the pipeline view works I'm happy to stand up. And I can get two others, I reckon.</p>
+<p><b>Richard Vance:</b> Dev and Karina. They're both Victorian, they're both well respected, and neither of them will say yes just because I asked. If they like it, the others will listen. Three champions.</p>
+<p><b>Change lead:</b> Isla, Dev and Karina. Isla, can you confirm the other two by name, with surnames, so I can add them to the stakeholder list? By Friday the fifth.</p>
+<p><b>Isla Fraser:</b> Friday the fifth. Done.</p>
+<p><b>Change lead:</b> And Richard, where does that leave you? I've been recording you as resistant. Is that still fair?</p>
+<p><b>Richard Vance:</b> I'd say conditional. I'll engage if the view is better on day one. You can write that.</p>
+<p><span class="ts">[00:42]</span><b>Jorge Alvarez:</b> Compass Assist. Is the plan that bankers get it at go-live along with everyone else?</p>
+<p><b>Richard Vance:</b> No. Switch it off for my people at go-live. They've got enough to take in. The pipeline is the story. If they're also learning to talk to a robot, the pipeline gets lost.</p>
+<p><b>Isla Fraser:</b> Could they have it later? I'd use it for meeting prep.</p>
+<p><b>Richard Vance:</b> Week three. Opt-in. If they want it they can ask for it. I don't want it pushed.</p>
+<p><b>Change lead:</b> So Compass Assist is off for business bankers at go-live and offered in week three after go-live as opt-in. Training for it moves to week three as well.</p>
+<p><b>Jorge Alvarez:</b> That's easy configuration. We can switch it by profile.</p>
+<p><b>Change lead:</b> I should say, if the AI benefit is delayed for bankers, that's a trade-off. It becomes a small risk I'll log.</p>
+<p><b>Richard Vance:</b> Log it. Fine.</p>
+<p><span class="ts">[00:48]</span><b>Anika Rao:</b> Question for you, Richard, while we're on the spreadsheets. Bankers keep client notes in a free-text column. Meeting notes, personal comments. Do you want those loaded as well?</p>
+<p><b>Richard Vance:</b> I don't know. Some of those notes are, well. Some of them are blunt. I'm not sure we want them in the system.</p>
+<p><b>Anika Rao:</b> There's a data question too. I need to check whether the notes can be loaded cleanly.</p>
+<p><b>Change lead:</b> Open question, then. Can bankers' client notes be loaded from the spreadsheets? Owner is you two, Richard and Anika. I'll number it Q-07.</p>
+<p><b>Richard Vance:</b> Fine. I'll look at a sample.</p>
+<p><span class="ts">[00:53]</span><b>Change lead:</b> Read-back. Richard is conditional on the pipeline view being better on day one. Champions are Isla, Dev and Karina. Pipelines are pre-loaded from each banker's spreadsheet, two weeks of prep. Training is ninety minutes at 7:30am, no full days. Compass Assist is off for bankers at go-live and opt-in from week three. Q-07 open on client notes. Isla confirms names by the fifth, Anika scopes the load by the twelfth.</p>
+<p><b>Richard Vance:</b> Close enough. I need to go.</p>
+<p><b>Isla Fraser:</b> He has a client.</p>
+<p><b>Richard Vance:</b> I do have a client. Thank you.</p>
+  </div>
+  <div class="pn"><a href="t3.html">&larr; T3 Risk and compliance session</a><a href="t5.html">T5 Programme steering catch-up &rarr;</a></div>
+  <p class="sources">This is an invented source for the Hampton Bank demo. <a href="index.html">Back to sources</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script></body></html>

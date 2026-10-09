@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Risk register | Hampton Bank</title>
+<meta name="description" content="Project Compass change risks, with the detail one click down.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+[hidden]{display:none!important}
+.updbox{background:var(--mist);border-left:5px solid var(--green2);border-radius:var(--radius);padding:10px 16px;margin:0 0 16px}
+.updbox h3{margin:0 0 4px;font-size:16px}
+.updbox ul{margin:0}
+.dt{margin-top:6px;padding:8px 10px;background:var(--sand);border-radius:6px;font-size:13px}
+.xp{font:600 12px "General Sans",sans-serif;padding:3px 10px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
+@media(max-width:1000px){
+ .reg thead{display:none}
+ .reg,.reg tbody,.reg tr,.reg td{display:block}
+ .reg tr{border-bottom:3px solid var(--line)}
+ .reg td{border:0;padding:3px 12px}
+}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+<div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Risk register</h1>
+<p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+<p class="lede">Fourteen change risks: four High, seven Medium, three Low. This register feeds section 10 of the <a href="07-change-plan.html#risks">change plan</a>.</p></div>
+
+<div class="updbox"><h3>Changed in v0.2</h3>
+<ul>
+<li>R-01 has a new mitigation (<a href="../sources/t4.html">T4</a>). R-03 rises to High and R-02 uses the Fri 9 Apr date (<a href="../sources/t5.html">T5</a>).</li>
+<li>R-13 (Low, <a href="../sources/t4.html">T4</a>) and R-14 (Medium, <a href="../sources/t5.html">T5</a>) are new.</li>
+</ul></div>
+
+<p class="small">High risks are reported weekly in the <a href="04-weekly-status.html">weekly status</a> and taken to steering by Daniel Nguyen.</p>
+
+<div class="filters" data-filter-group="#list"><button data-filter="wave:1" aria-pressed="false">Wave 1</button>
+<button data-filter="wave:2" aria-pressed="false">Wave 2</button>
+<button data-filter="wave:both" aria-pressed="false">Both</button>
+<button data-filter="rating:High" aria-pressed="false">High</button>
+<button data-filter="rating:Medium" aria-pressed="false">Medium</button>
+<button data-filter="rating:Low" aria-pressed="false">Low</button>
+<input data-search placeholder="Search risks" aria-label="Search risks">
+</div>
+<p class="small">Showing <span data-count>14</span> of 14 risks. Dates are 2027.</p>
+
+<table class="reg"><thead><tr><th>ID</th><th>Risk</th><th>Rating</th><th>Owner</th><th>Next step</th><th>Wave</th></tr></thead>
+<tbody id="list">
+<tr class="updated" data-row data-wave="both" data-rating="High"><td><b>R-01</b></td><td>Business bankers keep using personal spreadsheets after go-live. <span class="upd">Updated v0.2</span><br><button class="xp" data-xp="d1">Detail</button><div id="d1" class="dt" hidden>Likelihood/impact High/High. Pipelines sit in personal spreadsheets and bankers cannot attend a full day. Pre-load spreadsheets, 90-minute 7:30am sessions, champions Isla Fraser, Dev and Karina. Open. <a href="../sources/t4.html">T4</a>, <a href="../sources/e4.html">E4</a>.</div></td><td><span class="chip red">High</span></td><td>Richard Vance</td><td>Pre-load pipelines, name champions, Fri 9 Apr</td><td>Both</td></tr>
+<tr class="updated" data-row data-wave="both" data-rating="High"><td><b>R-02</b></td><td>Compass Assist is not approved by Risk and Compliance before go-live. <span class="upd">Updated v0.2</span><br><button class="xp" data-xp="d2">Detail</button><div id="d2" class="dt" hidden>Likelihood/impact Medium/High. The test set is not complete until after UAT. Approval gate on Fri 9 Apr. Open. <a href="../sources/t3.html">T3</a>, <a href="../sources/t5.html">T5</a>.</div></td><td><span class="chip red">High</span></td><td>Fatima Haddad</td><td>Confirm test set in writing (A-27), Fri 9 Apr</td><td>Both</td></tr>
+<tr class="updated" data-row data-wave="1" data-rating="High"><td><b>R-03</b></td><td>Contact centre shift cover is short in Wave 1 training. <span class="upd">Updated v0.2</span><br><button class="xp" data-xp="d3">Detail</button><div id="d3" class="dt" hidden>Likelihood/impact High/High. School holidays and Easter fall in two of three training weeks. Early and late Docklands blocks, a branch block in the week of 12 Apr, make-ups on 14 and 15 Apr. Open. <a href="../sources/t2.html">T2</a>, <a href="../sources/t5.html">T5</a>, <a href="../sources/e2.html">E2</a>.</div></td><td><span class="chip red">High</span></td><td>Tom Gallagher</td><td>Confirm Docklands blocks (A-26), Fri 12 Feb</td><td>Wave 1</td></tr>
+<tr data-row data-wave="both" data-rating="Medium"><td><b>R-04</b></td><td>Training capacity is limited to eight L&amp;D staff.<br><button class="xp" data-xp="d4">Detail</button><div id="d4" class="dt" hidden>Likelihood/impact Medium/Medium. Eight people deliver every session in two states. Confirm capacity, ask Northgate Digital for support, settle Wave 2 trainers (Q-06). Open. <a href="../sources/t1.html">T1</a>.</div></td><td><span class="chip amber">Medium</span></td><td>Sam Petrovic</td><td>Confirm trainer capacity, Fri 12 Feb</td><td>Both</td></tr>
+<tr data-row data-wave="both" data-rating="Medium"><td><b>R-05</b></td><td>Branch staff are overloaded at month end.<br><button class="xp" data-xp="d5">Detail</button><div id="d5" class="dt" hidden>Likelihood/impact Medium/Medium. Training spans month end and Easter trading. Agree rosters, use the week of 12 Apr block, decide where staff train (Q-03). Open. <a href="../sources/e2.html">E2</a>.</div></td><td><span class="chip amber">Medium</span></td><td>Aroha Williams</td><td>Agree branch rosters, Fri 26 Feb</td><td>Both</td></tr>
+<tr data-row data-wave="both" data-rating="High"><td><b>R-06</b></td><td>Data migrated from the legacy CRM is of poor quality.<br><button class="xp" data-xp="d6">Detail</button><div id="d6" class="dt" hidden>Likelihood/impact High/High. Data scope is undecided (Q-01), so records could be wrong at go-live. Decide scope by Fri 5 Feb, reconcile in UAT and before each go-live. Open. <a href="../sources/t1.html">T1</a>, <a href="../sources/t4.html">T4</a>.</div></td><td><span class="chip red">High</span></td><td>Anika Rao</td><td>Decide data scope (Q-01), Fri 5 Feb</td><td>Both</td></tr>
+<tr data-row data-wave="both" data-rating="Medium"><td><b>R-07</b></td><td>The two-wave split creates two ways of working for a while.<br><button class="xp" data-xp="d7">Detail</button><div id="d7" class="dt" hidden>Likelihood/impact Medium/Medium. Victoria goes live seven weeks before New South Wales. Keep one process design and record lessons for Wave 2. Watching. <a href="../sources/t1.html">T1</a>.</div></td><td><span class="chip amber">Medium</span></td><td>Daniel Nguyen</td><td>Brief NSW managers, Fri 30 Apr</td><td>Both</td></tr>
+<tr data-row data-wave="1" data-rating="Medium"><td><b>R-08</b></td><td>Complaints timers are misconfigured.<br><button class="xp" data-xp="d8">Detail</button><div id="d8" class="dt" hidden>Likelihood/impact Low/High. Categories are not mapped and complaints are regulated. Categories due Fri 5 Feb (moved from Fri 29 Jan), timers tested in UAT. Open. <a href="../sources/t2.html">T2</a>, <a href="../sources/t5.html">T5</a>.</div></td><td><span class="chip amber">Medium</span></td><td>Louise Chen</td><td>Supply complaint categories (A-14), Fri 5 Feb</td><td>Wave 1</td></tr>
+<tr data-row data-wave="2" data-rating="Low"><td><b>R-09</b></td><td>Sponsor attention drifts after Wave 1.<br><button class="xp" data-xp="d9">Detail</button><div id="d9" class="dt" hidden>Likelihood/impact Low/Medium. The first go-live delivers the visible win. Scorecard to Helen Marchetti before Wave 2 (A-28). Watching. <a href="../sources/e1.html">E1</a>, <a href="../sources/t5.html">T5</a>.</div></td><td><span class="chip green">Low</span></td><td>Daniel Nguyen</td><td>Review Wave 2 dates, Fri 30 Apr</td><td>Wave 2</td></tr>
+<tr data-row data-wave="both" data-rating="Low"><td><b>R-10</b></td><td>Regional branch connectivity is unreliable.<br><button class="xp" data-xp="d0">Detail</button><div id="d0" class="dt" hidden>Likelihood/impact Low/Medium. 20 of 60 branches are regional. Test regional sites, with a fallback to train at a nearby branch. Watching. <a href="../sources/t1.html">T1</a>.</div></td><td><span class="chip green">Low</span></td><td>Priya Raman</td><td>Test the regional sites, Fri 26 Mar</td><td>Both</td></tr>
+<tr data-row data-wave="1" data-rating="Medium"><td><b>R-11</b></td><td>UAT testers are pulled back to their day jobs.<br><button class="xp" data-xp="d1">Detail</button><div id="d1" class="dt" hidden>Likelihood/impact Medium/Medium. UAT runs five weeks alongside normal work. Heads of function release named testers. Open. <a href="../sources/t1.html">T1</a>.</div></td><td><span class="chip amber">Medium</span></td><td>Jorge Alvarez</td><td>Release named UAT testers, Mon 8 Feb</td><td>Wave 1</td></tr>
+<tr data-row data-wave="both" data-rating="Medium"><td><b>R-12</b></td><td>Ownership of Compass Assist prompt changes after go-live is unclear.<br><button class="xp" data-xp="d2">Detail</button><div id="d2" class="dt" hidden>Likelihood/impact Medium/Medium. Q-02 is open between Compliance and the platform team. Agree approver and maker and record it in the AI use rules. Open. <a href="../sources/t3.html">T3</a>.</div></td><td><span class="chip amber">Medium</span></td><td>Fatima Haddad</td><td>Agree prompt-change owner (Q-02), Fri 9 Apr</td><td>Both</td></tr>
+<tr class="updated" data-row data-wave="1" data-rating="Low"><td><b>R-13</b></td><td>Compass Assist is off for business bankers at go-live, which delays the AI benefit for them. <span class="upd">New v0.2</span><br><button class="xp" data-xp="d3">Detail</button><div id="d3" class="dt" hidden>Likelihood/impact Medium/Low. The agreed approach is opt-in from week 3. Offer training in week 3 and ask champions to try it first. Open. <a href="../sources/t4.html">T4</a>.</div></td><td><span class="chip green">Low</span></td><td>Priya Raman</td><td>Offer banker training, Fri 7 May</td><td>Wave 1</td></tr>
+<tr class="updated" data-row data-wave="both" data-rating="Medium"><td><b>R-14</b></td><td>The guardrails sign-off moves close to go-live. <span class="upd">New v0.2</span><br><button class="xp" data-xp="d4">Detail</button><div id="d4" class="dt" hidden>Likelihood/impact Medium/Medium. The gate moves from Fri 26 Mar to Fri 9 Apr, ten days before go-live. Train on approved guardrails only and keep a path without Compass Assist. Open. <a href="../sources/t5.html">T5</a>.</div></td><td><span class="chip amber">Medium</span></td><td>Fatima Haddad</td><td>Review test results weekly, Fri 9 Apr</td><td>Both</td></tr>
+</tbody></table>
+
+<h2>Assumptions</h2><ul>
+<li>Go-live dates hold. If not, training is rebooked.</li>
+<li>Guardrails are approved on Fri 9 Apr. If not, Compass Assist stays off. <span class="upd">v0.2</span></li>
+<li>NSW school dates do not clash. <span class="tbc">TBC: confirm NSW school calendar</span></li>
+</ul><h2>Dependencies</h2><ul>
+<li>Complaint categories from Louise Chen, due Fri 5 Feb.</li>
+<li>Banker spreadsheet loading scoped by Anika Rao by Fri 12 Feb (A-25). <span class="upd">v0.2</span></li>
+<li>UAT scripts and hypercare roster from Northgate Digital.</li>
+</ul>
+
+<p class="pn"><a href="07-change-plan.html">Change plan</a><a href="11-stakeholder-list.html">Next: Stakeholder list</a></p>
+<p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t2.html">T2</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4</a>, <a href="../sources/t5.html">T5</a>, <a href="../sources/e1.html">E1</a>, <a href="../sources/e2.html">E2</a>, <a href="../sources/e4.html">E4</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script></body></html>

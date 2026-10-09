@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phased rollout | Hampton Bank</title>
+<meta name="description" content="A one-slide proposal to go live in two waves, Victoria on 19 April 2027 and NSW on 7 June 2027, with one gate for every phase.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+:root{--p1:var(--sage);--p2:var(--green);--p3:var(--green2);--p4:color-mix(in srgb,var(--ink) 45%,var(--muted))}
+.chg{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--green2);border-radius:var(--radius);padding:14px 18px;margin:0 0 22px;box-shadow:var(--shadow)}
+.chg h2{margin:0 0 8px;font-size:19px}.chg ul{margin:0;max-width:none}
+.stage{position:relative;width:100%;overflow:hidden;margin:0 0 18px}
+.slide{width:1280px;height:720px;transform-origin:0 0;background:var(--cream);border:1px solid var(--line);padding:14px 20px;display:flex;flex-direction:column;gap:8px;font-size:12.8px;line-height:1.35;overflow:hidden}
+.slide p,.slide li{max-width:none;margin:0}
+.sh{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:3px solid var(--green);padding-bottom:6px;flex:none}
+.sh img{height:34px;display:block;background:var(--paper);border-radius:8px;padding:3px 8px}
+.sh .tt2{flex:1;padding-left:12px}
+.sh h2{margin:0;font:700 20px/1.1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.sh .sub{color:var(--muted);font-size:13px;margin-top:2px}
+.sh .ver{font-size:11.5px;color:var(--muted);text-align:right;white-space:nowrap}
+.timeline{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 10px;flex:none}
+.trow{display:grid;grid-template-columns:236px minmax(0,1fr);gap:0 10px;align-items:center}
+.trows{position:relative}
+.trows .trow{height:30px;border-top:1px solid var(--line)}
+.tl{display:flex;gap:8px;align-items:center}
+.tl i{width:10px;height:24px;border-radius:3px;background:var(--pc);flex:none}
+.tl span{line-height:1.15;font-size:13px}.tl small{display:block;font-size:11px;color:var(--muted)}
+.tt{position:relative;height:100%}
+.axis{height:36px}.axis .tt{height:36px}
+.mo span,.wo span{position:absolute;white-space:nowrap}
+.mo span{top:0;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border-left:1px solid var(--line);padding-left:4px}
+.wo span{top:17px;font-size:10px;color:var(--faint);border-left:1px solid var(--line);padding-left:3px;height:17px}
+.tb{position:absolute;top:4px;height:22px;border-radius:5px;background:var(--pc);color:#F8F5EE;font-weight:700;font-size:11px;padding:3px 5px;overflow:hidden;white-space:nowrap;line-height:16px;z-index:3}
+.trow:nth-child(2) .tb{color:var(--ink)}
+.tb.trn{opacity:.78}
+.ln{position:absolute;top:13px;height:4px;border-radius:3px;background:var(--pc);opacity:.3;z-index:3}
+.dm{position:absolute;top:9px;width:11px;height:11px;background:var(--green);transform:rotate(45deg);margin-left:-5px;z-index:3}
+.dt{position:absolute;top:6px;font-weight:700;font-size:11px;white-space:nowrap;z-index:3}
+.bands{position:absolute;inset:0;display:grid;grid-template-columns:236px minmax(0,1fr);gap:0 10px;pointer-events:none}
+.bands .tt{grid-column:2}
+.hatch{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 6px,transparent 6px,transparent 12px);border-left:1px dashed var(--amber-line);border-right:1px dashed var(--amber-line);z-index:1}
+.hyp{position:absolute;top:0;bottom:0;background:var(--sand);opacity:.85;z-index:1}
+.hatch em,.hyp em{position:absolute;font-style:normal;font-weight:700;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;left:3px;right:2px;line-height:1.1}
+.hatch em{bottom:2px;color:var(--amber)}.hyp em{top:2px;color:var(--muted)}
+.gline{position:absolute;top:0;bottom:0;border-left:2px dashed var(--green);z-index:2}
+.gline em{position:absolute;bottom:2px;left:4px;font-style:normal;font-size:9.5px;font-weight:700;color:var(--green);white-space:nowrap;background:var(--paper);padding:0 3px}
+.pcs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;flex:1;min-height:0}
+.pc{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+.pc header{background:var(--pc);color:#F8F5EE;padding:6px 10px}
+.pc:first-child header{color:var(--ink)}
+.pc header small{display:block;font:700 10px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.pc header b{display:block;font-size:15px;line-height:1.25}
+.pc header span{font-size:11.5px;display:block;line-height:1.3}
+.pc header small .updbadge{display:inline-block;margin-left:8px;background:#F8F5EE;color:var(--green);border-radius:999px;padding:2px 6px;font-size:9px;letter-spacing:.04em}
+.pc>div{padding:6px 10px 6px;overflow:hidden}
+.pc h4{margin:5px 0 2px;font:700 10px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pc ul{margin:0;padding-left:1.1em}
+.pc li{margin:0 0 1px}
+.sf{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;flex:none}
+.sf>div{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:7px 12px}
+.sf h4{margin:0 0 3px;font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.sf .tc{background:var(--amber-bg);border-color:var(--amber-line)}
+.sf ol{margin:0;padding-left:1.2em}
+.sf .own{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line);border-radius:5px;padding:0 5px;font-weight:700;white-space:nowrap;font-size:11.5px}
+.strip3{margin-top:0}
+.flow .stage{overflow:visible}
+@media (max-width:899px){
+ .stage{overflow:visible}
+ .slide{width:auto;height:auto;transform:none!important;padding:12px;font-size:14px}
+ .sh{flex-wrap:wrap}.sh .ver{white-space:normal;text-align:left}
+ .trow{grid-template-columns:1fr;gap:2px}.trows .trow{height:auto;padding:4px 0 2px}.trows .tt{height:32px}
+ .axis .tl{display:none}.axis{grid-template-columns:1fr}
+ .bands{display:none}
+ .tb{font-size:0;padding:0}.tb.trn{opacity:.78}
+ .dt{display:none}
+ .pcs{grid-template-columns:1fr}.sf{grid-template-columns:1fr}
+}
+@page{size:13.333in 7.5in;margin:0}
+@media print{
+ .topbar,.pagehead,.chg,.after,footer.site,.sources,.pn{display:none!important}
+ .wrap{max-width:none;padding:0;margin:0}
+ .stage{height:720px!important;overflow:hidden;margin:0}
+ .slide{transform:none!important;border:0;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Phased rollout</h1>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p><p class="lede">One slide shows the four phases from UAT in February to BAU handover in June 2027, with the single gate each phase passes.</p></div>
+
+<div class="chg" id="changed"><h2>Changed in v0.2 <span class="upd">Updated v0.2</span></h2><ul>
+<li>The Compass Assist guardrails gate moves from Fri 26 Mar to Fri 9 Apr 2027, ten days before Wave 1 go-live. It is drawn on the timeline and shown in the Wave 1 card. From <a href="../sources/t5.html">T5</a> (change C-3).</li>
+<li>Training for Wave 1 now has early, late, first-block and make-up sessions around the school holidays and Easter (change C-4). See the <a href="19-training-schedule.html">training schedule</a>.</li>
+<li>Version raised to v0.2, and the gate date matches the <a href="08-plan-on-a-page.html">plan on a page</a> (change C-7).</li></ul></div>
+
+<div class="stage" id="stage"><section class="slide" id="slide" aria-label="Phased rollout slide">
+<div class="sh"><a href="../index.html"><img src="../assets/hb-logo.svg" alt="Hampton Bank"></a><div class="tt2"><h2>Phased rollout</h2><div class="sub">Two waves after UAT: Victoria Mon 19 Apr 2027, NSW Mon 7 Jun. The existing process stays until a team goes live.</div></div><div class="ver">Draft v0.2 | 29 January 2027<br>Change lead, Change Made Simple</div></div>
+<div class="timeline"><div class="trow axis"><div class="tl"></div><div class="tt"><div class="mo"><span style="left:0.00%">Feb</span><span style="left:15.00%">Mar</span><span style="left:37.14%">Apr</span><span style="left:58.57%">May</span><span style="left:80.71%">Jun</span></div><div class="wo"><span style="left:0.00%">8</span><span style="left:5.00%">15</span><span style="left:10.00%">22</span><span style="left:15.00%">1</span><span style="left:20.00%">8</span><span style="left:25.00%">15</span><span style="left:30.00%">22</span><span style="left:35.00%">29</span><span style="left:40.00%">5</span><span style="left:45.00%">12</span><span style="left:50.00%">19</span><span style="left:55.00%">26</span><span style="left:60.00%">3</span><span style="left:65.00%">10</span><span style="left:70.00%">17</span><span style="left:75.00%">24</span><span style="left:80.00%">31</span><span style="left:85.00%">7</span><span style="left:90.00%">14</span><span style="left:95.00%">21</span></div></div></div><div class="trows"><div class="bands"><div class="tt"><span class="hatch" style="left:32.86%;width:12.14%"><em>School holidays and Easter</em></span><span class="hyp" style="left:50.00%;width:8.57%"><em>Hypercare</em></span><span class="hyp" style="left:85.00%;width:10.71%"><em>Hypercare</em></span><span class="gline" style="left:42.86%"><em>Gate Fri 9 Apr</em></span></div></div><div class="trow" style="--pc:var(--p1)"><div class="tl"><i></i><span><b>Phase 1</b><small>UAT</small></span></div><div class="tt"><span class="tb " style="left:0.00%;width:23.57%">UAT 8 Feb to 12 Mar</span><span class="dm" style="left:26.43%"></span><span class="dt" style="left:27.43%">Sign-off 17 Mar</span></div></div><div class="trow" style="--pc:var(--p2)"><div class="tl"><i></i><span><b>Phase 2</b><small>Wave 1 Victoria</small></span></div><div class="tt"><span class="tb trn" style="left:35.71%;width:12.86%">Training</span><span class="tb " style="left:50.00%;width:6.43%">Go 19 Apr</span><span class="ln" style="left:56.43%;width:43.57%"></span></div></div><div class="trow" style="--pc:var(--p3)"><div class="tl"><i></i><span><b>Phase 3</b><small>Wave 2 NSW</small></span></div><div class="tt"><span class="tb trn" style="left:70.00%;width:13.57%">Training</span><span class="tb " style="left:85.00%;width:6.43%">Go 7 Jun</span><span class="ln" style="left:91.43%;width:8.57%"></span></div></div><div class="trow" style="--pc:var(--p4)"><div class="tl"><i></i><span><b>Phase 4</b><small>BAU handover</small></span></div><div class="tt"><span class="tb " style="left:95.71%;width:4.29%">BAU</span></div></div></div></div>
+<div class="pcs"><article class="pc" style="--pc:var(--p1)"><header><small>Phase 1</small><b>UAT</b><span>Mon 8 Feb to Wed 17 Mar 2027</span></header>
+<div><h4>Who</h4><p>About 50 testers from eight teams in both states, including the banker champions.</p><h4>What changes</h4><ul><li>Testers run scripts on masked data, with a debrief at 12:30pm daily.</li><li>UAT is paused on Mon 8 Mar for Labour Day.</li></ul><h4>Gate</h4><ul><li>No open defect rated high at sign-off.</li><li>Sign-off by Helen Marchetti on Wed 17 Mar.</li></ul></div></article><article class="pc" style="--pc:var(--p2)"><header><small>Phase 2<span class="updbadge">Updated v0.2</span></small><b>Wave 1 Victoria</b><span>Training Tue 30 Mar to Fri 16 Apr | Go-live Mon 19 Apr</span></header>
+<div><h4>Who</h4><p>808 people: Docklands 200, branches 340, bankers 45, operations 120, complaints 40, risk 25, platform 30, L&D 8.</p><h4>What changes</h4><ul><li>One customer view and one case in one place. Compass Assist drafts for agents and branches.</li><li>Bankers start with their spreadsheet pre-loaded. Compass Assist is off.</li></ul><h4>Gate</h4><ul><li>Guardrails approved Fri 9 Apr (was Fri 26 Mar).</li><li>At least 90 percent trained by Fri 16 Apr.</li><li>Hypercare to Fri 30 Apr.</li></ul></div></article><article class="pc" style="--pc:var(--p3)"><header><small>Phase 3</small><b>Wave 2 NSW</b><span>Training Mon 17 May to Fri 4 Jun | Go-live Mon 7 Jun</span></header>
+<div><h4>Who</h4><p>445 people: Parramatta contact centre 150, NSW branches 260, NSW business bankers 35.</p><h4>What changes</h4><ul><li>Same changes as Wave 1, with Parramatta training blocks set to its shift pattern.</li><li>The legacy CRM stays in NSW until go-live. King's Birthday, Mon 14 Jun, is in hypercare.</li></ul><h4>Gate</h4><ul><li>Wave 1 stable for a week after hypercare closes.</li><li>At least 90 percent trained by Fri 4 Jun.</li><li>Hypercare to Mon 21 Jun.</li></ul></div></article><article class="pc" style="--pc:var(--p4)"><header><small>Phase 4</small><b>BAU handover</b><span>Tue 22 Jun 2027</span></header>
+<div><h4>Who</h4><p>CRM platform team (30) and L&D (8) take over from the project and Northgate Digital.</p><h4>What changes</h4><ul><li>Platform team owns configuration, roles and the pipeline.</li><li>Compass Assist prompt changes follow the route settled under Q-02.</li></ul><h4>Gate</h4><ul><li>Both hypercare periods closed.</li><li>Open defects and the FAQ handed over by name.</li></ul></div></article></div>
+<div class="sf"><div><h4>The gate for every phase</h4><p>A phase goes live when its scripts pass in the live system, its guide and training are ready, its data is in, and the phase before it has been stable for a week. The 16 criteria on the go / no-go checklist all need a tick. Helen Marchetti signs on Daniel Nguyen's recommendation, and Fatima Haddad signs the Compass Assist guardrails by Fri 9 Apr <span class="upd">Updated v0.2</span>.</p></div>
+<div class="tc"><h4>To confirm</h4><ol><li>NSW school calendar and Wave 2 session dates <span class="own">Owner: NSW HR business partner</span></li><li>Where NSW gets its Wave 2 trainers (Q-06) <span class="own">Owner: Sam Petrovic</span></li></ol></div></div>
+</section></div>
+
+<div class="after">
+<h2>Headcount by wave</h2>
+<div class="strip strip3">
+<div class="stat"><b>808</b><span>Wave 1 Victoria and head office: 200 Docklands, 340 branches, 45 bankers, 40 complaints, 120 operations, 25 risk, 30 platform, 8 L&amp;D</span></div>
+<div class="stat"><b>445</b><span>Wave 2 NSW: 150 Parramatta, 260 branches, 35 bankers</span></div>
+<div class="stat"><b>1,253</b><span>In scope across both waves, about 1,250 people</span></div></div>
+
+<h2>Dates behind the slide</h2>
+<table><thead><tr><th>Item</th><th>Date</th><th>Note</th></tr></thead><tbody>
+<tr><td>UAT window</td><td>Mon 8 Feb to Fri 12 Mar 2027</td><td>Mon 8 Mar is Labour Day in Victoria, and UAT is paused that day. Sign-off is Wed 17 Mar.</td></tr>
+<tr class="updated"><td>Guardrails sign-off gate <span class="upd">Updated v0.2</span></td><td>Fri 9 Apr 2027</td><td>Moved from Fri 26 Mar so the test set can be complete. Training demos use approved guardrails only.</td></tr>
+<tr><td>Victorian school holidays and Easter</td><td>Fri 26 Mar to Sun 11 Apr 2027</td><td>Hatched on the timeline. Good Friday is Fri 26 Mar and Easter Monday is Mon 29 Mar. See <a href="https://www.vic.gov.au/school-term-dates-and-holidays-victoria">Victorian school term dates and holidays</a> and <a href="https://business.vic.gov.au/business-information/public-holidays/victorian-public-holidays-2027">Victorian public holidays 2027</a>.</td></tr>
+<tr><td>Wave 1 training, go-live, hypercare</td><td>Tue 30 Mar to Fri 16 Apr; Mon 19 Apr; Mon 19 to Fri 30 Apr</td><td>Anzac Day falls on Sun 25 Apr, with no replacement Monday in Victoria.</td></tr>
+<tr><td>Wave 2 training, go-live, hypercare</td><td>Mon 17 May to Fri 4 Jun; Mon 7 Jun; Mon 7 to Mon 21 Jun</td><td>Ten working days of hypercare, because King's Birthday on Mon 14 Jun is excluded.</td></tr>
+<tr><td>BAU handover</td><td>Tue 22 Jun 2027</td><td>The CRM platform team and L&amp;D take over.</td></tr></tbody></table>
+<p class="small" style="margin-top:10px">The timeline and the cards read from one list of phases, so they cannot disagree. The <a href="21-uat-schedule.html">UAT schedule</a>, <a href="22-go-no-go.html">go / no-go checklist</a> and <a href="19-training-schedule.html">training schedule</a> are checked against these phases first. Wave 2 is planned on the basis that the NSW school calendar shows no clash. That is to be confirmed.</p>
+</div>
+
+  <p class="sources">Sources: <a href="../sources/t1.html">T1 programme planning</a> | <a href="../sources/t4.html">T4 business banking workshop</a> | <a href="../sources/t5.html">T5 steering catch-up</a> | <a href="../sources/e3.html">E3 programme calendar</a> | See also <a href="08-plan-on-a-page.html">plan on a page</a>, <a href="17-comms-plan.html">comms plan</a></p>
+  <nav class="pn"><a href="19-training-schedule.html">&larr; Training schedule</a><a href="../index.html">All outputs</a></nav>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var stage=document.getElementById("stage"),slide=document.getElementById("slide");
+  function fit(){
+    if(window.innerWidth<900){stage.style.height="auto";slide.style.transform="none";return;}
+    var s=Math.min(1,stage.clientWidth/1280);
+    slide.style.transform="scale("+s+")";
+    stage.style.height=(720*s)+"px";
+  }
+  fit();window.addEventListener("resize",fit);
+})();
+</script></body></html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shared facts | Hampton Bank</title>
+<meta name="description" content="One place for the dates, names and numbers that appear on more than one page, so every Project Compass output agrees.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+code{font:600 12.5px ui-monospace,Consolas,monospace;background:var(--mist);color:var(--green);padding:2px 6px;border-radius:5px;white-space:nowrap}
+pre{font:13px/1.55 ui-monospace,Consolas,monospace;background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--green2);border-radius:8px;padding:12px 14px;margin:0 0 12px;white-space:pre-wrap;overflow-wrap:anywhere;max-width:none}
+pre.bad{border-left-color:var(--red);background:var(--red-bg)}
+pre.good{border-left-color:var(--ok);background:var(--ok-bg)}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:14px}
+@media (max-width:900px){.ba{grid-template-columns:1fr}}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/07-change-plan.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass | Method</p><h1>Shared facts</h1>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+  <p class="lede">Every date, name and number that appears on more than one page lives in one place. When a value changes, the change is made once and every page picks it up.</p></div>
+
+  <div class="note"><b>Changed in v0.2</b> <span class="upd">Updated v0.2</span>
+    <ul>
+      <li>The guardrails gate moves from Fri 26 Mar to Fri 9 Apr 2027 (<a href="../sources/t5.html">T5</a>, change C-3). It is the one edit shown on the third tab.</li>
+      <li>Wave 1 training and the school-holiday window carry the T5 decisions (change C-4).</li>
+      <li>Richard Vance is now Conditional, and three champions are added (<a href="../sources/t4.html">T4</a>, change C-1).</li>
+    </ul></div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="idea" aria-selected="true">The idea</button>
+    <button role="tab" data-tab="facts" aria-selected="false">Key facts</button>
+    <button role="tab" data-tab="demo" aria-selected="false">One edit, six pages</button>
+  </div>
+
+  <section class="panel" id="idea">
+    <p>The facts file holds each value once, for example <code>guardrails_gate</code>, with a record of where it came from. Pages carry the token <code>{{guardrails_gate}}</code> in place of the date. The build replaces each token with the value and stops if a token is not defined. The check fails if a page still holds an old wording from the avoid list, so no page keeps an old date after it was fixed elsewhere.</p>
+    <div class="trap"><b>Trap:</b> Fri 26 Mar 2027 is still correct as Good Friday, so the avoid entry matches it only next to the words "guardrails" or "gate". A plain search for the date would flag the holiday and hide the real error.</div>
+  </section>
+
+  <section class="panel" id="facts" hidden>
+    <h2>The calendar</h2>
+    <p class="small">Checked against the <a href="https://www.vic.gov.au/school-term-dates-and-holidays-victoria">Victorian Government school terms</a> and <a href="https://business.vic.gov.au/business-information/public-holidays/victorian-public-holidays-2027">Victorian public holidays 2027</a>.</p>
+    <table>
+      <thead><tr><th>Item</th><th>Current value</th><th>Source</th></tr></thead>
+      <tbody>
+<tr><td>Baseline version v0.1</td><td>Fri 22 Jan 2027</td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr><td>Checking loop, version v0.2</td><td>Fri 29 Jan 2027</td><td><a href="../sources/t4.html">T4</a> and <a href="../sources/t5.html">T5</a></td></tr>
+<tr><td>UAT window (Labour Day, Mon 8 Mar, is paused)</td><td>Mon 8 Feb to Fri 12 Mar 2027</td><td><a href="../sources/e3.html">E3</a></td></tr>
+<tr><td>UAT sign-off</td><td>Wed 17 Mar 2027</td><td><a href="../sources/e3.html">E3</a></td></tr>
+<tr class="updated"><td>Victorian school holidays, including Easter</td><td>Fri 26 Mar to Sun 11 Apr 2027 <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></td><td><a href="https://www.vic.gov.au/school-term-dates-and-holidays-victoria">Victorian Government</a></td></tr>
+<tr class="updated"><td>Wave 1 Victoria training</td><td>Tue 30 Mar to Fri 16 Apr 2027 <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></td><td><a href="../sources/t1.html">T1</a> and <a href="../sources/t5.html">T5</a></td></tr>
+<tr class="updated"><td>Compass Assist guardrails sign-off gate</td><td>Fri 9 Apr 2027 (was Fri 26 Mar 2027) <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></td><td><a href="../sources/t5.html">T5</a></td></tr>
+<tr><td>Wave 1 Victoria go-live</td><td>Mon 19 Apr 2027</td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr><td>Wave 1 hypercare</td><td>Mon 19 Apr to Fri 30 Apr 2027</td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr><td>Wave 2 NSW training</td><td>Mon 17 May to Fri 4 Jun 2027</td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr><td>Wave 2 NSW go-live</td><td>Mon 7 Jun 2027</td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr><td>Wave 2 hypercare (10 working days)</td><td>Mon 7 Jun to Mon 21 Jun 2027</td><td><a href="../sources/t1.html">T1</a></td></tr>
+<tr><td>Handover to business as usual</td><td>Tue 22 Jun 2027</td><td><a href="../sources/t1.html">T1</a></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Headcounts by team and wave</h2>
+    <table>
+      <thead><tr><th>Team</th><th>Headcount</th><th>Wave 1 (Victoria and head office)</th><th>Wave 2 (NSW)</th></tr></thead>
+      <tbody>
+<tr><td>Contact centre</td><td>350</td><td>200 (Docklands)</td><td>150 (Parramatta)</td></tr>
+<tr><td>Branch network</td><td>600</td><td>340 (34 branches)</td><td>260 (26 branches)</td></tr>
+<tr><td>Business bankers</td><td>80</td><td>45</td><td>35</td></tr>
+<tr><td>Complaints and advocacy</td><td>40</td><td>40</td><td>0</td></tr>
+<tr><td>Operations</td><td>120</td><td>120</td><td>0</td></tr>
+<tr><td>Risk and compliance</td><td>25</td><td>25</td><td>0</td></tr>
+<tr><td>CRM platform team</td><td>30</td><td>30</td><td>0</td></tr>
+<tr><td>L&amp;D</td><td>8</td><td>8</td><td>0</td></tr>
+<tr><td><b>Total</b></td><td><b>1,253</b> (say "about 1,250")</td><td><b>808</b></td><td><b>445</b></td></tr>
+      </tbody>
+    </table>
+    <p class="small">Source: the programme plan agreed in <a href="../sources/t1.html">T1</a>.</p>
+
+    <h2>The ten stakeholders</h2>
+    <table>
+      <thead><tr><th>Name and role</th><th>Stance at v0.2</th></tr></thead>
+      <tbody>
+<tr><td>Helen Marchetti, Chief Customer Officer, sponsor</td><td>Champion</td></tr>
+<tr><td>Priya Raman, CIO</td><td>Supportive</td></tr>
+<tr><td>Daniel Nguyen, Program director</td><td>Supportive</td></tr>
+<tr><td>Tom Gallagher, Head of contact centre</td><td>Supportive, worried about shift cover</td></tr>
+<tr><td>Aroha Williams, Head of branch network</td><td>Supportive</td></tr>
+<tr class="updated"><td>Richard Vance, Head of business banking</td><td>Conditional (was Resistant) <span class="upd">Updated v0.2 from <a href="../sources/t4.html">T4</a></span></td></tr>
+<tr><td>Fatima Haddad, Head of compliance</td><td>Cautious on AI</td></tr>
+<tr><td>Louise Chen, Complaints manager</td><td>Supportive</td></tr>
+<tr><td>Sam Petrovic, L&amp;D lead</td><td>Supportive, stretched</td></tr>
+<tr><td>Jorge Alvarez, Implementation partner lead, Northgate Digital</td><td>Supportive</td></tr>
+      </tbody>
+    </table>
+    <p class="small">Business banker champions in Victoria: Isla Fraser, Dev and Karina (first names only). <span class="upd">Added v0.2 from <a href="../sources/t4.html">T4</a></span></p>
+
+    <h2>The five processes</h2>
+    <table>
+      <thead><tr><th>No.</th><th>Process</th><th>System</th></tr></thead>
+      <tbody>
+<tr><td>1</td><td>Contact centre enquiry and case handling</td><td>Service Cloud</td></tr>
+<tr><td>2</td><td>Branch customer servicing and onboarding</td><td>Financial Services Cloud</td></tr>
+<tr><td>3</td><td>Business banking pipeline</td><td>Financial Services Cloud</td></tr>
+<tr><td>4</td><td>Complaints and advocacy</td><td>Service Cloud</td></tr>
+<tr><td>5</td><td>AI assistant use and approval</td><td>Compass Assist</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="panel" id="demo" hidden>
+    <p class="lede">On Thu 28 Jan 2027 the steering catch-up moved the Compass Assist guardrails gate from Fri 26 Mar to Fri 9 Apr. One value changes in the facts file. Every page that shows the gate picks it up on rebuild.</p>
+
+    <div class="ba">
+      <div class="tile red"><h3>Before</h3><pre class="bad">"guardrails_gate": "Fri 26 Mar 2027"</pre><p class="small">Source: Risk and compliance session, Tue 19 Jan 2027 (<a href="../sources/t3.html">T3</a>).</p></div>
+      <div class="tile ok updated"><h3>After <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></h3><pre class="good">"guardrails_gate": "Fri 9 Apr 2027"</pre><p class="small">Source: Steering catch-up, Thu 28 Jan 2027 (<a href="../sources/t5.html">T5</a>).</p></div>
+    </div>
+
+    <h2>The pages that changed</h2>
+    <table>
+      <thead><tr><th>Page</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+<tr class="updated"><td><a href="08-plan-on-a-page.html">05 Plan on a page</a></td><td>Gate: Fri 26 Mar 2027</td><td>Gate: Fri 9 Apr 2027</td></tr>
+<tr class="updated"><td><a href="22-go-no-go.html">15 Go/no-go</a></td><td>Approved by Fri 26 Mar 2027</td><td>Approved by Fri 9 Apr 2027</td></tr>
+<tr class="updated"><td><a href="09-phased-rollout.html">17 Phased rollout</a></td><td>Gate marker in the week of 22 Mar</td><td>Gate marker in the week of 5 Apr</td></tr>
+<tr class="updated"><td><a href="15-policy-timeline.html">19 Policy timeline</a></td><td>Sign-off gate, Fri 26 Mar 2027</td><td>Sign-off gate, Fri 9 Apr 2027 (was Fri 26 Mar)</td></tr>
+<tr class="updated"><td><a href="04-weekly-status.html">20 Weekly status</a></td><td>Gate Fri 26 Mar</td><td>Gate Fri 9 Apr, ten days before go-live</td></tr>
+<tr class="updated"><td><a href="14-solution-overview.html">08 Solution overview</a></td><td>Approval gate before go-live on Fri 26 Mar</td><td>Approval gate before go-live on Fri 9 Apr</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="pn"><a href="01-action-list.html">Previous: action list</a><a href="../index.html">Back to all outputs</a></div>
+  <p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4</a>, <a href="../sources/t5.html">T5</a>, <a href="../sources/e3.html">E3 programme calendar</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script></body></html>
