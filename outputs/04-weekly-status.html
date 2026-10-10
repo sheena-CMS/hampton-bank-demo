@@ -1,148 +1,199 @@
 <!doctype html>
 <html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Weekly status report | Hampton Bank</title>
-<meta name="description" content="Project Compass steering weekly status report for the weeks ending Fri 29 Jan 2027 (v0.2) and Fri 22 Jan 2027 (v0.1).">
+<meta name="description" content="The Project Compass weekly change status report on one A4 landscape page: timeline, stakeholders, change impact, readiness and risks for the week ending Fri 29 Jan 2027.">
 <link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
 <style>
-.mast{background:var(--green);color:#F8F5EE;border-radius:var(--radius);padding:16px 20px;margin:0 0 16px}
-.mast .sc{font:700 12px/1 "General Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin:0 0 8px;max-width:none}
-.mast h2{color:#F8F5EE;margin:0 0 4px;font-size:26px}
-.mast p{margin:0;color:#E9EEEC;max-width:none}
-.strip .stat.zero b{color:var(--faint)}
-.strip .stat.od b{color:var(--red)}
-.boxes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
-.bx{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--green);border-radius:var(--radius);padding:12px 16px;box-shadow:var(--shadow)}
-.bx h3{font-size:17px;margin-bottom:.4em}
-.bx p{font-size:14px;max-width:none}
-.bx.ok{border-top-color:var(--ok)}
-.bx.nx{border-top-color:var(--amber-line)}
-.bx.es{border-top-color:var(--red)}
-.bx.es h3{color:var(--red)}
-.bx.empty{border-top-color:var(--line)} .bx.empty h3{color:var(--muted)}
-.flag{background:var(--red-bg);border:1px solid var(--red-line);border-radius:6px;padding:8px 12px;margin:0 0 10px;font-size:14px}
-.foot{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px;margin-top:10px}
-.mv td:nth-child(2),.mv td:nth-child(3){white-space:nowrap}
-@media (max-width:760px){
- .boxes{grid-template-columns:1fr}
- table.stack thead{display:none}
- table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
- table.stack tr{border-bottom:2px solid var(--line);padding:6px 0}
- table.stack td{border:0;padding:4px 12px}
- table.stack td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;color:var(--green)}
+/* One A4 landscape sheet (1123 x 794 at 96dpi), scaled to fit the page width. Below 900px it reflows as a normal page. */
+.stage{position:relative;width:100%;overflow:hidden;margin:0 0 18px;padding:0 0 26px}
+.a4{width:1123px;height:794px;transform-origin:0 0;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-lift);padding:20px 24px 14px;display:flex;flex-direction:column;gap:10px;font-size:11.5px;line-height:1.38;overflow:hidden}
+.a4 p,.a4 li,.a4 ul{max-width:none;margin:0}
+.a4 h3{margin:0 0 7px;font:700 10.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.ah{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--green);padding-bottom:8px;flex:none}
+.ah img{height:30px;display:block}
+.ah .tt2{flex:1}
+.ah h2{margin:0;font:700 19px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.ah .sub{color:var(--muted);font-size:11.5px}
+.rag{display:inline-flex;align-items:center;gap:6px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;font-size:11px}
+.rag::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.rag.a{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line)}
+.rag.g{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok)}
+.head1{background:#0E4A47;color:#F8F5EE;border-radius:8px;padding:8px 14px;font:600 15px/1.3 Gambetta,Georgia,serif;flex:none}
+.nums{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;flex:none}
+.nums div{border:1px solid var(--line);border-top:3px solid var(--green);border-radius:8px;padding:6px 10px;background:var(--cream)}
+.nums b{display:block;font:700 21px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.nums span{color:var(--muted);font-size:11px}
+.nums .warn{border-top-color:var(--coral)}.nums .warn b{color:var(--coral)}
+.tlbox{border:1px solid var(--line);border-radius:8px;padding:8px 12px 8px;flex:none}
+.trow{display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;align-items:center}
+.trows{position:relative}
+.trows .trow{height:34px;border-top:1px solid var(--line)}
+.tl{font-weight:600;line-height:1.15}.tl small{display:block;font-weight:400;font-size:10px;color:var(--muted)}
+.tt{position:relative;height:100%}
+.axis,.axis .tt{height:30px}
+.mo span{position:absolute;top:0;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border-left:1px solid var(--line);padding-left:4px;height:30px}
+.tb{position:absolute;top:13px;height:17px;border-radius:4px;color:#F8F5EE;font-weight:700;font-size:10px;line-height:17px;padding:0 6px;overflow:hidden;white-space:nowrap;z-index:3}
+.tb.uat{background:#1F6B66}.tb.trn{background:#0E4A47}.tb.hyp{background:var(--sage);color:#1B2322}
+.dm{position:absolute;top:16px;width:11px;height:11px;background:var(--green);transform:rotate(45deg);margin-left:-5px;z-index:5}
+.dm.go{background:var(--coral)}.dm.gate{background:var(--amber)}
+.dl{position:absolute;top:13px;margin-left:11px;font-weight:700;font-size:10px;line-height:17px;white-space:nowrap;z-index:4}
+.dl.go{top:0;margin-left:-4px;line-height:12px;color:var(--coral)}
+.bands{position:absolute;inset:0;display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;pointer-events:none}
+.bands .tt{grid-column:2}
+.hatch{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 5px,transparent 5px,transparent 10px);border-left:1px dashed var(--amber-line);border-right:1px dashed var(--amber-line);z-index:1}
+.hatch em,.now em{position:absolute;font-style:normal;font-weight:700;font-size:9px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.hatch em{top:-13px;left:-1px;color:var(--amber)}
+.now{position:absolute;top:-14px;bottom:0;border-left:2px solid var(--coral);z-index:2}
+.now em{top:0;left:4px;color:var(--coral)}
+.cols{display:grid;grid-template-columns:1fr 1.14fr 1fr 1fr;gap:10px;flex:1;min-height:0}
+.box{border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow:hidden;min-width:0}
+.box h4{margin:9px 0 4px;font:700 9.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.box ul{padding-left:1.1em}.box li{margin:0 0 3px}
+.stance{display:flex;height:20px;border-radius:5px;overflow:hidden;margin:0 0 5px;font-weight:700;font-size:10.5px;color:#F8F5EE;text-align:center;line-height:20px}
+.stance .c{background:#0E4A47}.stance .s{background:#1F6B66}.stance .k{background:#E7C47A;color:#4a3410}.stance .w{background:#E3A39B;color:#5a1d16}
+.skey{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:10px;color:var(--muted)}
+.skey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+.move{display:flex;align-items:center;gap:6px;background:var(--mist);border-radius:6px;padding:5px 8px;margin:0 0 5px!important}
+.move .arr{color:var(--coral);font-weight:700}
+.heat{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:2px;font-size:10.5px;background:none;border:0;box-shadow:none}
+.heat thead th:not(:first-child){width:26px}
+.heat th,.heat td{padding:0;border:0;background:none}
+.heat thead th{font-weight:700;font-size:9.5px;color:var(--muted);text-align:center;padding-bottom:2px}
+.heat tbody th{text-align:left;font-weight:600;padding-right:4px;line-height:1.15;color:var(--ink);font-size:10.5px;letter-spacing:0;text-transform:none}
+.heat tbody th small{font-weight:400;color:var(--muted);font-size:10px}
+.heat td{height:23px;border-radius:3px;text-align:center;font-size:10px;font-weight:700}
+.heat td.iH{background:var(--red-bg);color:var(--red)}.heat td.iM{background:var(--amber-bg);color:var(--amber)}.heat td.iL{background:var(--mist);color:var(--muted)}
+.pkey{font-size:10px;color:var(--muted);margin-top:7px!important}
+.ws{list-style:none;padding:0!important}
+.ws li{display:grid;grid-template-columns:62px 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line);margin:0!important}
+.ws li:first-child{border-top:0;padding-top:0}
+.ws .rag{justify-self:start;align-self:start;padding:3px 7px;font-size:10px}
+.ws b{display:block}
+.rk{list-style:none;padding:0!important}
+.rk li{display:grid;grid-template-columns:34px 1fr;gap:6px;margin-bottom:4px!important}
+.rk .id{font-weight:700;color:var(--red)}
+.up{color:var(--coral);font-weight:700;white-space:nowrap}
+.af{display:flex;justify-content:space-between;gap:16px;color:var(--faint);font-size:10px;flex:none}
+.tl-narrow{display:none}
+@media (max-width:899px){
+ .stage{overflow:visible;padding:0}
+ .a4{width:auto;height:auto;transform:none!important;padding:14px;font-size:14px;box-shadow:var(--shadow)}
+ .ah{flex-wrap:wrap}.ah .sub{font-size:13px}.head1{font-size:16px}
+ .nums{grid-template-columns:repeat(2,minmax(0,1fr))}.nums span{font-size:13px}
+ .tlbox{display:none}.tl-narrow{display:block;border:1px solid var(--line);border-radius:8px;padding:10px 12px}.tl-narrow ol{padding-left:1.2em;margin:0}
+ .cols{grid-template-columns:1fr}
+ .a4 h3{font-size:12px}.box h4{font-size:11px}.heat,.skey,.pkey,.stance{font-size:12px}.heat tbody th small{font-size:12px}.ws .rag,.rag{font-size:11px}.ws li{grid-template-columns:74px 1fr}
+ .af{flex-direction:column;gap:2px;font-size:12px}
+}
+@page{size:A4 landscape;margin:0}
+@media print{
+ .topbar,.pagehead,.changed,footer.site,.sources,.pn,.printnote,.demo-nav{display:none!important}
+ .wrap{max-width:none;padding:0;margin:0}
+ .stage{height:794px!important;overflow:hidden;margin:0;padding:0}
+ .a4{transform:none!important;border:0;box-shadow:none}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style></head><body>
 <header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/index.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
-<main class="wrap">
-  <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass | Steering committee</p><h1>Weekly status report</h1>
-  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
-  <p class="lede">A one-page read of the week for the steering committee. Counts come from the registers, not from reading rows. Each box holds five sentences at most.</p></div>
+<main class="wrap wide">
+<div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Weekly status report</h1>
+<p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+<p class="lede">The week on one A4 landscape page for the steering committee: where the change stands with people, not only with tasks.</p></div>
 
-  <div class="tabs" role="tablist">
-    <button role="tab" data-tab="v02" aria-selected="true">Week ending Fri 29 Jan 2027 (v0.2)</button>
-    <button role="tab" data-tab="v01" aria-selected="false">Week ending Fri 22 Jan 2027 (v0.1)</button>
-  </div>
+<details class="changed"><summary>Changed in v0.2 <span>4 updates</span></summary><ul>
+<li>This is the first report issued after the checking loop. It adds two risks, five actions and two go/no-go criteria compared with the week ending Fri 22 Jan.</li>
+<li>The guardrails gate shows Fri 9 Apr 2027, moved from Fri 26 Mar (<a href="../sources/t5.html">T5</a>, change C-3).</li>
+<li>The school-holiday flag is under Escalations with the steerco decision from <a href="../sources/t5.html">T5</a> (change C-4).</li>
+<li>Q-05 is answered and removed; Q-07 is new (<a href="../sources/t4.html">T4</a>, change C-5).</li>
+</ul></details>
 
-  <section class="panel" id="v02">
-    <div class="mast"><p class="sc">Project Compass weekly status report</p><h2>Week ending Fri 29 Jan 2027</h2><p>Mon 25 Jan to Fri 29 Jan 2027 | Change lead, Change Made Simple | 2 sessions this week | v0.2</p></div>
+<div class="stage" id="stage"><article class="a4" id="sheet">
+<div class="ah"><img src="../assets/hb-logo.svg" alt="Hampton Bank"><div class="tt2"><h2>Project Compass: weekly change status</h2><div class="sub">Week ending Fri 29 Jan 2027 | Change lead, Change Made Simple | v0.2</div></div><span class="rag a">Overall: Amber</span></div>
 
-    <details class="changed"><summary>Changed in v0.2 <span>4 updates</span></summary><ul>
-        <li>This is the first report issued after the checking loop. It adds two risks, five actions and two go/no-go criteria compared with the week ending Fri 22 Jan.</li>
-        <li>The guardrails gate shows Fri 9 Apr 2027, moved from Fri 26 Mar (<a href="../sources/t5.html">T5</a>, change C-3).</li>
-        <li>The school-holiday flag is under Escalations with the steerco decision from <a href="../sources/t5.html">T5</a> (change C-4).</li>
-        <li>Q-05 is answered and removed; Q-07 is new (<a href="../sources/t4.html">T4</a>, change C-5).</li>
-      </ul></details>
+<p class="head1">Go-live holds at Mon 19 Apr. Wave 1 training now works around the school holidays, and business banking has moved from Resistant to Conditional.</p>
 
-    <div class="strip">
-      <div class="stat"><b>14</b><span>Risks</span></div>
-      <div class="stat"><b>28</b><span>Actions</span></div>
-      <div class="stat"><b>10</b><span>Actions done</span></div>
-      <div class="stat"><b>15</b><span>Actions open</span></div>
-      <div class="stat od"><b>3</b><span>Actions overdue</span></div>
-      <div class="stat"><b>6</b><span>Open questions</span></div>
-      <div class="stat"><b>16</b><span>Go/no-go criteria</span></div>
-    </div>
+<div class="nums">
+<div><b>80</b><span>days to Wave 1 go-live</span></div>
+<div><b>1,253</b><span>people in scope</span></div>
+<div><b>13</b><span>named stakeholders</span></div>
+<div class="warn"><b>14</b><span>risks, 4 High</span></div>
+<div class="warn"><b>28</b><span>actions, 3 overdue</span></div>
+<div><b>16</b><span>go/no-go criteria</span></div>
+</div>
 
-    <h2>Status by workstream</h2>
-    <table class="stack">
-      <thead><tr><th>Workstream</th><th>Status</th><th>Why</th></tr></thead>
-      <tbody>
-        <tr><td data-label="Workstream">UAT</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">Kick-off sessions run Mon 8 to Fri 12 Feb. Louise Chen's complaint categories must be mapped by Fri 5 Feb, moved from Fri 29 Jan.</td></tr>
-        <tr><td data-label="Workstream">Training <span class="upd">Updated v0.2</span></td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">The plan changed after the school-holiday check. Risk R-03 on shift cover is now High. Sam Petrovic confirms the early and late Docklands blocks by Fri 12 Feb.</td></tr>
-        <tr><td data-label="Workstream">Comms</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">On track. A bankers' message and a school-holiday roster reminder are being added to the plan.</td></tr>
-        <tr><td data-label="Workstream">Readiness</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">Go/no-go now has 16 criteria. Anika Rao scopes the banker pipeline pre-load by Fri 12 Feb, and three actions are overdue.</td></tr>
-        <tr><td data-label="Workstream">AI approval <span class="upd">Updated v0.2</span></td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">The gate is Fri 9 Apr, ten days before go-live. Fatima Haddad confirms the date and test set in writing by Fri 5 Feb.</td></tr>
-      </tbody>
-    </table>
+<div class="tlbox">
+<div class="trow axis"><div class="tl"></div><div class="tt mo"><span style="left:4.55%">Feb</span><span style="left:22.73%">Mar</span><span style="left:42.86%">Apr</span><span style="left:62.34%">May</span><span style="left:82.47%">Jun</span></div></div>
+<div class="trows">
+<div class="bands"><div class="tt"><div class="hatch" style="left:38.96%;width:11.04%"><em>School holidays and Easter</em></div><div class="now" style="left:2.6%"><em>This report</em></div></div></div>
+<div class="trow"><div class="tl">Project</div><div class="tt"><div class="tb uat" style="left:9.09%;width:21.43%">UAT 8 Feb to 12 Mar</div><i class="dm " style="left:33.12%"></i><span class="dl " style="left:33.12%">Sign-off 17 Mar</span><i class="dm gate" style="left:48.05%"></i><span class="dl gate" style="left:48.05%">AI gate 9 Apr</span></div></div>
+<div class="trow"><div class="tl">Wave 1, Victoria <small>808 people</small></div><div class="tt"><div class="tb trn" style="left:41.56%;width:11.69%">Training</div><div class="tb hyp" style="left:54.55%;width:7.79%">Hypercare</div><i class="dm go" style="left:54.55%"></i><span class="dl go" style="left:54.55%">Go-live 19 Apr</span></div></div>
+<div class="trow"><div class="tl">Wave 2, NSW <small>445 people</small></div><div class="tt"><div class="tb trn" style="left:72.73%;width:12.33%">Training</div><div class="tb hyp" style="left:86.36%;width:9.74%">Hypercare</div><i class="dm go" style="left:86.36%"></i><span class="dl go" style="left:86.36%">Go-live 7 Jun</span></div></div>
+</div></div>
+<div class="tl-narrow"><h3>Timeline</h3><ol>
+<li>Mon 8 Feb to Fri 12 Mar: UAT. Sign-off Wed 17 Mar.</li>
+<li>Fri 26 Mar to Sun 11 Apr: school holidays and Easter.</li>
+<li>Tue 30 Mar to Fri 16 Apr: Wave 1 training. AI gate Fri 9 Apr.</li>
+<li>Mon 19 Apr: Wave 1 go-live, Victoria. Hypercare to Fri 30 Apr.</li>
+<li>Mon 17 May to Fri 4 Jun: Wave 2 training.</li>
+<li>Mon 7 Jun: Wave 2 go-live, NSW. Hypercare to Mon 21 Jun.</li>
+</ol></div>
 
-    <div class="boxes">
-      <div class="bx"><h3>Change lead's review</h3>
-        <p>The week added two risks (R-13 and R-14) and raised one (R-03 to High). The school-holiday overlap is the largest change to the Wave 1 plan since the baseline, and it was found by checking the programme calendar against official 2027 calendars, not raised by the business. Richard Vance moved from refusing to release bankers for a full day to agreeing 90-minute sessions, on the condition that the pipeline view is better on day one. Fatima Haddad agreed the new gate date in the room, and I treat it as confirmed once A-27 arrives in writing. The three overdue actions are the same three as last week and none has moved.</p></div>
-      <div class="bx ok"><h3>This period</h3>
-        <p>The business banking workshop on Tue 26 Jan agreed 90-minute sessions from 7:30am, a two-week spreadsheet pre-load into the pipeline, and Compass Assist off for bankers at go-live and opt-in in week 3. Isla Fraser offered to champion with two other bankers. The steering catch-up on Thu 28 Jan kept go-live on Mon 19 Apr and set training to start Tue 30 Mar with early and late Docklands sessions. It added a first branch block in the week of 12 Apr and make-up sessions on Wed 14 and Thu 15 Apr. Q-05 was answered: Compass Assist may draft complaint responses that the complaints officer edits and sends.</p></div>
-      <div class="bx nx"><h3>Next period</h3>
-        <p>Five actions fall due on Fri 5 Feb: complaint categories (A-14), two banker champions by name (A-24), the written gate date (A-27), the personal-data wording (A-12) and the legacy CRM data scope (A-13). UAT kick-off sessions start Mon 8 Feb. Trainer blocks (A-26) and the pipeline pre-load scope (A-25) are due Fri 12 Feb, and the customer-experience scorecard outline (A-28) is due Fri 19 Feb. No public holiday falls in the period. The next one is Labour Day on Mon 8 Mar, and Good Friday starts the school-holiday stretch on Fri 26 Mar.</p></div>
-      <div class="bx es"><h3>Escalations</h3>
-        <div class="flag"><b>School-holiday flag.</b> Victorian school holidays and Easter, Fri 26 Mar to Sun 11 Apr 2027, cover the first two of the three Wave 1 training weeks, while go-live on Mon 19 Apr does not clash. The steering committee decided on Thu 28 Jan to keep go-live with the training changes listed above. <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></div>
-        <p>Tom Gallagher and Aroha Williams are asked to confirm rosters against that plan by Fri 12 Feb. Marcus Obi (A-06), Aroha Williams (A-15) and Richard Vance (A-17) are asked to close their overdue actions by Fri 5 Feb. The NSW school calendar is confirmed once for Wave 2.</p></div>
-    </div>
+<div class="cols">
+<section class="box"><h3>Stakeholders</h3>
+<div class="stance" role="img" aria-label="Stance of 13 named stakeholders: 4 champions, 7 supportive, 1 cautious, 1 conditional"><span class="c" style="flex:4">4</span><span class="s" style="flex:7">7</span><span class="k" style="flex:1">1</span><span class="w" style="flex:1">1</span></div>
+<p class="skey"><span><i style="background:#0E4A47"></i>Champion</span><span><i style="background:#1F6B66"></i>Supportive</span><span><i style="background:#E7C47A"></i>Cautious</span><span><i style="background:#E3A39B"></i>Conditional</span></p>
+<h4>Moved this week</h4>
+<p class="move"><b>Richard Vance</b> Resistant <span class="arr">&rarr;</span> <b>Conditional</b></p>
+<ul><li>Three banker champions added: Isla Fraser, Dev and Karina.</li></ul>
+<h4>Watch</h4>
+<ul><li><b>Fatima Haddad</b> is cautious on AI. Test set due in writing Fri 5 Feb.</li><li><b>Tom Gallagher</b> is supportive but worried about shift cover.</li><li><b>Sam Petrovic</b> is stretched: eight trainers for two states.</li></ul>
+</section>
 
-    <h2>What moved since the last report</h2>
-    <table class="stack mv">
-      <thead><tr><th>Count</th><th>Fri 22 Jan (v0.1)</th><th>Fri 29 Jan (v0.2)</th><th>Why it moved</th></tr></thead>
-      <tbody>
-        <tr class="updated"><td data-label="Count">Risks</td><td data-label="v0.1">12</td><td data-label="v0.2">14</td><td data-label="Why">R-13 and R-14 were added from <a href="../sources/t4.html">T4</a> and <a href="../sources/t5.html">T5</a>. See the <a href="03-risk-register.html">risk register</a>.</td></tr>
-        <tr class="updated"><td data-label="Count">Actions</td><td data-label="v0.1">23</td><td data-label="v0.2">28</td><td data-label="Why">A-24 to A-28 were raised on 26 and 28 Jan. See the <a href="01-action-list.html">action list</a>.</td></tr>
-        <tr class="updated"><td data-label="Count">Actions done</td><td data-label="v0.1">8</td><td data-label="v0.2">10</td><td data-label="Why">A-09 and A-11 were closed by T5 and the go/no-go change.</td></tr>
-        <tr class="updated"><td data-label="Count">Actions open</td><td data-label="v0.1">12</td><td data-label="v0.2">15</td><td data-label="Why">Five new actions, less the two closed.</td></tr>
-        <tr><td data-label="Count">Actions overdue</td><td data-label="v0.1">3</td><td data-label="v0.2">3</td><td data-label="Why">The same three actions as last week.</td></tr>
-        <tr class="updated"><td data-label="Count">Open questions</td><td data-label="v0.1">6</td><td data-label="v0.2">6</td><td data-label="Why">Q-05 was answered and removed. Q-07 was added. See <a href="02-open-questions.html">open questions</a>.</td></tr>
-        <tr class="updated"><td data-label="Count">Go/no-go criteria</td><td data-label="v0.1">14</td><td data-label="v0.2">16</td><td data-label="Why">Two criteria added, and the guardrails date moved. See <a href="22-go-no-go.html">go/no-go</a>.</td></tr>
-      </tbody>
-    </table>
-    <p class="foot">Figures computed from the risk register, action list, open questions register and go/no-go page. Drafted Fri 29 Jan 2027 and corrected by the Change lead.</p>
-  </section>
+<section class="box"><h3>Change impact by team</h3>
+<table class="heat"><thead><tr><th></th><th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th></tr></thead><tbody><tr><th scope="row">Contact centre <small>350</small></th><td class="iH" title="High">H</td><td class="iL" title="Low">L</td><td class="iN" title="None"></td><td class="iM" title="Medium">M</td><td class="iH" title="High">H</td></tr><tr><th scope="row">Branch network <small>600</small></th><td class="iL" title="Low">L</td><td class="iH" title="High">H</td><td class="iL" title="Low">L</td><td class="iL" title="Low">L</td><td class="iM" title="Medium">M</td></tr><tr><th scope="row">Business bankers <small>80</small></th><td class="iN" title="None"></td><td class="iM" title="Medium">M</td><td class="iH" title="High">H</td><td class="iN" title="None"></td><td class="iL" title="Low">L</td></tr><tr><th scope="row">Complaints and advocacy <small>40</small></th><td class="iL" title="Low">L</td><td class="iN" title="None"></td><td class="iN" title="None"></td><td class="iH" title="High">H</td><td class="iH" title="High">H</td></tr><tr><th scope="row">Operations <small>120</small></th><td class="iM" title="Medium">M</td><td class="iM" title="Medium">M</td><td class="iL" title="Low">L</td><td class="iM" title="Medium">M</td><td class="iL" title="Low">L</td></tr><tr><th scope="row">Risk and compliance <small>25</small></th><td class="iN" title="None"></td><td class="iN" title="None"></td><td class="iN" title="None"></td><td class="iM" title="Medium">M</td><td class="iH" title="High">H</td></tr><tr><th scope="row">CRM platform team <small>30</small></th><td class="iM" title="Medium">M</td><td class="iM" title="Medium">M</td><td class="iM" title="Medium">M</td><td class="iM" title="Medium">M</td><td class="iH" title="High">H</td></tr><tr><th scope="row">Learning and development <small>8</small></th><td class="iL" title="Low">L</td><td class="iL" title="Low">L</td><td class="iL" title="Low">L</td><td class="iL" title="Low">L</td><td class="iM" title="Medium">M</td></tr></tbody></table>
+<p class="pkey">H high, M medium, L low impact. P1 contact centre, P2 branch servicing, P3 business pipeline, P4 complaints, P5 AI assistant. 20 of 25 process stages are rated High.</p>
+</section>
 
-  <section class="panel" id="v01" hidden>
-    <div class="mast"><p class="sc">Project Compass weekly status report</p><h2>Week ending Fri 22 Jan 2027</h2><p>Mon 18 Jan to Fri 22 Jan 2027 | Change lead, Change Made Simple | 1 session this week | v0.1 baseline</p></div>
-    <p class="small">This is the earlier report, kept as issued. It shows the baseline before the checking loop.</p>
+<section class="box"><h3>Readiness by workstream</h3>
+<ul class="ws">
+<li><span class="rag a">Amber</span><span><b>UAT</b>Kick-off Mon 8 Feb. Complaint categories due Fri 5 Feb.</span></li>
+<li><span class="rag a">Amber</span><span><b>Training</b>Replanned around the school holidays. Docklands blocks confirmed by Fri 12 Feb.</span></li>
+<li><span class="rag g">Green</span><span><b>Comms</b>On track. Banker message and roster reminder being added.</span></li>
+<li><span class="rag a">Amber</span><span><b>Go-live readiness</b>Now 16 criteria. Pipeline pre-load scoped by Fri 12 Feb.</span></li>
+<li><span class="rag a">Amber</span><span><b>AI approval</b>Gate moved to Fri 9 Apr, ten days before go-live.</span></li>
+</ul>
+</section>
 
-    <div class="strip">
-      <div class="stat"><b>12</b><span>Risks</span></div>
-      <div class="stat"><b>23</b><span>Actions</span></div>
-      <div class="stat"><b>8</b><span>Actions done</span></div>
-      <div class="stat"><b>12</b><span>Actions open</span></div>
-      <div class="stat od"><b>3</b><span>Actions overdue</span></div>
-      <div class="stat"><b>6</b><span>Open questions (Q-01 to Q-06)</span></div>
-      <div class="stat"><b>14</b><span>Go/no-go criteria</span></div>
-    </div>
+<section class="box"><h3>Top risks</h3>
+<ul class="rk">
+<li><span class="id">R-01</span><span>Bankers keep using personal spreadsheets after go-live.</span></li>
+<li><span class="id">R-02</span><span>Compass Assist is not approved before go-live.</span></li>
+<li><span class="id">R-03</span><span>Contact centre shift cover is short in Wave 1 training. <span class="up">&uarr; now High</span></span></li>
+<li><span class="id">R-06</span><span>Data migrated from the legacy CRM is of poor quality.</span></li>
+</ul>
+<h4>Asks of the steering committee</h4>
+<ul><li>Tom Gallagher and Aroha Williams confirm rosters against the new training plan by Fri 12 Feb.</li><li>Close the three overdue actions (A-06, A-15, A-17) by Fri 5 Feb.</li></ul>
+</section>
+</div>
 
-    <h2>Status by workstream</h2>
-    <table class="stack">
-      <thead><tr><th>Workstream</th><th>Status</th><th>Why</th></tr></thead>
-      <tbody>
-        <tr><td data-label="Workstream">UAT</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">Jorge Alvarez shared the UAT script list. Kick-off sessions are planned for Mon 8 Feb.</td></tr>
-        <tr><td data-label="Workstream">Training</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">Sam Petrovic confirmed trainer capacity. The calendar has not yet been checked against school terms (A-08).</td></tr>
-        <tr><td data-label="Workstream">Comms</td><td data-label="Status"><span class="chip green">Green</span></td><td data-label="Why">The comms plan outline is due Fri 12 Feb.</td></tr>
-        <tr><td data-label="Workstream">Readiness</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">Fourteen go/no-go criteria are drafted and three actions are overdue.</td></tr>
-        <tr><td data-label="Workstream">AI approval</td><td data-label="Status"><span class="chip amber">Amber</span></td><td data-label="Why">The guardrails gate is Fri 26 Mar and the date is not yet confirmed (A-09, due Fri 29 Jan).</td></tr>
-      </tbody>
-    </table>
+<div class="af"><span>Hampton Bank is a fictional company. Figures come from the risk register, action list, stakeholder list and go/no-go checklist.</span><span>Page 1 of 1</span></div>
+</article></div>
+<p class="small printnote">This page prints on one A4 landscape sheet.</p>
 
-    <div class="boxes">
-      <div class="bx"><h3>Change lead's review</h3>
-        <p>The baseline artefacts are issued at v0.1, and every page carries the same dates. The risk and compliance session set the firmest rules so far: a written approval gate, no personal data in prompts outside Salesforce, and review of all drafted text. Richard Vance's reply on spreadsheets was short and sceptical, and business banking is where adoption is most at risk. The three overdue actions sit with Marcus Obi, Aroha Williams and Richard Vance.</p></div>
-      <div class="bx ok"><h3>This period</h3>
-        <p>The risk and compliance session on Tue 19 Jan with Fatima Haddad, Ben Okafor and Priya Raman agreed a written approval gate for Compass Assist. It also left Q-05 open on whether Compass Assist may draft written complaint responses. Daniel Nguyen sent the programme calendar on Thu 21 Jan. The stakeholder list, risk register and the other baseline pages were issued at v0.1 on Fri 22 Jan.</p></div>
-      <div class="bx nx"><h3>Next period</h3>
-        <p>Fatima Haddad confirms the guardrails sign-off date by Fri 29 Jan (A-09). Louise Chen supplies the complaint category list by Fri 29 Jan (A-14). The Change lead checks the programme calendar against the Victorian public holidays and school terms (A-08). Two further workshops are planned with business banking and the steering committee.</p></div>
-      <div class="bx es"><h3>Escalations</h3>
-        <p>Three actions are overdue: A-06 (Marcus Obi), A-15 (Aroha Williams) and A-17 (Richard Vance). Each owner is asked to close or re-date the action by Fri 29 Jan. Nothing else needs the steering committee this week.</p></div>
-    </div>
-    <p class="foot">Figures computed from the baseline registers. Drafted Fri 22 Jan 2027.</p>
-  </section>
-
-  <div class="pn"><a href="15-policy-timeline.html">Previous: policy timeline</a><a href="01-action-list.html">Next: action list</a></div>
-  <p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e3.html">E3 programme calendar</a>. School terms and holidays: Victorian Government. Public holidays: Business Victoria.</p>
+<div class="pn"><a href="15-policy-timeline.html">Previous: policy timeline</a><a href="01-action-list.html">Next: action list</a></div>
+<p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e3.html">E3 programme calendar</a>. School terms and holidays: Victorian Government. Public holidays: Business Victoria.</p>
 </main>
 <footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
-<script src="../assets/hb.js"></script></body></html>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var stage=document.getElementById("stage"),sheet=document.getElementById("sheet");
+  function fit(){
+    if(window.innerWidth<900){stage.style.height="auto";sheet.style.transform="none";return;}
+    var s=Math.min(1,stage.clientWidth/1123);
+    sheet.style.transform="scale("+s+")";
+    stage.style.height=(794*s+26)+"px";
+  }
+  fit();window.addEventListener("resize",fit);
+})();
+</script></body></html>

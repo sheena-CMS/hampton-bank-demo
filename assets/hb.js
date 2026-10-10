@@ -89,7 +89,7 @@
   if (!main || document.querySelector('.demo-nav')) return;
   var groups = [
     ['Tasks', [['01-action-list', 'Action list'], ['02-open-questions', 'Open questions'], ['03-risk-register', 'Risk register'], ['04-weekly-status', 'Weekly status report'], ['05-shared-facts', 'Shared facts']]],
-    ['Frame the project', [['06-exec-one-pager', 'Executive one-pager'], ['07-change-plan', 'Change plan'], ['08-plan-on-a-page', 'Plan on a page'], ['09-phased-rollout', 'Phased rollout'], ['10-kpi-scorecard', 'KPI scorecard']]],
+    ['Frame the project', [['06-exec-one-pager', 'Executive one-pager'], ['07-change-on-a-page', 'Change on a page'], ['08-detailed-change-plan', 'Detailed change plan'], ['09-phased-rollout', 'Phased rollout'], ['10-kpi-scorecard', 'KPI scorecard']]],
     ['People', [['11-stakeholder-list', 'Stakeholder list'], ['12-org-chart', 'Org chart']]],
     ['Understand the change', [['13-as-is-to-be-impact', 'As-is, to-be and impact'], ['14-solution-overview', 'Solution overview'], ['15-policy-timeline', 'AI policy timeline'], ['16-sharepoint-review', 'SharePoint review']]],
     ['Prepare people', [['17-comms-plan', 'Comms plan'], ['18-learning-plan', 'Learning plan'], ['19-training-schedule', 'Training schedule'], ['20-training-form', 'Training form']]],
