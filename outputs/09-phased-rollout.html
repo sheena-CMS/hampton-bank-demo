@@ -7,8 +7,8 @@
 :root{--p1:var(--sage);--p2:var(--green);--p3:var(--green2);--p4:color-mix(in srgb,var(--ink) 45%,var(--muted))}
 .chg{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--green2);border-radius:var(--radius);padding:14px 18px;margin:0 0 22px;box-shadow:var(--shadow)}
 .chg h2{margin:0 0 8px;font-size:19px}.chg ul{margin:0;max-width:none}
-.stage{position:relative;width:100%;overflow:hidden;margin:0 0 18px}
-.slide{width:1280px;height:720px;transform-origin:0 0;background:var(--cream);border:1px solid var(--line);padding:14px 20px;display:flex;flex-direction:column;gap:8px;font-size:12.8px;line-height:1.35;overflow:hidden}
+.stage{position:relative;width:100%;overflow:hidden;margin:0 0 18px;padding:0 0 26px}
+.slide{width:1123px;height:794px;box-shadow:var(--shadow-lift);transform-origin:0 0;background:var(--paper);border:1px solid var(--line);padding:18px 22px 14px;display:flex;flex-direction:column;gap:10px;font-size:12px;line-height:1.38;overflow:hidden}
 .slide p,.slide li{max-width:none;margin:0}
 .sh{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:3px solid var(--green);padding-bottom:6px;flex:none}
 .sh img{height:34px;display:block;background:var(--paper);border-radius:8px;padding:3px 8px}
@@ -17,7 +17,7 @@
 .sh .sub{color:var(--muted);font-size:13px;margin-top:2px}
 .sh .ver{font-size:11.5px;color:var(--muted);text-align:right;white-space:nowrap}
 .timeline{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 10px;flex:none}
-.trow{display:grid;grid-template-columns:236px minmax(0,1fr);gap:0 10px;align-items:center}
+.trow{display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 10px;align-items:center}
 .trows{position:relative}
 .trows .trow{height:30px;border-top:1px solid var(--line)}
 .tl{display:flex;gap:8px;align-items:center}
@@ -28,13 +28,13 @@
 .mo span,.wo span{position:absolute;white-space:nowrap}
 .mo span{top:0;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border-left:1px solid var(--line);padding-left:4px}
 .wo span{top:17px;font-size:10px;color:var(--faint);border-left:1px solid var(--line);padding-left:3px;height:17px}
-.tb{position:absolute;top:4px;height:22px;border-radius:5px;background:var(--pc);color:#F8F5EE;font-weight:700;font-size:11px;padding:3px 5px;overflow:hidden;white-space:nowrap;line-height:16px;z-index:3}
+.tb{position:absolute;top:4px;height:22px;border-radius:5px;background:var(--pc);color:#F8F5EE;font-weight:700;font-size:11px;padding:3px 3px;text-align:center;overflow:hidden;white-space:nowrap;line-height:16px;z-index:3}
 .trow:nth-child(2) .tb{color:var(--ink)}
 .tb.trn{opacity:.78}
 .ln{position:absolute;top:13px;height:4px;border-radius:3px;background:var(--pc);opacity:.3;z-index:3}
 .dm{position:absolute;top:9px;width:11px;height:11px;background:var(--green);transform:rotate(45deg);margin-left:-5px;z-index:3}
 .dt{position:absolute;top:6px;font-weight:700;font-size:11px;white-space:nowrap;z-index:3}
-.bands{position:absolute;inset:0;display:grid;grid-template-columns:236px minmax(0,1fr);gap:0 10px;pointer-events:none}
+.bands{position:absolute;inset:0;display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 10px;pointer-events:none}
 .bands .tt{grid-column:2}
 .hatch{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 6px,transparent 6px,transparent 12px);border-left:1px dashed var(--amber-line);border-right:1px dashed var(--amber-line);z-index:1}
 .hyp{position:absolute;top:0;bottom:0;background:var(--sand);opacity:.85;z-index:1}
@@ -63,8 +63,8 @@
 .strip3{margin-top:0}
 .flow .stage{overflow:visible}
 @media (max-width:899px){
- .stage{overflow:visible}
- .slide{width:auto;height:auto;transform:none!important;padding:12px;font-size:14px}
+ .stage{overflow:visible;padding:0}
+ .slide{width:auto;height:auto;transform:none!important;padding:12px;font-size:14px;box-shadow:none}
  .sh{flex-wrap:wrap}.sh .ver{white-space:normal;text-align:left}
  .trow{grid-template-columns:1fr;gap:2px}.trows .trow{height:auto;padding:4px 0 2px}.trows .tt{height:32px}
  .axis .tl{display:none}.axis{grid-template-columns:1fr}
@@ -73,25 +73,25 @@
  .dt{display:none}
  .pcs{grid-template-columns:1fr}.sf{grid-template-columns:1fr}
 }
-@page{size:13.333in 7.5in;margin:0}
+@page{size:A4 landscape;margin:0}
 @media print{
  .topbar,.pagehead,.chg,.changed,.after,footer.site,.sources,.pn{display:none!important}
  .wrap{max-width:none;padding:0;margin:0}
- .stage{height:720px!important;overflow:hidden;margin:0}
- .slide{transform:none!important;border:0;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .stage{height:794px!important;overflow:hidden;margin:0;padding:0}
+ .slide{transform:none!important;border:0;box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}
 }
 </style></head><body>
 <header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/index.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
 <main class="wrap wide">
   <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Phased rollout</h1>
-  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p><p class="lede">One slide shows the four phases from UAT in February to BAU handover in June 2027, with the single gate each phase passes.</p></div>
+  <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p><p class="lede">One A4 landscape page shows the four phases from UAT in February to BAU handover in June 2027, with the single gate each phase passes.</p></div>
 
 <details class="changed" id="changed"><summary>Changed in v0.2 <span>3 updates</span></summary><ul>
 <li>The Compass Assist guardrails gate moves from Fri 26 Mar to Fri 9 Apr 2027, ten days before Wave 1 go-live. It is drawn on the timeline and shown in the Wave 1 card. From <a href="../sources/t5.html">T5</a> (change C-3).</li>
 <li>Training for Wave 1 now has early, late, first-block and make-up sessions around the school holidays and Easter (change C-4). See the <a href="19-training-schedule.html">training schedule</a>.</li>
 <li>Version raised to v0.2, and the gate date matches the <a href="07-change-on-a-page.html">change on a page</a> (change C-7).</li></ul></details>
 
-<div class="stage" id="stage"><section class="slide" id="slide" aria-label="Phased rollout slide">
+<div class="stage" id="stage"><section class="slide" id="slide" aria-label="Phased rollout page">
 <div class="sh"><a href="../index.html"><img src="../assets/hb-logo.svg" alt="Hampton Bank"></a><div class="tt2"><h2>Phased rollout</h2><div class="sub">Two waves after UAT: Victoria Mon 19 Apr 2027, NSW Mon 7 Jun. The existing process stays until a team goes live.</div></div><div class="ver">Draft v0.2 | 29 January 2027<br>Change lead, Change Made Simple</div></div>
 <div class="timeline"><div class="trow axis"><div class="tl"></div><div class="tt"><div class="mo"><span style="left:0.00%">Feb</span><span style="left:15.00%">Mar</span><span style="left:37.14%">Apr</span><span style="left:58.57%">May</span><span style="left:80.71%">Jun</span></div><div class="wo"><span style="left:0.00%">8</span><span style="left:5.00%">15</span><span style="left:10.00%">22</span><span style="left:15.00%">1</span><span style="left:20.00%">8</span><span style="left:25.00%">15</span><span style="left:30.00%">22</span><span style="left:35.00%">29</span><span style="left:40.00%">5</span><span style="left:45.00%">12</span><span style="left:50.00%">19</span><span style="left:55.00%">26</span><span style="left:60.00%">3</span><span style="left:65.00%">10</span><span style="left:70.00%">17</span><span style="left:75.00%">24</span><span style="left:80.00%">31</span><span style="left:85.00%">7</span><span style="left:90.00%">14</span><span style="left:95.00%">21</span></div></div></div><div class="trows"><div class="bands"><div class="tt"><span class="hatch" style="left:32.86%;width:12.14%"><em>School holidays and Easter</em></span><span class="hyp" style="left:50.00%;width:8.57%"><em>Hypercare</em></span><span class="hyp" style="left:85.00%;width:10.71%"><em>Hypercare</em></span><span class="gline" style="left:42.86%"><em>Gate Fri 9 Apr</em></span></div></div><div class="trow" style="--pc:var(--p1)"><div class="tl"><i></i><span><b>Phase 1</b><small>UAT</small></span></div><div class="tt"><span class="tb " style="left:0.00%;width:23.57%">UAT 8 Feb to 12 Mar</span><span class="dm" style="left:26.43%"></span><span class="dt" style="left:27.43%">Sign-off 17 Mar</span></div></div><div class="trow" style="--pc:var(--p2)"><div class="tl"><i></i><span><b>Phase 2</b><small>Wave 1 Victoria</small></span></div><div class="tt"><span class="tb trn" style="left:35.71%;width:12.86%">Training</span><span class="tb " style="left:50.00%;width:6.43%">Go 19 Apr</span><span class="ln" style="left:56.43%;width:43.57%"></span></div></div><div class="trow" style="--pc:var(--p3)"><div class="tl"><i></i><span><b>Phase 3</b><small>Wave 2 NSW</small></span></div><div class="tt"><span class="tb trn" style="left:70.00%;width:13.57%">Training</span><span class="tb " style="left:85.00%;width:6.43%">Go 7 Jun</span><span class="ln" style="left:91.43%;width:8.57%"></span></div></div><div class="trow" style="--pc:var(--p4)"><div class="tl"><i></i><span><b>Phase 4</b><small>BAU handover</small></span></div><div class="tt"><span class="tb " style="left:95.71%;width:4.29%">BAU</span></div></div></div></div>
 <div class="pcs"><article class="pc" style="--pc:var(--p1)"><header><small>Phase 1</small><b>UAT</b><span>Mon 8 Feb to Wed 17 Mar 2027</span></header>
@@ -110,7 +110,7 @@
 <div class="stat"><b>445</b><span>Wave 2 NSW: 150 Parramatta, 260 branches, 35 bankers</span></div>
 <div class="stat"><b>1,253</b><span>In scope across both waves, about 1,250 people</span></div></div>
 
-<h2>Dates behind the slide</h2>
+<h2>Dates behind the page</h2>
 <table><thead><tr><th>Item</th><th>Date</th><th>Note</th></tr></thead><tbody>
 <tr><td>UAT window</td><td>Mon 8 Feb to Fri 12 Mar 2027</td><td>Mon 8 Mar is Labour Day in Victoria, and UAT is paused that day. Sign-off is Wed 17 Mar.</td></tr>
 <tr class="updated"><td>Guardrails sign-off gate <span class="upd">Updated v0.2</span></td><td>Fri 9 Apr 2027</td><td>Moved from Fri 26 Mar so the test set can be complete. Training demos use approved guardrails only.</td></tr>
@@ -122,7 +122,7 @@
 </div>
 
   <p class="sources">Sources: <a href="../sources/t1.html">T1 programme planning</a> | <a href="../sources/t4.html">T4 business banking workshop</a> | <a href="../sources/t5.html">T5 steering catch-up</a> | <a href="../sources/e3.html">E3 programme calendar</a> | See also <a href="07-change-on-a-page.html">change on a page</a>, <a href="17-comms-plan.html">comms plan</a></p>
-  <nav class="pn"><a href="19-training-schedule.html">&larr; Training schedule</a><a href="../index.html">All outputs</a></nav>
+  <nav class="pn"><a href="19-training-schedule.html">&larr; Training schedule</a><a href="index.html">All outputs</a></nav>
 </main>
 <footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
 <script src="../assets/hb.js"></script>
@@ -131,9 +131,9 @@
   var stage=document.getElementById("stage"),slide=document.getElementById("slide");
   function fit(){
     if(window.innerWidth<900){stage.style.height="auto";slide.style.transform="none";return;}
-    var s=Math.min(1,stage.clientWidth/1280);
+    var s=Math.min(1,stage.clientWidth/1123);
     slide.style.transform="scale("+s+")";
-    stage.style.height=(720*s)+"px";
+    stage.style.height=(794*s+26)+"px";
   }
   fit();window.addEventListener("resize",fit);
 })();
