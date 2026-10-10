@@ -28,12 +28,46 @@
 .tl-narrow li{font-size:14px}
 .sumh{font-size:20px;margin:26px 0 10px}
 .more .card h3{margin:0 0 4px}.more .card p{margin:0;font-size:14px;color:var(--muted)}
+
+/* Laid out on the Change Made Simple five-step methodology; step 3 follows the five Change Action Plan areas per team */
+.steps5{list-style:none;margin:0 0 18px;padding:0;max-width:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;counter-reset:st}
+.steps5 li{margin:0;display:flex}
+.steps5 a{counter-increment:st;display:block;width:100%;background:var(--paper);border:1px solid var(--line);border-bottom:3px solid var(--green);border-radius:var(--radius);padding:10px 12px;text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:600;line-height:1.3}
+.steps5 a::before{content:counter(st);display:block;font:700 20px/1 Gambetta,Georgia,serif;color:var(--coral);margin-bottom:5px}
+.steps5 a:hover{border-color:var(--green);color:var(--green)}
+@media(max-width:900px){.steps5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.level{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:8px 0 6px}
+.level span{background:var(--mist);color:var(--muted);text-align:center;font:600 12.5px/1 "General Sans",sans-serif;padding:9px 4px;border-radius:5px}
+.level span.on{background:var(--coral);color:#fff}
+.read{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin:0 0 18px}
+@media(max-width:820px){.read{grid-template-columns:1fr}}
+.read .tile h3{margin:0 0 6px}
+.read .tile p{margin:0 0 8px;max-width:none}
+.moves{margin:0;padding-left:1.3em;max-width:none}
+.moves li{font-size:14px;margin-bottom:6px}
+.warn2{background:var(--amber-bg);border:1px solid var(--amber-line);border-left:5px solid var(--amber);border-radius:6px;padding:10px 14px;margin:0 0 18px;max-width:none;font-size:14px}
+.warn2 b:first-child{color:var(--amber)}
+.team{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--green);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;min-width:0}
+.team h3{margin:0 0 2px}
+.team .who{font-size:13px;color:var(--muted);margin:0 0 10px;max-width:none}
+.team .who .chip{margin-left:4px}
+.team dl{margin:0;display:grid;grid-template-columns:104px minmax(0,1fr);gap:0}
+.team dt,.team dd{margin:0;padding:7px 0;border-top:1px solid var(--line);font-size:14px}
+.team dt{font:700 11px/1.5 "General Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--green2);padding-right:8px}
+@media(max-width:520px){.team dl{grid-template-columns:1fr}.team dd{border-top:0;padding-top:0}}
+.exp{list-style:none;margin:0 0 18px;padding:0;max-width:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.exp li{margin:0;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green2);border-radius:var(--radius);padding:10px 14px;font-size:14px}
+.exp b{display:block}.exp small{display:block;margin-bottom:4px}
+.pills{list-style:none;margin:0 0 16px;padding:0;max-width:none;display:flex;flex-wrap:wrap;gap:6px}
+.pills li{margin:0;background:var(--mist);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600;color:var(--green)}
+.ready{list-style:none;margin:0 0 16px;padding:0;max-width:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.ready li{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;font-size:14px}
 </style></head><body>
 <header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/index.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
 <main class="wrap">
 <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Detailed change plan</h1>
 <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
-<p class="lede">What is changing at Hampton Bank, who is affected, and how the change is managed to handover on 22 June 2027, across Victoria in April and New South Wales in June.</p></div>
+<p class="lede">The change plan for Project Compass, laid out on the Change Made Simple five-step methodology: vision, analysis, planning, change networks, then execution and adoption.</p></div>
 
 <details class="changed"><summary>Changed in v0.2 <span>6 updates</span></summary><ul>
 <li>Training: Wave 1 works around the school holidays and Easter, with early and late Docklands blocks and make-up sessions on 14 and 15 April. From <a href="../sources/t5.html">T5</a>.</li>
@@ -46,15 +80,33 @@
 
 <div class="tabs" role="tablist">
 <button role="tab" data-tab="summary" aria-selected="true">Summary</button>
-<button role="tab" data-tab="strategy" aria-selected="false">Strategy</button>
-<button role="tab" data-tab="impacts" aria-selected="false">Stakeholders and impacts</button>
-<button role="tab" data-tab="timeline" aria-selected="false">Timeline</button>
-<button role="tab" data-tab="governance" aria-selected="false">Governance and readiness</button>
+<button role="tab" data-tab="vision" aria-selected="false">1 Vision and success</button>
+<button role="tab" data-tab="analysis" aria-selected="false">2 Analysis</button>
+<button role="tab" data-tab="plan" aria-selected="false">3 Plan by team</button>
+<button role="tab" data-tab="network" aria-selected="false">4 Change network</button>
+<button role="tab" data-tab="execute" aria-selected="false">5 Execute and embed</button>
 </div>
 
 <!-- SUMMARY -->
 <section class="panel" id="summary">
 <p class="lede">Hampton Bank is replacing its legacy CRM, Hamlink, with Salesforce, and adding an AI assistant called Compass Assist to help staff draft notes. About 1,250 people change how they work, in two waves: Victoria first, then New South Wales.</p>
+
+<div class="read">
+<div class="tile"><span class="lbl" style="margin-top:0">Overall change level</span>
+<div class="level" role="img" aria-label="Overall change level: Complex, the third of four levels"><span>Contained</span><span>Significant</span><span class="on">Complex</span><span>Transformational</span></div>
+<p class="small">Eight teams in two states, five processes, and an AI assistant that is new to everyone.</p>
+<h3>Expert insight</h3>
+<p>Adoption is most at risk in business banking. Bankers will not give up their spreadsheets unless the pipeline view is better on day one, so the pre-load matters more than the training.</p>
+</div>
+<div class="tile"><h3>First three moves</h3>
+<ol class="moves">
+<li>Pre-load every banker's pipeline and name the other two champions (A-24, A-25).</li>
+<li>Confirm the early and late Docklands blocks and the rosters by Fri 12 Feb (A-26).</li>
+<li>Get the Compass Assist test set and gate date in writing by Fri 5 Feb (A-27).</li>
+</ol></div>
+</div>
+
+<p class="warn2"><b>Important warning:</b> the head of business banking is Conditional, not yet supportive, and two of the three Wave 1 training weeks fall in the school holidays and Easter. Since December 2025, poor change management is also a named psychosocial hazard under Australian work health and safety law, so listening comes before each rollout step.</p>
 
 <div class="strip">
 <div class="stat"><b>1,253</b><span>people in scope (about 1,250)</span></div>
@@ -63,66 +115,127 @@
 <div class="stat"><b>60</b><span>branches, 34 Victoria and 26 NSW</span></div>
 </div>
 
-<div class="strat"><span class="lbl">Change management strategy</span>
+<h2 class="sumh">The plan in five steps</h2>
+<ol class="steps5">
+<li><a href="#vision">Vision and success criteria with the executive team</a></li>
+<li><a href="#analysis">Deep-dive analysis of solution, processes and stakeholder impacts</a></li>
+<li><a href="#plan">Planning: change, comms, training and engagement, team by team</a></li>
+<li><a href="#network">Activate the change network: champions and change leadership</a></li>
+<li><a href="#execute">Execute, embed and drive adoption</a></li>
+</ol>
+</section>
+
+<!-- 1 VISION -->
+<section class="panel" id="vision" hidden>
+<p class="lede">Where the change is going, and what each leader expects from their team once it is embedded.</p>
+<div class="strat"><span class="lbl">The vision in one line</span>
 <p>Know what changes in your day, practise it before go-live, and have someone on your floor to ask in the first two weeks.</p></div>
 
-<h2 class="sumh">Key dates</h2>
-<div class="facts">
-<div class="tile"><span class="lbl">Test window</span><b class="big">8 Feb to 12 Mar</b><p>UAT sign-off Wed 17 Mar 2027. Labour Day, Mon 8 Mar, is paused.</p></div>
-<div class="tile amber"><span class="lbl">Training</span><b class="big">30 Mar to 16 Apr; 17 May to 4 Jun</b><p>Three weeks before each go-live.</p></div>
-<div class="tile"><span class="lbl">Go-live</span><b class="big">19 Apr and 7 Jun</b><p>Victoria Mon 19 Apr 2027. New South Wales Mon 7 Jun 2027.</p></div>
-<div class="tile sage"><span class="lbl">Hypercare</span><b class="big">2 weeks per wave</b><p>19 to 30 Apr, then 7 to 21 Jun. Handover Tue 22 Jun.</p></div>
-</div>
+<h2 class="sumh">Why the bank is doing this</h2>
+<ul class="pills"><li>Faster resolution</li><li>Lower cost to serve</li><li>Lower risk</li><li>Better customer experience</li><li>Reliable data</li></ul>
 
-<h2 class="sumh">What to watch</h2>
-<p>Go-live on Mon 19 Apr 2027 is clear of the school holidays, but the first two of the three Wave 1 training weeks fall inside the holidays and Easter (Fri 26 Mar to Sun 11 Apr). The steering committee kept the dates and added flexible sessions (<a href="../sources/t5.html">T5</a>). New South Wales has no clash; <span class="tbc">TBC: confirm NSW school calendar</span> before the Wave 2 roster.</p>
-<div class="trap"><b>Trap:</b> If rosters are not adjusted, staff on leave miss their first Wave 1 sessions and the 90 percent completion criterion is at risk. See <a href="19-training-schedule.html">the training schedule</a>.</div>
+<h2 class="sumh">How success is measured</h2>
+<p>Six measure themes, each tied to a business-case driver. Targets are set by Hampton Bank owners after the baseline is taken. Detail: <a href="10-kpi-scorecard.html">KPI scorecard</a>.</p>
+<ul class="pills"><li>Customer experience</li><li>Speed to resolve</li><li>Cost to serve</li><li>Risk and compliance</li><li>Adoption</li><li>Data quality</li></ul>
 
-<h2 class="sumh">The rest of the plan</h2>
-<div class="grid g3 more">
-<a class="card" href="17-comms-plan.html"><h3>Comms plan</h3><p>Who hears what, in what order and from whom.</p></a>
-<a class="card" href="18-learning-plan.html"><h3>Learning plan</h3><p>How each job is done in Salesforce and Compass Assist.</p></a>
-<a class="card" href="19-training-schedule.html"><h3>Training schedule</h3><p>Who is trained, in what, and when.</p></a>
-<a class="card" href="11-stakeholder-list.html"><h3>Stakeholder list</h3><p>Who is affected and where each key stakeholder stands.</p></a>
-<a class="card" href="03-risk-register.html"><h3>Risk register</h3><p>The change risks, each with an owner and a next step.</p></a>
-<a class="card" href="02-open-questions.html"><h3>Open questions</h3><p>What is still waiting on an answer.</p></a>
-</div>
+<h2 class="sumh">What each leader expects</h2>
+<ul class="exp">
+<li><b>Helen Marchetti</b><small>Chief Customer Officer, sponsor</small>A visible customer-experience win by June, and a one-page scorecard before Wave 2.</li>
+<li><b>Priya Raman</b><small>CIO</small>One platform rather than two, and a clear owner for technology risk including Compass Assist.</li>
+<li><b>Daniel Nguyen</b><small>Program director</small>An accurate plan with dates that change once, and early warning of anything that threatens a go-live.</li>
+<li><b>Tom Gallagher</b><small>Head of contact centre</small>Training blocks that fit shifts, and cover plans that hold in the school holidays.</li>
+<li><b>Aroha Williams</b><small>Head of branch network</small>Less admin for branches, and rosters that respect Easter trading.</li>
+<li><b>Richard Vance</b><small>Head of business banking</small>A pipeline view that is better than the spreadsheets on day one.</li>
+<li><b>Fatima Haddad</b><small>Head of compliance</small>A written approval gate, and a human review of every Compass Assist draft.</li>
+</ul>
 </section>
 
-<!-- STRATEGY -->
-<section class="panel" id="strategy" hidden>
-<p class="lede">Each group has one strategy line that starts with what the group needs to know.</p>
-<table><thead><tr><th>Group</th><th>People</th><th>Strategy</th></tr></thead><tbody>
-<tr><td>Contact centre agents</td><td>350</td><td>Know the three-screen workflow is now one screen, and train in 90-minute blocks that fit your shift.</td></tr>
-<tr><td>Branch staff</td><td>600</td><td>Know referrals now live in the system with an owner, and plan training around month end and Easter trading.</td></tr>
-<tr class="updated"><td>Business bankers <span class="upd">Updated v0.2 from <a href="../sources/t4.html">T4</a></span></td><td>80</td><td>Know your pipeline is already loaded when you first log in, and Compass Assist is your choice from week 3.</td></tr>
-<tr><td>Complaints and advocacy</td><td>40</td><td>Know your categories and timers are mapped before UAT, and Compass Assist drafts are labelled and yours to edit.</td></tr>
-</tbody></table>
-<button class="xp" data-xp="xg" aria-expanded="false">Show detail</button>
-<div id="xg" hidden>
-<p><b>Operations (120):</b> know which referrals and cases arrive with a named owner. <b>Risk and compliance (25):</b> know the guardrails test set, the gate on Fri 9 Apr and the logging you will review. <b>CRM platform team (30):</b> know your admin tasks before hypercare ends, including who changes Compass Assist prompts. <b>Learning and development (8):</b> know the trainer schedule early, with New South Wales trainers confirmed before Wave 1 ends.</p>
-<p class="small">Counts total 1,253 (<a href="05-shared-facts.html">shared facts</a>). Compass Assist is used only where Risk and Compliance has approved it, and a person reviews every draft.</p>
-</div>
-</section>
+<!-- 2 ANALYSIS -->
+<section class="panel" id="analysis" hidden>
+<p class="lede">What is being built, which processes change, and how hard the change lands on each group.</p>
 
-<!-- IMPACTS -->
-<section class="panel" id="impacts" hidden>
-<p class="lede">Richard Vance, Head of business banking, is now Conditional rather than Resistant: he will engage if the pipeline view is better on day one. <span class="upd">Updated v0.2 from <a href="../sources/t4.html">T4</a></span> Fatima Haddad stays Cautious on AI and holds the gate.</p>
+<h2 class="sumh" style="margin-top:0">Solution design</h2>
+<div class="grid g3">
+<div class="tile"><h3>Service Cloud</h3><p>Contact centre and complaints cases.</p></div>
+<div class="tile"><h3>Financial Services Cloud</h3><p>Customers, accounts, branch servicing and the banker pipeline.</p></div>
+<div class="tile sage"><h3>Compass Assist</h3><p>Helps staff draft notes. A person reviews every draft, and it is off for bankers at go-live.</p></div>
+</div>
+<p class="small" style="margin-top:8px">Detail: <a href="14-solution-overview.html">Solution overview</a>.</p>
+
+<h2 class="sumh">Processes that change</h2>
+<ul><li>Case handling (High) and branch servicing (Medium): one customer view, guided onboarding, referrals with an owner.</li><li>Banker pipeline (High): a shared pipeline, pre-loaded from each banker's spreadsheet.</li><li>Complaints (High): a case type with categories, timers and reporting.</li><li>AI assistant (Medium): suggested answers and drafted notes, always reviewed.</li></ul>
+<p class="small">Stage by stage: <a href="13-as-is-to-be-impact.html">As-is, to-be and impact</a>.</p>
+
+<h2 class="sumh">Stakeholder impacts</h2>
 <table><thead><tr><th>Group</th><th>Impact</th><th>What changes most</th></tr></thead><tbody>
 <tr><td>Contact centre agents (350)</td><td><span class="chip red">High</span></td><td>Three screens become one; Compass Assist drafts notes.</td></tr>
 <tr class="updated"><td>Business bankers (80) <span class="upd">Updated v0.2</span></td><td><span class="chip red">High</span></td><td>Spreadsheets give way to a shared pipeline.</td></tr>
 <tr><td>Complaints and advocacy (40)</td><td><span class="chip red">High</span></td><td>One case type with timers. Queue sharing is open (Q-04).</td></tr>
 <tr><td>CRM platform team (30)</td><td><span class="chip red">High</span></td><td>New skills and new roles as Salesforce administrators.</td></tr>
 </tbody></table>
-<button class="xp" data-xp="xi" aria-expanded="false">Show detail</button>
-<div id="xi" hidden>
-<p><b>Medium impact:</b> branch staff (600), paper forms and emailed referrals move to guided onboarding and system referrals; operations (120), work arrives as owned referrals and cases; risk and compliance (25), a new approval gate and monitoring of AI use; learning and development (8), eight people deliver every session across two states.</p>
-<h3>Change arising</h3><ul><li>Case handling (High) and branch servicing (Medium): one customer view, guided onboarding, referrals with an owner.</li><li>Banker pipeline (High) <span class="upd">v0.2</span>: a shared pipeline, pre-loaded from each banker's spreadsheet.</li><li>Complaints (High): a case type with categories, timers and reporting.</li><li>AI assistant (Medium) <span class="upd">v0.2</span>: suggested answers and drafted notes, always reviewed. Off for bankers at go-live.</li></ul><p class="small">Full list: <a href="11-stakeholder-list.html">stakeholder list</a> and <a href="12-org-chart.html">org chart</a>. Per-process ratings: <a href="13-as-is-to-be-impact.html">as-is to-be impact view</a>.</p>
+<p style="margin-top:12px"><b>Medium impact:</b> branch staff (600), paper forms and emailed referrals move to guided onboarding and system referrals; operations (120), work arrives as owned referrals and cases; risk and compliance (25), a new approval gate and monitoring of AI use; learning and development (8), eight people deliver every session across two states.</p>
+<p class="small">Impact ratings: High means the work itself changes, with different steps, tools or a different job. Medium means moderate change, or new capabilities added to existing work. Full list: <a href="11-stakeholder-list.html">Stakeholder list</a> and <a href="12-org-chart.html">Org chart</a>.</p>
+</section>
+
+<!-- 3 PLAN -->
+<section class="panel" id="plan" hidden>
+<p class="lede">Each team gets its own plan across five areas: what the change means for them, how we listen, how we reach them, what they need to know, and how they build the skill.</p>
+<div class="grid g2">
+<article class="team"><h3>Contact centre</h3>
+<p class="who">350 people, Docklands and Parramatta | Leader: Tom Gallagher <span class="chip green">Supportive, worried about shift cover</span><br>How they work: frontline, on shifts</p>
+<dl><dt>Impact</dt><dd>Three Hamlink screens and retyped notes become one customer view and one case record. Compass Assist drafts the notes.</dd><dt>Listening</dt><dd>Team leaders ask at shift huddles what worries agents most and pass it to the Change lead each week.</dd><dt>Engagement</dt><dd>Huddles and roster briefings from team leaders, backed by the intranet and email. Tom Gallagher fronts the shift-cover plan.</dd><dt>Key message</dt><dd>The three-screen workflow is now one screen, and training comes in 90-minute blocks that fit your shift.</dd><dt>Capability</dt><dd>90-minute blocks across all shifts, with early (6:30am) and late (4:30pm) blocks at Docklands.</dd></dl></article>
+<article class="team"><h3>Branch network</h3>
+<p class="who">600 people in 60 branches | Leader: Aroha Williams <span class="chip green">Supportive</span><br>How they work: frontline, across many sites</p>
+<dl><dt>Impact</dt><dd>Paper forms and emailed referrals become guided onboarding and a referral with an owner.</dd><dt>Listening</dt><dd>Branch managers collect questions at branch huddles. <span class="tbc">TBC: NSW champions</span> are not yet named.</dd><dt>Engagement</dt><dd>Branch managers carry one consistent message, with a school-holiday roster reminder before Fri 26 Mar.</dd><dt>Key message</dt><dd>Referrals now live in the system with an owner, and training is planned around month end and Easter trading.</dd><dt>Capability</dt><dd>Standard blocks, a first block in the week of 12 April, and make-ups on Wed 14 and Thu 15 Apr. <span class="tbc">TBC: Q-03</span> at the branch or on site.</dd></dl></article>
+<article class="team"><h3>Business bankers</h3>
+<p class="who">80 people, 45 in Victoria and 35 in NSW | Leader: Richard Vance <span class="chip amber">Conditional, was Resistant</span><br>How they work: client-facing, each with a personal pipeline</p>
+<dl><dt>Impact</dt><dd>Personal spreadsheets give way to a shared pipeline.</dd><dt>Listening</dt><dd>Through the three champions rather than the reporting line. Isla Fraser, Dev and Karina hear concerns first.</dd><dt>Engagement</dt><dd>Messages come from the champions and the Change lead. Richard Vance engages once the pipeline view is better than the spreadsheets.</dd><dt>Key message</dt><dd>Your pipeline is already loaded when you first log in, and Compass Assist is your choice from week 3.</dd><dt>Capability</dt><dd>90-minute sessions at 7:30am, before client calls. Pipelines pre-loaded for at least 90 percent of bankers by Fri 9 Apr.</dd></dl></article>
+<article class="team"><h3>Complaints and advocacy</h3>
+<p class="who">40 people at head office | Leader: Louise Chen <span class="chip green">Supportive</span><br>How they work: office-based, to regulated time limits</p>
+<dl><dt>Impact</dt><dd>A shared mailbox and Hamlink notes become one complaint case with categories, timers and reporting.</dd><dt>Listening</dt><dd>The team checks the category mapping before UAT, so concerns surface in testing and not after go-live.</dd><dt>Engagement</dt><dd>Direct from Louise Chen in team meetings.</dd><dt>Key message</dt><dd>Your categories and timers are mapped before UAT, and Compass Assist drafts are labelled and yours to edit.</dd><dt>Capability</dt><dd>A four-step job page, with practice in the sandbox on masked records.</dd></dl></article>
+</div>
+
+<h2 class="sumh">Head office teams</h2>
+<table><thead><tr><th>Team</th><th>People</th><th>What they need to know</th></tr></thead><tbody>
+<tr><td>Operations</td><td>120</td><td>Which referrals and cases arrive with a named owner.</td></tr>
+<tr><td>Risk and compliance</td><td>25</td><td>The guardrails test set, the gate on Fri 9 Apr and the logging they will review.</td></tr>
+<tr><td>CRM platform team</td><td>30</td><td>Their admin tasks before hypercare ends, including who changes Compass Assist prompts.</td></tr>
+<tr><td>Learning and development</td><td>8</td><td>The trainer schedule early, with New South Wales trainers confirmed before Wave 1 ends.</td></tr>
+</tbody></table>
+
+<h2 class="sumh">The four plans behind this</h2>
+<div class="grid g2 more">
+<a class="card" href="17-comms-plan.html"><h3>Comms plan</h3><p>Who hears what, in what order and from whom.</p></a>
+<a class="card" href="18-learning-plan.html"><h3>Learning plan</h3><p>How each job is done in Salesforce and Compass Assist.</p></a>
+<a class="card" href="19-training-schedule.html"><h3>Training schedule</h3><p>Who is trained, in what, and when.</p></a>
+<a class="card" href="11-stakeholder-list.html"><h3>Stakeholder list</h3><p>Who is affected and where each key stakeholder stands.</p></a>
 </div>
 </section>
 
-<!-- TIMELINE -->
-<section class="panel" id="timeline" hidden>
+<!-- 4 NETWORK -->
+<section class="panel" id="network" hidden>
+<p class="lede">The people who carry the change between leadership and the floor.</p>
+
+<h2 class="sumh" style="margin-top:0">Champions</h2>
+<div class="grid g3">
+<div class="tile"><h3>Business banking, Victoria</h3><p><b>Isla Fraser, Dev and Karina.</b> Early access to the pipeline, a named hypercare contact, and time in the roster to coach other bankers.</p></div>
+<div class="tile sage"><h3>Contact centre and branches</h3><p>Team leaders and branch managers run the huddles, the roster briefings and the school-holiday reminder.</p></div>
+<div class="tile amber"><h3>New South Wales</h3><p><span class="tbc">TBC: NSW champions</span> are not yet named. They are needed before Wave 2 manager briefings start in May.</p></div>
+</div>
+
+<h2 class="sumh">Change leadership team</h2>
+<table><thead><tr><th>Forum or role</th><th>Who</th><th>Accountable for</th></tr></thead><tbody>
+<tr><td>Sponsor</td><td>Helen Marchetti</td><td>The outcome, the go-live call and the scorecard.</td></tr>
+<tr><td>Steering committee</td><td>Daniel Nguyen (chair)</td><td>Dates, scope and the go/no-go decision per wave.</td></tr>
+<tr class="updated"><td>Compass Assist approval gate <span class="upd">Updated v0.2</span></td><td>Fatima Haddad</td><td>Written approval of the guardrails on Fri 9 Apr 2027. Without it, Compass Assist does not go live.</td></tr>
+<tr><td>Change lead</td><td>Change lead, Change Made Simple</td><td>This plan, the registers, the comms plan and the weekly status.</td></tr>
+</tbody></table>
+<p style="margin-top:12px">Also accountable: Jorge Alvarez (Northgate Digital) for configuration and hypercare; Anika Rao for data loading and prompt changes after go-live (Q-02); Sam Petrovic for trainers.</p>
+<p class="small">Escalation runs from the item owner to Daniel Nguyen, then the steering committee, then Helen Marchetti.</p>
+</section>
+
+<!-- 5 EXECUTE -->
+<section class="panel" id="execute" hidden>
 <p class="lede">Weeks start on Mondays, 1 February to 21 June 2027. Amber hatching is the school holidays and Easter, Fri 26 Mar to Sun 11 Apr. One-page view: <a href="07-change-on-a-page.html">Change on a page</a>.</p>
 <div class="wkwrap"><div class="wk" style="--cols:21">
 <div class="h"></div>
@@ -175,23 +288,17 @@
 <p>Good Friday Fri 26 Mar and Easter Monday Mon 29 Mar are public holidays. Anzac Day is Sun 25 Apr with no replacement Monday in Victoria. King's Birthday, Mon 14 Jun, is excluded from Wave 2 hypercare.</p>
 <p>Northgate Digital and L&amp;D are on the floor in hypercare. The CRM platform team owns the platform and prompt changes from Tue 22 Jun.</p>
 </div>
-</section>
 
-<!-- GOVERNANCE -->
-<section class="panel" id="governance" hidden>
-<p class="lede">Escalation: item owner, Daniel Nguyen, steering committee, then Helen Marchetti. Actions are in <a href="01-action-list.html">21 Action list</a>: 28 at v0.2, 10 done, 15 open, 3 overdue. Progress: <a href="04-weekly-status.html">20 Weekly status</a>.</p>
-<table><thead><tr><th>Forum or role</th><th>Who</th><th>Accountable for</th></tr></thead><tbody>
-<tr><td>Sponsor</td><td>Helen Marchetti</td><td>The outcome, the go-live call and the scorecard.</td></tr>
-<tr><td>Steering committee</td><td>Daniel Nguyen (chair)</td><td>Dates, scope and the go/no-go decision per wave.</td></tr>
-<tr class="updated"><td>Compass Assist approval gate <span class="upd">Updated v0.2</span></td><td>Fatima Haddad</td><td>Written approval of the guardrails on Fri 9 Apr 2027. Without it, Compass Assist does not go live.</td></tr>
-<tr><td>Change lead</td><td>Change lead, Change Made Simple</td><td>This plan, the registers, the comms plan and the weekly status.</td></tr>
-</tbody></table>
-<button class="xp" data-xp="xv" aria-expanded="false">Show detail</button>
-<div id="xv" hidden>
-<p>Also accountable: Jorge Alvarez (Northgate Digital) for configuration and hypercare; Anika Rao for data loading and prompt changes after go-live (Q-02); Sam Petrovic for trainers.</p>
-<h3>Change readiness at 29 January 2027</h3>
-<ul><li>People: at risk. Eight trainers, and shift cover during the Victorian holidays.</li><li>Process: at risk. Branch and banking as-is is still being confirmed.</li><li>Technology: at risk. Guardrails not yet approved; gate is Fri 9 Apr.</li><li>Data: not ready. Legacy data scope is open (Q-01, due Fri 5 Feb) and banker loading is not scoped (A-25).</li><li>Support: not ready. The hypercare roster is not named yet.</li></ul><p>The 16 go/no-go criteria, including banker pipelines and labelled complaint drafts, are in <a href="22-go-no-go.html">15 Go/no-go</a>. <span class="upd">Updated v0.2 from <a href="../sources/t5.html">T5</a></span></p>
+<h2 class="sumh">Coaching, training and support</h2>
+<div class="grid g3">
+<div class="tile"><h3>Training</h3><p>Eight L&amp;D staff deliver every session, starting three weeks before each go-live. At least 90 percent completion per wave group is a go/no-go criterion.</p></div>
+<div class="tile"><h3>Hypercare</h3><p>Two weeks per wave, with Northgate Digital and L&amp;D on the floor: 19 to 30 Apr, then 7 to 21 Jun.</p></div>
+<div class="tile sage"><h3>Handover</h3><p>The CRM platform team owns the platform and prompt changes from Tue 22 Jun.</p></div>
 </div>
+
+<h2 class="sumh">Readiness at 29 January 2027</h2>
+<ul class="ready"><li><b>People</b><br>At risk. Eight trainers, and shift cover during the Victorian holidays.</li><li><b>Process</b><br>At risk. Branch and banking as-is is still being confirmed.</li><li><b>Technology</b><br>At risk. Guardrails not yet approved; gate is Fri 9 Apr.</li><li><b>Data</b><br>Not ready. Legacy data scope is open (Q-01, due Fri 5 Feb) and banker loading is not scoped (A-25).</li><li><b>Support</b><br>Not ready. The hypercare roster is not named yet.</li></ul>
+<p>The 16 go/no-go criteria are in the <a href="22-go-no-go.html">Go/no-go checklist</a>, the 14 risks in the <a href="03-risk-register.html">Risk register</a>, and the week's progress in the <a href="04-weekly-status.html">Weekly status report</a>.</p>
 </section>
 
 <p class="pn"><a href="index.html">All outputs</a><a href="03-risk-register.html">Next: Risk register</a></p>

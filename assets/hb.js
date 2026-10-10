@@ -88,12 +88,11 @@
   var main = document.querySelector('main.wrap');
   if (!main || document.querySelector('.demo-nav')) return;
   var groups = [
-    ['Tasks', [['01-action-list', 'Action list'], ['02-open-questions', 'Open questions'], ['03-risk-register', 'Risk register'], ['04-weekly-status', 'Weekly status report'], ['05-shared-facts', 'Shared facts']]],
-    ['Frame the project', [['06-exec-one-pager', 'Executive one-pager'], ['07-change-on-a-page', 'Change on a page'], ['08-detailed-change-plan', 'Detailed change plan'], ['09-phased-rollout', 'Phased rollout'], ['10-kpi-scorecard', 'KPI scorecard']]],
-    ['People', [['11-stakeholder-list', 'Stakeholder list'], ['12-org-chart', 'Org chart']]],
-    ['Understand the change', [['13-as-is-to-be-impact', 'As-is, to-be and impact'], ['14-solution-overview', 'Solution overview'], ['15-policy-timeline', 'AI policy timeline'], ['16-sharepoint-review', 'SharePoint review']]],
-    ['Prepare people', [['17-comms-plan', 'Comms plan'], ['18-learning-plan', 'Learning plan'], ['19-training-schedule', 'Training schedule'], ['20-training-form', 'Training form']]],
-    ['Test and go live', [['21-uat-schedule', 'UAT schedule'], ['22-go-no-go', 'Go/no-go checklist']]]
+    ['Project and tasks', [['00-project-on-a-page', 'Project on a page', '00'], ['01-action-list', 'Action list', '01'], ['02-open-questions', 'Open questions', '02'], ['03-risk-register', 'Risk register', '03']]],
+    ['Frame the project', [['06-exec-one-pager', 'Executive one-pager', '04'], ['07-change-on-a-page', 'Change on a page', '05'], ['04-weekly-status', 'Weekly status report', '06'], ['09-phased-rollout', 'Phased rollout', '07'], ['10-kpi-scorecard', 'KPI scorecard', '08'], ['22-go-no-go', 'Go/no-go checklist', '09'], ['21-uat-schedule', 'UAT schedule', '10']]],
+    ['Inputs and design', [['14-solution-overview', 'Solution overview', '11'], ['15-policy-timeline', 'AI policy timeline', '12'], ['16-sharepoint-review', 'SharePoint review', '13']]],
+    ['The change plan', [['08-detailed-change-plan', 'Detailed change plan', '14'], ['11-stakeholder-list', 'Stakeholder list', '15'], ['12-org-chart', 'Org chart', '16'], ['13-as-is-to-be-impact', 'As-is, to-be and impact', '17'], ['17-comms-plan', 'Comms plan', '18'], ['18-learning-plan', 'Learning plan', '19'], ['19-training-schedule', 'Training schedule', '20'], ['20-training-form', 'Training form', '21']]],
+    ['The base', [['05-shared-facts', 'Shared facts', '22']]]
   ];
   var here = (location.pathname.split('/').pop() || '').replace(/\.html$/, '');
   if (!here || here === 'index') return; /* the landing page already lists every output */
@@ -103,7 +102,7 @@
     h += '<p class="dn-group">' + g[0] + '</p><ul>';
     g[1].forEach(function (p) {
       var cur = p[0] === here;
-      var n = p[0].slice(0, 2);
+      var n = p[2]; /* shown number follows the order here, not the file name */
       h += '<li><a href="' + p[0] + '.html"' + (cur ? ' aria-current="page"' : '') + '><span class="dn-n">' + n + '</span>' + p[1] + '</a></li>';
     });
     h += '</ul>';

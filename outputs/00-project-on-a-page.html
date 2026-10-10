@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project on a page | Hampton Bank</title>
+<meta name="description" content="Project Compass on one A4 landscape page: what is changing at Hampton Bank, why, who is affected, when, and who decides.">
+<link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
+<style>
+/* One A4 landscape sheet (1123 x 794 at 96dpi), scaled to fit the page width. Below 900px it reflows as a normal page. */
+.stage{position:relative;width:100%;overflow:hidden;margin:0 0 18px;padding:0 0 26px}
+.a4{width:1123px;height:794px;transform-origin:0 0;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-lift);padding:20px 24px 14px;display:flex;flex-direction:column;gap:10px;font-size:11.5px;line-height:1.38;overflow:hidden}
+.a4 p,.a4 li,.a4 ul{max-width:none;margin:0}
+.a4 h3{margin:0 0 7px;font:700 10.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.ah{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--green);padding-bottom:8px;flex:none}
+.ah img{height:30px;display:block}
+.ah .tt2{flex:1}
+.ah h2{margin:0;font:700 19px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.ah .sub{color:var(--muted);font-size:11.5px}
+.rag{display:inline-flex;align-items:center;gap:6px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;font-size:11px}
+.rag::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.rag.a{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line)}
+.rag.g{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok)}
+.head1{background:#0E4A47;color:#F8F5EE;border-radius:8px;padding:8px 14px;font:600 15px/1.3 Gambetta,Georgia,serif;flex:none}
+.nums{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;flex:none}
+.nums div{border:1px solid var(--line);border-top:3px solid var(--green);border-radius:8px;padding:6px 10px;background:var(--cream)}
+.nums b{display:block;font:700 21px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.nums span{color:var(--muted);font-size:11px}
+.nums .warn{border-top-color:var(--coral)}.nums .warn b{color:var(--coral)}
+.tlbox{border:1px solid var(--line);border-radius:8px;padding:8px 12px 8px;flex:none}
+.trow{display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;align-items:center}
+.trows{position:relative}
+.trows .trow{height:34px;border-top:1px solid var(--line)}
+.tl{font-weight:600;line-height:1.15}.tl small{display:block;font-weight:400;font-size:10px;color:var(--muted)}
+.tt{position:relative;height:100%}
+.axis,.axis .tt{height:30px}
+.mo span{position:absolute;top:0;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border-left:1px solid var(--line);padding-left:4px;height:30px}
+.tb{position:absolute;top:13px;height:17px;border-radius:4px;color:#F8F5EE;font-weight:700;font-size:10px;line-height:17px;padding:0 6px;overflow:hidden;white-space:nowrap;z-index:3}
+.tb.uat{background:#1F6B66}.tb.trn{background:#0E4A47}.tb.hyp{background:var(--sage);color:#1B2322}
+.dm{position:absolute;top:16px;width:11px;height:11px;background:var(--green);transform:rotate(45deg);margin-left:-5px;z-index:5}
+.dm.go{background:var(--coral)}.dm.gate{background:var(--amber)}
+.dl{position:absolute;top:13px;margin-left:11px;font-weight:700;font-size:10px;line-height:17px;white-space:nowrap;z-index:4}
+.dl.go{top:0;margin-left:-4px;line-height:12px;color:var(--coral)}
+.bands{position:absolute;inset:0;display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;pointer-events:none}
+.bands .tt{grid-column:2}
+.hatch{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 5px,transparent 5px,transparent 10px);border-left:1px dashed var(--amber-line);border-right:1px dashed var(--amber-line);z-index:1}
+.hatch em,.now em{position:absolute;font-style:normal;font-weight:700;font-size:9px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.hatch em{top:-13px;left:-1px;color:var(--amber)}
+.now{position:absolute;top:-14px;bottom:0;border-left:2px solid var(--coral);z-index:2}
+.now em{top:0;left:4px;color:var(--coral)}
+.cols{display:grid;grid-template-columns:1fr 1.14fr 1fr 1fr;gap:10px;flex:1;min-height:0}
+.box{border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow:hidden;min-width:0}
+.box h4{margin:9px 0 4px;font:700 9.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.box ul{padding-left:1.1em}.box li{margin:0 0 3px}
+.stance{display:flex;height:20px;border-radius:5px;overflow:hidden;margin:0 0 5px;font-weight:700;font-size:10.5px;color:#F8F5EE;text-align:center;line-height:20px}
+.stance .c{background:#0E4A47}.stance .s{background:#1F6B66}.stance .k{background:#E7C47A;color:#4a3410}.stance .w{background:#E3A39B;color:#5a1d16}
+.skey{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:10px;color:var(--muted)}
+.skey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+.move{display:flex;align-items:center;gap:6px;background:var(--mist);border-radius:6px;padding:5px 8px;margin:0 0 5px!important}
+.move .arr{color:var(--coral);font-weight:700}
+.heat{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:2px;font-size:10.5px;background:none;border:0;box-shadow:none}
+.heat thead th:not(:first-child){width:26px}
+.heat th,.heat td{padding:0;border:0;background:none}
+.heat thead th{font-weight:700;font-size:9.5px;color:var(--muted);text-align:center;padding-bottom:2px}
+.heat tbody th{text-align:left;font-weight:600;padding-right:4px;line-height:1.15;color:var(--ink);font-size:10.5px;letter-spacing:0;text-transform:none}
+.heat tbody th small{font-weight:400;color:var(--muted);font-size:10px}
+.heat td{height:23px;border-radius:3px;text-align:center;font-size:10px;font-weight:700}
+.heat td.iH{background:var(--red-bg);color:var(--red)}.heat td.iM{background:var(--amber-bg);color:var(--amber)}.heat td.iL{background:var(--mist);color:var(--muted)}
+.pkey{font-size:10px;color:var(--muted);margin-top:7px!important}
+.ws{list-style:none;padding:0!important}
+.ws li{display:grid;grid-template-columns:62px 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line);margin:0!important}
+.ws li:first-child{border-top:0;padding-top:0}
+.ws .rag{justify-self:start;align-self:start;padding:3px 7px;font-size:10px}
+.ws b{display:block}
+.rk{list-style:none;padding:0!important}
+.rk li{display:grid;grid-template-columns:34px 1fr;gap:6px;margin-bottom:4px!important}
+.rk .id{font-weight:700;color:var(--red)}
+.up{color:var(--coral);font-weight:700;white-space:nowrap}
+.af{display:flex;justify-content:space-between;gap:16px;color:var(--faint);font-size:10px;flex:none}
+.tl-narrow{display:none}
+@media (max-width:899px){
+ .stage{overflow:visible;padding:0}
+ .a4{width:auto;height:auto;transform:none!important;padding:14px;font-size:14px;box-shadow:var(--shadow)}
+ .ah{flex-wrap:wrap}.ah .sub{font-size:13px}.head1{font-size:16px}
+ .nums{grid-template-columns:repeat(2,minmax(0,1fr))}.nums span{font-size:13px}
+ .tlbox{display:none}.tl-narrow{display:block;border:1px solid var(--line);border-radius:8px;padding:10px 12px}.tl-narrow ol{padding-left:1.2em;margin:0}
+ .cols{grid-template-columns:1fr}
+ .a4 h3{font-size:12px}.box h4{font-size:11px}.heat,.skey,.pkey,.stance{font-size:12px}.heat tbody th small{font-size:12px}.ws .rag,.rag{font-size:11px}.ws li{grid-template-columns:74px 1fr}
+ .af{flex-direction:column;gap:2px;font-size:12px}
+}
+@page{size:A4 landscape;margin:0}
+@media print{
+ .topbar,.pagehead,.changed,footer.site,.sources,.pn,.printnote,.demo-nav{display:none!important}
+ .wrap{max-width:none;padding:0;margin:0}
+ .stage{height:794px!important;overflow:hidden;margin:0;padding:0}
+ .a4{transform:none!important;border:0;box-shadow:none}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* Project on a page: additions to the A4 sheet used by the weekly status report */
+.cols.p4{grid-template-columns:1fr 1.2fr 1.05fr 1fr}
+.drv{list-style:none;padding:0!important;display:flex;flex-wrap:wrap;gap:4px}
+.drv li{margin:0!important;background:var(--mist);border-radius:999px;padding:3px 9px;font-weight:600;font-size:10.5px}
+.proc{list-style:none;padding:0!important;counter-reset:p}
+.proc li{counter-increment:p;position:relative;padding:0 0 0 24px;margin:0 0 7px!important}
+.proc li::before{content:counter(p);position:absolute;left:0;top:1px;width:17px;height:17px;border-radius:4px;background:#0E4A47;color:#F8F5EE;font-weight:700;font-size:10px;line-height:17px;text-align:center}
+.proc b{display:block}
+.teams{list-style:none;padding:0!important}
+.teams li{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) 28px;gap:6px;align-items:center;margin:0 0 6px!important}
+.teams .tn{font-weight:600;line-height:1.15}
+.teams .tbar{height:11px;background:var(--mist);border-radius:3px;overflow:hidden}
+.teams .tbar i{display:block;height:100%;background:#1F6B66;border-radius:3px}
+.teams b{text-align:right}
+.gates{list-style:none;padding:0!important}
+.gates li{display:grid;grid-template-columns:70px 1fr;gap:8px;margin:0 0 6px!important}
+.gates .gd{font-weight:700;color:var(--coral);white-space:nowrap}
+.lead{list-style:none;padding:0!important}
+.lead li{margin:0 0 4px!important}
+.lead small{display:block;color:var(--muted);font-size:10.5px}
+.strat1{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:6px;padding:6px 9px;font:600 12px/1.35 Gambetta,Georgia,serif;color:#4a3410;margin-top:8px!important}
+@media (max-width:899px){.drv li,.lead small{font-size:13px}.teams li{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 34px}.strat1{font-size:15px}.gates li{grid-template-columns:86px 1fr}}
+</style></head><body>
+<header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/index.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
+<main class="wrap wide">
+<div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Project on a page</h1>
+<p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
+<p class="lede">The whole project on one A4 landscape page: what is changing, why, who is affected, when, and who decides. Start here.</p></div>
+
+<div class="stage" id="stage"><article class="a4" id="sheet">
+<div class="ah"><img src="../assets/hb-logo.svg" alt="Hampton Bank"><div class="tt2"><h2>Project Compass: project on a page</h2><div class="sub">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</div></div></div>
+
+<p class="head1">Hampton Bank is replacing its legacy CRM, Hamlink, with Salesforce, and adding an AI assistant called Compass Assist, for about 1,250 people in two waves.</p>
+
+<div class="nums">
+<div><b>1,253</b><span>people in scope</span></div>
+<div><b>808</b><span>in Wave 1, Victoria</span></div>
+<div><b>445</b><span>in Wave 2, NSW</span></div>
+<div><b>60</b><span>branches in two states</span></div>
+<div><b>5</b><span>processes that change</span></div>
+<div><b>3</b><span>gates before go-live</span></div>
+</div>
+
+<div class="tlbox">
+<div class="trow axis"><div class="tl"></div><div class="tt mo"><span style="left:4.55%">Feb</span><span style="left:22.73%">Mar</span><span style="left:42.86%">Apr</span><span style="left:62.34%">May</span><span style="left:82.47%">Jun</span></div></div>
+<div class="trows">
+<div class="bands"><div class="tt"><div class="hatch" style="left:38.96%;width:11.04%"><em>School holidays and Easter</em></div></div></div>
+<div class="trow"><div class="tl">Project</div><div class="tt"><div class="tb uat" style="left:9.09%;width:21.43%">UAT 8 Feb to 12 Mar</div><i class="dm " style="left:33.12%"></i><span class="dl " style="left:33.12%">Sign-off 17 Mar</span><i class="dm gate" style="left:48.05%"></i><span class="dl gate" style="left:48.05%">AI gate 9 Apr</span></div></div>
+<div class="trow"><div class="tl">Wave 1, Victoria <small>808 people</small></div><div class="tt"><div class="tb trn" style="left:41.56%;width:11.69%">Training</div><div class="tb hyp" style="left:54.55%;width:7.79%">Hypercare</div><i class="dm go" style="left:54.55%"></i><span class="dl go" style="left:54.55%">Go-live 19 Apr</span></div></div>
+<div class="trow"><div class="tl">Wave 2, NSW <small>445 people</small></div><div class="tt"><div class="tb trn" style="left:72.73%;width:12.33%">Training</div><div class="tb hyp" style="left:86.36%;width:9.74%">Hypercare</div><i class="dm go" style="left:86.36%"></i><span class="dl go" style="left:86.36%">Go-live 7 Jun</span></div></div>
+</div></div>
+<div class="tl-narrow"><h3>Timeline</h3><ol>
+<li>Mon 8 Feb to Fri 12 Mar: UAT. Sign-off Wed 17 Mar.</li>
+<li>Fri 26 Mar to Sun 11 Apr: school holidays and Easter.</li>
+<li>Tue 30 Mar to Fri 16 Apr: Wave 1 training. AI gate Fri 9 Apr.</li>
+<li>Mon 19 Apr: Wave 1 go-live, Victoria. Hypercare to Fri 30 Apr.</li>
+<li>Mon 17 May to Fri 4 Jun: Wave 2 training.</li>
+<li>Mon 7 Jun: Wave 2 go-live, NSW. Hypercare to Mon 21 Jun.</li>
+<li>Tue 22 Jun: handover to business as usual.</li>
+</ol></div>
+
+<div class="cols p4">
+<section class="box"><h3>Why and what</h3>
+<h4 style="margin-top:0">Business case</h4>
+<ul class="drv"><li>Faster resolution</li><li>Lower cost to serve</li><li>Lower risk</li><li>Better customer experience</li><li>Reliable data</li></ul>
+<h4>What is being built</h4>
+<ul><li><b>Service Cloud</b> for contact centre and complaints cases.</li><li><b>Financial Services Cloud</b> for customers, accounts, branch servicing and the banker pipeline.</li><li><b>Compass Assist</b> to help staff draft notes. A person reviews every draft.</li></ul>
+<p class="strat1">Know what changes in your day, practise it before go-live, and have someone on your floor to ask in the first two weeks.</p>
+</section>
+
+<section class="box"><h3>Five processes that change</h3>
+<ol class="proc">
+<li><b>Contact centre</b>Three Hamlink screens and retyped notes become one customer view and one case record.</li>
+<li><b>Branch servicing</b>Paper forms and email referrals become a guided flow and a referral with an owner.</li>
+<li><b>Business pipeline</b>Personal spreadsheets become a shared pipeline, already loaded on day one.</li>
+<li><b>Complaints</b>A shared mailbox becomes one case with categories, timers and reporting.</li>
+<li><b>AI assistant</b>Compass Assist is new, and its rules are written before go-live.</li>
+</ol>
+</section>
+
+<section class="box"><h3>Who is affected</h3>
+<ul class="teams"><li><span class="tn">Branch network</span><span class="tbar"><i style="width:100.0%"></i></span><b>600</b></li><li><span class="tn">Contact centre</span><span class="tbar"><i style="width:58.3%"></i></span><b>350</b></li><li><span class="tn">Operations</span><span class="tbar"><i style="width:20.0%"></i></span><b>120</b></li><li><span class="tn">Business bankers</span><span class="tbar"><i style="width:13.3%"></i></span><b>80</b></li><li><span class="tn">Complaints and advocacy</span><span class="tbar"><i style="width:6.7%"></i></span><b>40</b></li><li><span class="tn">CRM platform team</span><span class="tbar"><i style="width:5.0%"></i></span><b>30</b></li><li><span class="tn">Risk and compliance</span><span class="tbar"><i style="width:4.2%"></i></span><b>25</b></li><li><span class="tn">Learning and development</span><span class="tbar"><i style="width:2%"></i></span><b>8</b></li></ul>
+<p class="pkey">Headcount by team. Victoria and head office go first in Wave 1; New South Wales follows in Wave 2.</p>
+</section>
+
+<section class="box"><h3>Who decides</h3>
+<h4 style="margin-top:0">Three gates</h4>
+<ul class="gates">
+<li><span class="gd">Wed 17 Mar</span><span><b>UAT sign-off.</b> Daniel Nguyen at the steering committee.</span></li>
+<li><span class="gd">Fri 9 Apr</span><span><b>Compass Assist guardrails.</b> Fatima Haddad for Risk and Compliance.</span></li>
+<li><span class="gd">Each wave</span><span><b>Go/no-go.</b> Helen Marchetti, on 16 criteria.</span></li>
+</ul>
+<h4>Who leads</h4>
+<ul class="lead">
+<li><b>Helen Marchetti</b><small>Chief Customer Officer, sponsor</small></li>
+<li><b>Daniel Nguyen</b><small>Program director</small></li>
+<li><b>Priya Raman</b><small>CIO</small></li>
+<li><b>Jorge Alvarez</b><small>Northgate Digital, implementation partner</small></li>
+</ul>
+</section>
+</div>
+
+<div class="af"><span>Hampton Bank is a fictional company. Every figure on this page comes from the other outputs.</span><span>Page 1 of 1</span></div>
+</article></div>
+<p class="small printnote">This page prints on one A4 landscape sheet.</p>
+
+<div class="pn"><a href="index.html">All outputs</a><a href="01-action-list.html">Next: Action list</a></div>
+<p class="sources">Figures: <a href="05-shared-facts.html">Shared facts</a>. Detail: <a href="08-detailed-change-plan.html">Detailed change plan</a>, <a href="13-as-is-to-be-impact.html">As-is, to-be and impact</a>, <a href="11-stakeholder-list.html">Stakeholder list</a>.</p>
+</main>
+<footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var stage=document.getElementById("stage"),sheet=document.getElementById("sheet");
+  function fit(){
+    if(window.innerWidth<900){stage.style.height="auto";sheet.style.transform="none";return;}
+    var s=Math.min(1,stage.clientWidth/1123);
+    sheet.style.transform="scale("+s+")";
+    stage.style.height=(794*s+26)+"px";
+  }
+  fit();window.addEventListener("resize",fit);
+})();
+</script></body></html>
