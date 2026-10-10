@@ -1,73 +1,164 @@
 <!doctype html>
 <html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Change on a page | Hampton Bank</title>
-<meta name="description" content="The Project Compass change and comms plan on one page, February to June 2027, with both waves, the school-holiday clash and the guardrails gate.">
+<meta name="description" content="The Project Compass change plan on one A4 landscape page: the strategy, the five steps, the milestones, what changes and the plan for each team.">
 <link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
 <style>
-[hidden]{display:none!important}
-.updbox{background:var(--mist);border:1px solid var(--sage);border-left:5px solid var(--green2);border-radius:var(--radius);padding:12px 16px;margin:0 0 18px}
-.updbox h3{margin:0 0 6px;font-size:16px}
-.updbox ul{margin:0;padding-left:1.1em;max-width:none}
-.updbox li{font-size:14px}
-.slide{max-width:1280px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:14px}
-.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--green);padding-bottom:10px}
-.sh h2{margin:0;font-size:26px}
-.sh p{margin:0;font-size:13px;color:var(--muted)}
-.sh .r{text-align:right;font-size:12.5px;color:var(--muted)}
-.band{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:12px;background:var(--green);color:#F8F5EE;border-radius:12px;padding:14px 16px}
-@media(max-width:900px){.band{grid-template-columns:1fr 1fr}.band .s{grid-column:1/-1}}
-@media(max-width:560px){.band{grid-template-columns:1fr}}
-.band .lb{font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#C9DACB;display:block;margin-bottom:6px}
-.band .s p{font:600 19px/1.3 Gambetta,Georgia,serif;color:#F8F5EE;margin:0}
-.band .o{border-left:2px solid #5F8A74;padding-left:12px}
-.band .o p{margin:0;font-size:14px;color:#E9EEEC}
-.tlp{border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--cream)}
-.tlp .wk{--cols:21;border:0;background:transparent;padding:0}
-.wk .blk{font-size:11.5px}
-.wk .blk.dash{border:2px dashed var(--amber-line);background:var(--amber-bg);color:var(--amber)}
-.wk .blk.gold{background:var(--red-bg);color:var(--red);border:1px solid var(--red-line)}
-.wk .blk.upd2{background:var(--green);color:#F8F5EE;outline:2px solid var(--green2);outline-offset:1px}
-.wk .vl{border-left:2px dashed var(--red);pointer-events:none;z-index:1;min-height:10px}
-.wk .mo{font-size:11px;font-weight:700;color:var(--muted);text-align:left;padding:2px 0 3px;border-bottom:2px solid var(--green2)}
-.wk .hol2{background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 6px,var(--paper) 6px,var(--paper) 12px);border:1px solid var(--amber-line);color:var(--amber);font-weight:700;border-radius:6px;padding:5px 7px;font-size:11.5px}
+/* One A4 landscape sheet (1123 x 794 at 96dpi), scaled to fit the page width. Below 900px it reflows as a normal page. */
+.stage{position:relative;width:100%;overflow:hidden;margin:0 0 18px;padding:0 0 26px}
+.a4{width:1123px;height:794px;transform-origin:0 0;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-lift);padding:20px 24px 14px;display:flex;flex-direction:column;gap:10px;font-size:11.5px;line-height:1.38;overflow:hidden}
+.a4 p,.a4 li,.a4 ul{max-width:none;margin:0}
+.a4 h3{margin:0 0 7px;font:700 10.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.ah{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--green);padding-bottom:8px;flex:none}
+.ah img{height:30px;display:block}
+.ah .tt2{flex:1}
+.ah h2{margin:0;font:700 19px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.ah .sub{color:var(--muted);font-size:11.5px}
+.rag{display:inline-flex;align-items:center;gap:6px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;font-size:11px}
+.rag::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.rag.a{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line)}
+.rag.g{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok)}
+.head1{background:#0E4A47;color:#F8F5EE;border-radius:8px;padding:8px 14px;font:600 15px/1.3 Gambetta,Georgia,serif;flex:none}
+.nums{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;flex:none}
+.nums div{border:1px solid var(--line);border-top:3px solid var(--green);border-radius:8px;padding:6px 10px;background:var(--cream)}
+.nums b{display:block;font:700 21px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.nums span{color:var(--muted);font-size:11px}
+.nums .warn{border-top-color:var(--coral)}.nums .warn b{color:var(--coral)}
+.tlbox{border:1px solid var(--line);border-radius:8px;padding:8px 12px 8px;flex:none}
+.trow{display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;align-items:center}
+.trows{position:relative}
+.trows .trow{height:34px;border-top:1px solid var(--line)}
+.tl{font-weight:600;line-height:1.15}.tl small{display:block;font-weight:400;font-size:10px;color:var(--muted)}
+.tt{position:relative;height:100%}
+.axis,.axis .tt{height:30px}
+.mo span{position:absolute;top:0;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border-left:1px solid var(--line);padding-left:4px;height:30px}
+.tb{position:absolute;top:13px;height:17px;border-radius:4px;color:#F8F5EE;font-weight:700;font-size:10px;line-height:17px;padding:0 6px;overflow:hidden;white-space:nowrap;z-index:3}
+.tb.uat{background:#1F6B66}.tb.trn{background:#0E4A47}.tb.hyp{background:var(--sage);color:#1B2322}
+.dm{position:absolute;top:16px;width:11px;height:11px;background:var(--green);transform:rotate(45deg);margin-left:-5px;z-index:5}
+.dm.go{background:var(--coral)}.dm.gate{background:var(--amber)}
+.dl{position:absolute;top:13px;margin-left:11px;font-weight:700;font-size:10px;line-height:17px;white-space:nowrap;z-index:4}
+.dl.go{top:0;margin-left:-4px;line-height:12px;color:var(--coral)}
+.bands{position:absolute;inset:0;display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;pointer-events:none}
+.bands .tt{grid-column:2}
+.hatch{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 5px,transparent 5px,transparent 10px);border-left:1px dashed var(--amber-line);border-right:1px dashed var(--amber-line);z-index:1}
+.hatch em,.now em{position:absolute;font-style:normal;font-weight:700;font-size:9px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.hatch em{top:-13px;left:-1px;color:var(--amber)}
+.now{position:absolute;top:-14px;bottom:0;border-left:2px solid var(--coral);z-index:2}
+.now em{top:0;left:4px;color:var(--coral)}
+.cols{display:grid;grid-template-columns:1fr 1.14fr 1fr 1fr;gap:10px;flex:1;min-height:0}
+.box{border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow:hidden;min-width:0}
+.box h4{margin:9px 0 4px;font:700 9.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.box ul{padding-left:1.1em}.box li{margin:0 0 3px}
+.stance{display:flex;height:20px;border-radius:5px;overflow:hidden;margin:0 0 5px;font-weight:700;font-size:10.5px;color:#F8F5EE;text-align:center;line-height:20px}
+.stance .c{background:#0E4A47}.stance .s{background:#1F6B66}.stance .k{background:#E7C47A;color:#4a3410}.stance .w{background:#E3A39B;color:#5a1d16}
+.skey{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:10px;color:var(--muted)}
+.skey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+.move{display:flex;align-items:center;gap:6px;background:var(--mist);border-radius:6px;padding:5px 8px;margin:0 0 5px!important}
+.move .arr{color:var(--coral);font-weight:700}
+.heat{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:2px;font-size:10.5px;background:none;border:0;box-shadow:none}
+.heat thead th:not(:first-child){width:26px}
+.heat th,.heat td{padding:0;border:0;background:none}
+.heat thead th{font-weight:700;font-size:9.5px;color:var(--muted);text-align:center;padding-bottom:2px}
+.heat tbody th{text-align:left;font-weight:600;padding-right:4px;line-height:1.15;color:var(--ink);font-size:10.5px;letter-spacing:0;text-transform:none}
+.heat tbody th small{font-weight:400;color:var(--muted);font-size:10px}
+.heat td{height:23px;border-radius:3px;text-align:center;font-size:10px;font-weight:700}
+.heat td.iH{background:var(--red-bg);color:var(--red)}.heat td.iM{background:var(--amber-bg);color:var(--amber)}.heat td.iL{background:var(--mist);color:var(--muted)}
+.pkey{font-size:10px;color:var(--muted);margin-top:7px!important}
+.ws{list-style:none;padding:0!important}
+.ws li{display:grid;grid-template-columns:62px 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line);margin:0!important}
+.ws li:first-child{border-top:0;padding-top:0}
+.ws .rag{justify-self:start;align-self:start;padding:3px 7px;font-size:10px}
+.ws b{display:block}
+.rk{list-style:none;padding:0!important}
+.rk li{display:grid;grid-template-columns:34px 1fr;gap:6px;margin-bottom:4px!important}
+.rk .id{font-weight:700;color:var(--red)}
+.up{color:var(--coral);font-weight:700;white-space:nowrap}
+.af{display:flex;justify-content:space-between;gap:16px;color:var(--faint);font-size:10px;flex:none}
 .tl-narrow{display:none}
-@media(max-width:860px){.tlp .wk{display:none}.tl-narrow{display:block}}
-.tl-narrow ul{margin:0;padding-left:1.1em}
-.tl-narrow li{font-size:14px}
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-@media(max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.tiles{grid-template-columns:1fr}}
-.pt{border:2px solid var(--green2);border-radius:12px;padding:10px 14px;background:var(--paper);min-width:0}
-.pt h3{font:700 12px/1 "General Sans",sans-serif;letter-spacing:.09em;text-transform:uppercase;margin:0 0 8px;color:var(--green)}
-.pt ul{list-style:none;margin:0;padding:0}
-.pt li{font-size:14px;margin:0 0 6px;display:grid;grid-template-columns:104px 1fr;gap:8px}
-.pt li b{font-weight:600;color:var(--muted);font-size:13px}
-.pt.c2{border-color:var(--sage)} .pt.c3{border-color:var(--amber-line);background:var(--amber-bg)} .pt.c4{border-color:var(--green)} .pt.c5{border-color:var(--red-line)} .pt.c6{border-color:var(--ink)}
-.pt.imp li{grid-template-columns:1fr}
-.pt.imp li span.a{color:var(--faint)}
-.roles{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--sand);border-radius:12px;padding:10px 14px}
-.roles .rl{font:700 11px/1.2 "General Sans",sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--green);margin-right:8px}
-.roles .p{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:500}
-.roles .p b{color:var(--green)}
-.ben{background:#16382B;color:#F8F5EE;border-radius:12px;padding:14px 16px;border-bottom:6px solid var(--sage)}
-.ben .lb{font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#C9DACB;display:block;margin-bottom:8px}
-.ben ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px 14px;max-width:none}
-@media(max-width:800px){.ben ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:480px){.ben ul{grid-template-columns:1fr}}
-.ben li{font-size:14px;margin:0}
-.ben li::before{content:"\2713";color:var(--sage);font-weight:700;margin-right:8px}
-.legend2{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);margin:10px 0 0}
-.legend2 span{display:inline-flex;align-items:center;gap:6px}
-.sw{width:22px;height:10px;border-radius:3px;background:var(--green2);display:inline-block}
-.sw.d{background:var(--amber-bg);border:2px dashed var(--amber-line)}
-.sw.h{background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 4px,var(--paper) 4px,var(--paper) 8px);border:1px solid var(--amber-line)}
-.sw.g{background:var(--red-bg);border:1px solid var(--red-line)}
+@media (max-width:899px){
+ .stage{overflow:visible;padding:0}
+ .a4{width:auto;height:auto;transform:none!important;padding:14px;font-size:14px;box-shadow:var(--shadow)}
+ .ah{flex-wrap:wrap}.ah .sub{font-size:13px}.head1{font-size:16px}
+ .nums{grid-template-columns:repeat(2,minmax(0,1fr))}.nums span{font-size:13px}
+ .tlbox{display:none}.tl-narrow{display:block;border:1px solid var(--line);border-radius:8px;padding:10px 12px}.tl-narrow ol{padding-left:1.2em;margin:0}
+ .cols{grid-template-columns:1fr}
+ .a4 h3{font-size:12px}.box h4{font-size:11px}.heat,.skey,.pkey,.stance{font-size:12px}.heat tbody th small{font-size:12px}.ws .rag,.rag{font-size:11px}.ws li{grid-template-columns:74px 1fr}
+ .af{flex-direction:column;gap:2px;font-size:12px}
+}
+@page{size:A4 landscape;margin:0}
+@media print{
+ .topbar,.pagehead,.changed,footer.site,.sources,.pn,.printnote,.demo-nav{display:none!important}
+ .wrap{max-width:none;padding:0;margin:0}
+ .stage{height:794px!important;overflow:hidden;margin:0;padding:0}
+ .a4{transform:none!important;border:0;box-shadow:none}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* Change on a page: the one-page version of the detailed change plan, in the look of the executive one-pager */
+.a4.cp{gap:9px;padding:18px 22px 12px}
+.xh{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#16382B;color:#F8F5EE;border-radius:10px;padding:10px 16px;flex:none}
+.xh img{height:28px;display:block;background:#F8F5EE;border-radius:6px;padding:3px 7px}
+.xh .t{flex:1}
+.xh h2{color:#F8F5EE;margin:0;font:700 14px/1.2 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.xh p{color:#C9DACB;font-size:11.5px;margin:1px 0 0!important}
+.xh .lv{font-weight:700;font-size:11px;background:#C4442A;color:#fff;border-radius:999px;padding:5px 11px;white-space:nowrap}
+.top2{display:grid;grid-template-columns:1.05fr 1.6fr;gap:10px;flex:none}
+.quote1{background:var(--cream);border:1px solid var(--line);border-left:5px solid #0E4A47;border-radius:8px;padding:9px 14px}
+.quote1 small{display:block;font:700 9.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.quote1 p{font:600 15px/1.3 Gambetta,Georgia,serif;color:var(--green)}
+.out3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.out3 div{border:1px solid var(--line);border-top:3px solid #1F6B66;border-radius:8px;padding:7px 10px}
+.out3 b{display:block;font:700 9.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green2);margin-bottom:3px}
+.chev5{display:flex;flex:none}
+.chev5 div{flex:1;min-width:0;padding:9px 20px 9px 30px;color:#F8F5EE;margin-left:-12px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,16px 50%)}
+.chev5 div:first-child{margin-left:0;padding-left:16px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%)}
+.chev5 div:nth-child(1){background:#3F8580}.chev5 div:nth-child(2){background:#1F6B66}.chev5 div:nth-child(3){background:#0E4A47}.chev5 div:nth-child(4){background:#16382B}.chev5 div:nth-child(5){background:#C4442A}
+.chev5 b{display:flex;align-items:baseline;gap:6px;font:700 13px/1.15 "General Sans",sans-serif}
+.chev5 b i{font:700 22px/1 Gambetta,Georgia,serif;font-style:normal}
+.chev5 span{display:block;font-size:11px;line-height:1.3;margin-top:3px;color:#EAF1EE}
+.mbox{border:1px solid var(--line);border-radius:8px;padding:8px 26px 6px;flex:none}
+.maxis{position:relative;height:98px}
+.mline{position:absolute;left:0;right:0;top:53px;height:4px;background:var(--line);border-radius:2px}
+.mhol{position:absolute;top:0;height:72px;background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 5px,transparent 5px,transparent 10px);border-left:1px dashed var(--amber-line);border-right:1px dashed var(--amber-line)}
+.mhol em{position:absolute;left:50%;top:2px;transform:translateX(-50%);line-height:1;font-style:normal;font-weight:700;font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--amber);white-space:nowrap}
+.mk{position:absolute;top:48px;width:14px;height:14px;border-radius:50%;background:#0E4A47;border:3px solid var(--paper);transform:translateX(-50%);box-shadow:0 0 0 1px #0E4A47;z-index:2}
+.mk.ring{background:var(--paper);border:3px solid #C4442A;box-shadow:none}
+.mk.gold{background:var(--amber);box-shadow:0 0 0 1px var(--amber)}
+.lb{position:absolute;width:120px;font-size:10.5px;line-height:1.25;text-align:center;transform:translateX(-50%);z-index:2}
+.lb b{display:block;color:var(--green);font-size:10.5px}
+.lb.up{bottom:54px;color:var(--ink);font-weight:400;white-space:normal}.lb.dn{top:66px}
+.lb.r{transform:translateX(-100%);text-align:right;margin-left:9px}
+.cols.c3{grid-template-columns:1fr 1.5fr 1fr}
+.ft{list-style:none;padding:0!important}
+.ft li{display:grid;grid-template-columns:1fr 16px 1.1fr;gap:6px;align-items:center;padding:7px 0;border-top:1px solid var(--line);margin:0!important}
+.ft li:first-child{border-top:0;padding-top:2px}
+.ft .fr{color:var(--muted)}
+.ft .ar{color:var(--coral);font-weight:700;text-align:center}
+.ft .to{font-weight:700;color:var(--green)}
+.tm{list-style:none;padding:0!important}
+.tm li{display:grid;grid-template-columns:104px 1fr 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--line);margin:0!important}
+.tm li:first-child{border-top:0;padding-top:0}
+.tm .hd{font:700 9.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-bottom:0!important}
+.tm b{display:block;line-height:1.2}
+.tm small{color:var(--muted);font-size:10.5px}
+.tm .say{font:600 12px/1.3 Gambetta,Georgia,serif;color:var(--green)}
+.trap1{background:var(--amber-bg);border:1px solid var(--amber-line);border-left:5px solid var(--amber);border-radius:6px;padding:7px 10px;color:#4a3410}
+.trap1 b{color:var(--amber)}
+.mv{padding-left:1.3em!important}
+.mv li{margin:0 0 4px!important}
+@media (max-width:899px){
+ .xh{flex-wrap:wrap}.xh p{font-size:13px}
+ .top2,.out3{grid-template-columns:1fr}.quote1 p{font-size:17px}
+ .chev5{flex-direction:column;gap:4px}.chev5 div,.chev5 div:first-child{margin:0;clip-path:none;border-radius:8px;padding:10px 14px}.chev5 span{font-size:13px}.chev5 b{font-size:15px}
+ .mbox{display:none}
+ .tm li{grid-template-columns:1fr}.tm .hd{display:none}.tm small,.out3 b,.quote1 small{font-size:12px}.tm .say{font-size:15px}
+}
 </style></head><body>
 <header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/index.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
 <main class="wrap wide">
 <div class="pagehead"><img class="hbbrand" src="../assets/hb-logo.svg" alt="Hampton Bank" height="34"><p class="eyebrow">Project Compass</p><h1>Change on a page</h1>
 <p class="verline">Draft v0.2 | 29 January 2027 | Change lead, Change Made Simple</p>
-<p class="lede">The change and comms plan for Salesforce and Compass Assist on one page, February to June 2027. Each activity appears once on the timeline and once in its tile.</p></div>
+<p class="lede">The change plan on one A4 landscape page: the strategy, the five steps, the milestones, what changes and the plan for each team. The detail behind it is in the <a href="08-detailed-change-plan.html">Detailed change plan</a>.</p></div>
 
 <details class="changed"><summary>Changed in v0.2 <span>4 updates</span></summary><ul>
 <li>The Compass Assist guardrails gate moves from Fri 26 Mar to Fri 9 Apr 2027, ten days before Wave 1 go-live. From <a href="../sources/t5.html">T5</a>.</li>
@@ -76,126 +167,87 @@
 <li>The complaint category list, needed before UAT, is now due Fri 5 Feb. From <a href="../sources/t5.html">T5</a>.</li>
 </ul></details>
 
-<div class="slide">
-<div class="sh"><div><h2>Project Compass: change and comms plan</h2><p>Salesforce and Compass Assist | Wave 1 Victoria and Wave 2 New South Wales | February to June 2027</p></div><div class="r">Draft v0.2<br>29 January 2027<br>Change lead</div></div>
+<div class="stage" id="stage"><article class="a4 cp" id="sheet">
+<div class="xh"><img src="../assets/hb-logo.svg" alt="Hampton Bank"><div class="t"><h2>Project Compass: change on a page</h2><p>Salesforce and Compass Assist | Wave 1 Victoria, Wave 2 New South Wales | Draft v0.2, 29 January 2027</p></div><span class="lv">Change level: Complex</span></div>
 
-<div class="band">
-<div class="s"><span class="lb">Change management strategy</span><p>Know what changes in your day, practise it before go-live, and have someone on your floor to ask in the first two weeks.</p></div>
-<div class="o"><span class="lb">Staff</span><p>Staff understand what changes in their work and when, and get training that fits their shift.</p></div>
-<div class="o"><span class="lb">Bankers</span><p>Bankers use one shared pipeline that is already loaded when they first log in.</p></div>
-<div class="o"><span class="lb">Compliance</span><p>Risk and Compliance approve Compass Assist, and every draft is reviewed by a person.</p></div>
+<div class="top2">
+<div class="quote1"><small>Change management strategy</small><p>Know what changes in your day, practise it before go-live, and have someone on your floor to ask in the first two weeks.</p></div>
+<div class="out3">
+<div><b>Staff</b>Understand what changes in their work and when, and get training that fits their shift.</div>
+<div><b>Bankers</b>Use one shared pipeline that is already loaded when they first log in.</div>
+<div><b>Compliance</b>Approve Compass Assist, and a person reviews every draft.</div>
+</div>
 </div>
 
-<div class="tlp">
-<div class="wk" style="--cols:21">
-<div class="h" style="grid-column:1;grid-row:1"></div>
-<div class="mo" style="grid-column:2/span 4;grid-row:1">February</div><div class="mo" style="grid-column:6/span 5;grid-row:1">March</div><div class="mo" style="grid-column:11/span 4;grid-row:1">April</div><div class="mo" style="grid-column:15/span 5;grid-row:1">May</div><div class="mo" style="grid-column:20/span 3;grid-row:1">June</div>
-
-<div class="h" style="grid-column:2;grid-row:2">1</div><div class="h" style="grid-column:3;grid-row:2">8</div><div class="h" style="grid-column:4;grid-row:2">15</div><div class="h" style="grid-column:5;grid-row:2">22</div>
-<div class="h" style="grid-column:6;grid-row:2">1</div><div class="h" style="grid-column:7;grid-row:2">8</div><div class="h" style="grid-column:8;grid-row:2">15</div><div class="h" style="grid-column:9;grid-row:2">22</div><div class="h" style="grid-column:10;grid-row:2">29</div>
-<div class="h" style="grid-column:11;grid-row:2">5</div><div class="h" style="grid-column:12;grid-row:2">12</div><div class="h" style="grid-column:13;grid-row:2">19</div><div class="h" style="grid-column:14;grid-row:2">26</div>
-<div class="h" style="grid-column:15;grid-row:2">3</div><div class="h" style="grid-column:16;grid-row:2">10</div><div class="h" style="grid-column:17;grid-row:2">17</div><div class="h" style="grid-column:18;grid-row:2">24</div><div class="h" style="grid-column:19;grid-row:2">31</div>
-<div class="h" style="grid-column:20;grid-row:2">7</div><div class="h" style="grid-column:21;grid-row:2">14</div><div class="h" style="grid-column:22;grid-row:2">21</div>
-
-<div class="vl" style="grid-column:13;grid-row:3/span 8;justify-self:start"></div>
-<div class="vl" style="grid-column:20;grid-row:3/span 8;justify-self:start"></div>
-
-<div class="lane" style="grid-column:1;grid-row:3">Milestones</div>
-<div class="blk gold" style="grid-column:8/span 3;grid-row:3">UAT sign-off Wed 17 Mar</div>
-<div class="blk upd2" style="grid-column:11/span 2;grid-row:3">Gate Fri 9 Apr (updated)</div>
-<div class="blk gold" style="grid-column:13/span 3;grid-row:3;margin-left:4px">Vic go-live Mon 19 Apr</div>
-<div class="blk gold" style="grid-column:20/span 3;grid-row:3;margin-left:4px">NSW go-live Mon 7 Jun</div>
-
-<div class="lane" style="grid-column:1;grid-row:4">School holidays</div>
-<div class="hol2" style="grid-column:9/span 3;grid-row:4">Holidays and Easter, 26 Mar to 11 Apr</div>
-
-<div class="lane" style="grid-column:1;grid-row:5/span 2">Change management</div>
-<div class="blk" style="grid-column:3/span 5;grid-row:5">UAT 8 Feb to 12 Mar</div>
-<div class="blk" style="grid-column:10/span 3;grid-row:5">Vic training 30 Mar to 16 Apr</div>
-<div class="blk" style="grid-column:17/span 3;grid-row:5">NSW training 17 May to 4 Jun</div>
-<div class="blk sand" style="grid-column:8/span 3;grid-row:6">Banker pipeline pre-load, two weeks</div>
-<div class="blk sand" style="grid-column:12/span 2;grid-row:6;margin-left:2px">Make-up 14 and 15 Apr</div>
-
-<div class="lane" style="grid-column:1;grid-row:7">Implementation partner</div>
-<div class="blk sage" style="grid-column:3/span 5;grid-row:7">UAT support and fixes</div>
-<div class="blk sage" style="grid-column:13/span 2;grid-row:7;margin-left:2px">Hypercare</div>
-<div class="blk sage" style="grid-column:20/span 3;grid-row:7;margin-left:2px">Hypercare</div>
-
-<div class="lane" style="grid-column:1;grid-row:8">Leader comms</div>
-<div class="blk dash" style="grid-column:2/span 2;grid-row:8">Sponsor note</div>
-<div class="blk" style="grid-column:4/span 3;grid-row:8">Scorecard outline, 19 Feb</div>
-<div class="blk dash" style="grid-column:8/span 4;grid-row:8">Heads: holiday roster reminder</div>
-<div class="blk dash" style="grid-column:15/span 3;grid-row:8">NSW heads briefing</div>
-
-<div class="lane" style="grid-column:1;grid-row:9">Comms</div>
-<div class="blk dash" style="grid-column:5/span 7;grid-row:9">Wave 1 comms, including bankers message</div>
-<div class="blk dash" style="grid-column:14/span 6;grid-row:9">Wave 2 comms</div>
-
-<div class="lane" style="grid-column:1;grid-row:10">AI assistant enablement</div>
-<div class="blk" style="grid-column:2/span 1;grid-row:10">Test set</div>
-<div class="blk sage" style="grid-column:3/span 5;grid-row:10">Guardrails tested in UAT</div>
-<div class="blk sage" style="grid-column:10/span 3;grid-row:10">Approved demo only</div>
-<div class="blk dash" style="grid-column:15/span 2;grid-row:10">Banker opt-in</div>
+<div class="chev5">
+<div><b><i>1</i>Vision</b><span>A visible customer-experience win by June, measured on six themes.</span></div>
+<div><b><i>2</i>Analysis</b><span>Five processes change. 20 of 25 stages are rated High.</span></div>
+<div><b><i>3</i>Plan</b><span>A plan per team: impact, listening, engagement, messages, capability.</span></div>
+<div><b><i>4</i>Network</b><span>Three banker champions named. NSW champions to come.</span></div>
+<div><b><i>5</i>Execute</b><span>Two go-lives, each with two weeks of hypercare on the floor.</span></div>
 </div>
 
-<div class="tl-narrow"><ul>
-<li>8 Feb to 12 Mar 2027: UAT (Mon 8 Mar paused for Labour Day). Wed 17 Mar: UAT sign-off.</li>
-<li>Fri 26 Mar to Sun 11 Apr: school holidays and Easter (amber).</li>
-<li>Tue 30 Mar to Fri 16 Apr: Wave 1 Victoria training. Fri 9 Apr: guardrails gate (updated). Make-up sessions Wed 14 and Thu 15 Apr.</li>
-<li>Mon 19 Apr: Wave 1 go-live. Hypercare to Fri 30 Apr.</li>
-<li>Mon 17 May to Fri 4 Jun: Wave 2 New South Wales training.</li>
-<li>Mon 7 Jun: Wave 2 go-live. Hypercare to Mon 21 Jun. Tue 22 Jun: business-as-usual handover.</li>
-</ul></div>
-</div>
-<div class="legend2" style="margin:-4px 0 0"><span><i class="sw"></i>Dated and confirmed</span><span><i class="sw d"></i>Proposed or dates to confirm</span><span><i class="sw h"></i>School holidays and Easter</span><span><i class="sw g"></i>Milestone</span><span>Dashed vertical lines: go-live</span></div>
+<div class="mbox"><div class="maxis"><div class="mline"></div><div class="mhol" style="left:37.59%;width:12.06%"><em>School holidays and Easter</em></div><span class="mk " style="left:4.96%"></span><div class="lb dn" style="left:4.96%"><b>Mon 8 Feb</b>UAT starts</div><span class="mk " style="left:31.21%"></span><div class="lb up" style="left:31.21%"><b>Wed 17 Mar</b>UAT sign-off</div><span class="mk " style="left:40.43%"></span><div class="lb dn" style="left:40.43%"><b>Tue 30 Mar</b>Wave 1 training</div><span class="mk gold" style="left:47.52%"></span><div class="lb up" style="left:47.52%"><b>Fri 9 Apr</b>Compass Assist gate</div><span class="mk ring" style="left:54.61%"></span><div class="lb dn" style="left:54.61%"><b>Mon 19 Apr</b>Wave 1 go-live</div><span class="mk " style="left:74.47%"></span><div class="lb up" style="left:74.47%"><b>Mon 17 May</b>Wave 2 training</div><span class="mk ring" style="left:89.36%"></span><div class="lb dn" style="left:89.36%"><b>Mon 7 Jun</b>Wave 2 go-live</div><span class="mk " style="left:100.0%"></span><div class="lb up r" style="left:100.0%"><b>Tue 22 Jun</b>Business as usual</div></div></div>
+<div class="tl-narrow"><h3>Milestones</h3><ol>
+<li>Mon 8 Feb: UAT starts. Wed 17 Mar: UAT sign-off.</li>
+<li>Fri 26 Mar to Sun 11 Apr: school holidays and Easter.</li>
+<li>Tue 30 Mar: Wave 1 training starts. Fri 9 Apr: Compass Assist gate.</li>
+<li>Mon 19 Apr: Wave 1 go-live, Victoria.</li>
+<li>Mon 17 May: Wave 2 training starts. Mon 7 Jun: Wave 2 go-live, NSW.</li>
+<li>Tue 22 Jun: business as usual.</li>
+</ol></div>
 
-<div class="tiles">
-<div class="pt"><h3>Change management</h3><ul>
-<li><b>8 Feb to 12 Mar</b><span>UAT, with kick-off sessions 8 to 12 Feb</span></li>
-<li><b>By Fri 5 Feb</b><span>Complaint category list from Louise Chen</span></li>
-<li><b>By Fri 9 Apr</b><span>Banker pipelines pre-loaded, at least 90 percent</span></li>
-<li><b>30 Mar to 16 Apr</b><span>Wave 1 training, with make-up sessions 14 and 15 Apr</span></li>
-<li><b>17 May to 4 Jun</b><span>Wave 2 training</span></li></ul></div>
-<div class="pt c2"><h3>Implementation partner</h3><ul>
-<li><b>8 Feb to 12 Mar</b><span>UAT support and fixes, Northgate Digital</span></li>
-<li><b>19 to 30 Apr</b><span>Wave 1 hypercare</span></li>
-<li><b>7 to 21 Jun</b><span>Wave 2 hypercare</span></li>
-<li><b>Tue 22 Jun</b><span>Handover to the CRM platform team</span></li></ul></div>
-<div class="pt c3"><h3>Leader comms</h3><ul>
-<li><b>Fri 19 Feb</b><span>Scorecard outline to Helen Marchetti</span></li>
-<li><span class="tbc">TBC</span><span>Sponsor note on dates and why</span></li>
-<li><span class="tbc">TBC</span><span>Heads of function: holiday roster reminder</span></li>
-<li><span class="tbc">TBC</span><span>NSW heads briefing before Wave 2</span></li></ul></div>
-<div class="pt c4"><h3>Comms</h3><ul>
-<li><span class="tbc">TBC</span><span>Wave 1 messages, including the bankers message</span></li>
-<li><span class="tbc">TBC</span><span>School-holiday roster reminder for managers</span></li>
-<li><span class="tbc">TBC</span><span>Wave 2 messages for New South Wales</span></li>
-<li><b>See</b><span><a href="17-comms-plan.html">13 Comms plan</a> for dates and channels</span></li></ul></div>
-<div class="pt c5"><h3>AI assistant enablement</h3><ul>
-<li><b>By Fri 5 Feb</b><span>Guardrails test set confirmed in writing</span></li>
-<li><b>8 Feb to 12 Mar</b><span>Guardrails tested during UAT</span></li>
-<li><b>Fri 9 Apr</b><span>Risk and Compliance approval gate <span class="upd">v0.2</span></span></li>
-<li><b>Week 3 after go-live</b><span>Bankers choose to opt in</span></li></ul></div>
-<div class="pt imp c6"><h3>High-level change impacts</h3><ul>
-<li>Three screens <span class="a">to</span> one customer view</li>
-<li>Personal spreadsheets <span class="a">to</span> a shared pipeline</li>
-<li>Emailed referrals <span class="a">to</span> referrals with an owner</li>
-<li>A shared mailbox <span class="a">to</span> a complaint case type with timers</li>
-<li>Typed case notes <span class="a">to</span> drafts the agent reviews</li></ul></div>
+<div class="cols c3">
+<section class="box"><h3>What changes</h3>
+<ul class="ft">
+<li><span class="fr">Three Hamlink screens</span><span class="ar">&rarr;</span><span class="to">One customer view</span></li>
+<li><span class="fr">Personal spreadsheets</span><span class="ar">&rarr;</span><span class="to">A shared pipeline</span></li>
+<li><span class="fr">Emailed referrals</span><span class="ar">&rarr;</span><span class="to">Referrals with an owner</span></li>
+<li><span class="fr">A shared mailbox</span><span class="ar">&rarr;</span><span class="to">A complaint case with timers</span></li>
+<li><span class="fr">Typed case notes</span><span class="ar">&rarr;</span><span class="to">Drafts the agent reviews</span></li>
+</ul>
+<p class="pkey">About 1,250 people in eight teams: 808 in Wave 1 and 445 in Wave 2.</p>
+</section>
+
+<section class="box"><h3>The plan, team by team</h3>
+<ul class="tm">
+<li class="hd"><span>Team</span><span>What they hear</span><span>How they learn</span></li>
+<li><span><b>Contact centre</b><small>350 people</small></span><span class="say">The three-screen workflow is now one screen.</span><span>90-minute blocks that fit the shift, with early and late blocks at Docklands.</span></li>
+<li><span><b>Branch network</b><small>600 people</small></span><span class="say">Referrals live in the system, with an owner.</span><span>Blocks planned around month end and Easter trading, with make-ups on 14 and 15 Apr.</span></li>
+<li><span><b>Business bankers</b><small>80 people</small></span><span class="say">Your pipeline is already loaded when you log in.</span><span>90 minutes at 7:30am, before client calls. Compass Assist is opt-in from week 3.</span></li>
+<li><span><b>Complaints</b><small>40 people</small></span><span class="say">Drafts are labelled and yours to edit.</span><span>Categories and timers mapped before UAT, then practice on masked records.</span></li>
+</ul>
+</section>
+
+<section class="box"><h3>Watch</h3>
+<p class="trap1"><b>School holidays.</b> Go-live is clear, but two of the three Wave 1 training weeks fall in the holidays and Easter. Rosters must allow for leave.</p>
+<h4>First three moves</h4>
+<ol class="mv">
+<li>Pre-load every banker's pipeline and name the other two champions.</li>
+<li>Confirm the Docklands blocks and rosters by Fri 12 Feb.</li>
+<li>Get the Compass Assist test set in writing by Fri 5 Feb.</li>
+</ol>
+</section>
 </div>
 
-<div class="roles"><span class="rl">Training roles: 7 groups</span>
-<span class="p"><b>80</b> Business bankers</span><span class="p"><b>600</b> Branch staff</span><span class="p"><b>350</b> Contact centre agents</span><span class="p"><b>40</b> Complaints and advocacy</span><span class="p"><b>120</b> Operations</span><span class="p"><b>25</b> Risk and compliance</span><span class="p"><b>30</b> Platform admins</span></div>
+<div class="af"><span>Hampton Bank is a fictional company. This page is the one-page view of the Detailed change plan.</span><span>Page 1 of 1</span></div>
+</article></div>
+<p class="small printnote">This page prints on one A4 landscape sheet.</p>
 
-<div class="ben"><span class="lb">Benefits</span>
-<ul><li>One customer view</li><li>Each case in one place</li><li>A shared banker pipeline</li><li>Less retyping of notes</li><li>Referrals with an owner</li><li>Complaint timers and reporting</li><li>Suggested answers and drafted notes</li><li>One platform, not two</li></ul></div>
-</div>
-
-<div class="trap" style="margin-top:18px"><b>Trap:</b> The first two weeks of Wave 1 training sit inside the school holidays and Easter. Go-live on Mon 19 Apr is clear, but a roster that ignores leave and parents on shifts will fail the 90 percent training criterion. The T5 decision is early and late Docklands blocks, a branch first block in the week of 12 April, and make-up sessions on 14 and 15 April. See <a href="19-training-schedule.html">16 Training schedule</a>.</div>
-<p class="small">School holiday check: go-live clear, Wave 1 training clashes, handling decided in <a href="../sources/t5.html">T5</a>. New South Wales has no clash in its training or go-live window; <span class="tbc">TBC: confirm NSW school calendar</span>. Public sources: Victorian school term dates and Victorian public holidays 2027. Good Friday is Fri 26 Mar, Easter Monday is Mon 29 Mar and Anzac Day falls on Sun 25 Apr with no replacement Monday in Victoria.</p>
-
-<p class="pn"><a href="12-org-chart.html">Org chart</a><a href="06-exec-one-pager.html">Next: Executive one-pager</a></p>
-<p class="sources">Sources: <a href="../sources/t1.html">T1 programme planning</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e3.html">E3 programme calendar</a>. Related: <a href="08-detailed-change-plan.html#execute">01 Change plan</a>, <a href="17-comms-plan.html">13 Comms plan</a>, <a href="19-training-schedule.html">16 Training schedule</a>, <a href="09-phased-rollout.html">17 Phased rollout</a>.</p>
+<div class="pn"><a href="index.html">All outputs</a><a href="08-detailed-change-plan.html">Next: Detailed change plan</a></div>
+<p class="sources">Sources: <a href="../sources/t1.html">T1 programme planning</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e3.html">E3 programme calendar</a>. Related: <a href="08-detailed-change-plan.html">Detailed change plan</a>, <a href="17-comms-plan.html">Comms plan</a>, <a href="19-training-schedule.html">Training schedule</a>, <a href="09-phased-rollout.html">Phased rollout</a>.</p>
 </main>
 <footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
-<script src="../assets/hb.js"></script></body></html>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var stage=document.getElementById("stage"),sheet=document.getElementById("sheet");
+  function fit(){
+    if(window.innerWidth<900){stage.style.height="auto";sheet.style.transform="none";return;}
+    var s=Math.min(1,stage.clientWidth/1123);
+    sheet.style.transform="scale("+s+")";
+    stage.style.height=(794*s+26)+"px";
+  }
+  fit();window.addEventListener("resize",fit);
+})();
+</script></body></html>

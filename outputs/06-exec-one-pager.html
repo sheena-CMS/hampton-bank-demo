@@ -4,59 +4,153 @@
 <meta name="description" content="A one-page executive update for Helen Marchetti on Salesforce and Compass Assist readiness, as at 29 January 2027.">
 <link rel="icon" href="../assets/hb-mark.svg"><link rel="stylesheet" href="../assets/hb.css">
 <style>
-[hidden]{display:none!important}
-.updbox{background:var(--mist);border:1px solid var(--sage);border-left:5px solid var(--green2);border-radius:var(--radius);padding:12px 16px;margin:0 0 18px}
-.updbox h3{margin:0 0 6px;font-size:16px}
-.updbox ul{margin:0;padding-left:1.1em;max-width:none}
-.updbox li{font-size:14px}
-.ex{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-.xh{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#16382B;color:#F8F5EE;border-radius:12px;padding:14px 18px}
-.xh h2{color:#F8F5EE;margin:0;font:700 15px/1.2 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase}
-.xh p{margin:2px 0 0;color:#C9DACB;font-size:14px}
-.xh .asat{font-weight:600;font-size:14px;white-space:nowrap}
-.cd{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:0}
-.cd h3{font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 10px}
-.cd ul{margin:0;padding:0;list-style:none;max-width:none}
-.cd li{position:relative;padding-left:16px;margin:0 0 7px;font-size:14.5px}
-.cd li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--green2)}
-.sum li{font-size:16px}
-.axis{position:relative;height:96px;margin:6px 8px 0}
-.axis .line{position:absolute;left:0;right:0;top:48px;height:4px;background:var(--line);border-radius:2px}
-.axis .done{position:absolute;left:0;top:48px;height:4px;width:10.6%;background:var(--green2);border-radius:2px}
-.mk{position:absolute;top:42px;width:16px;height:16px;border-radius:50%;background:var(--green);border:3px solid var(--paper);transform:translateX(-50%);box-shadow:0 0 0 1px var(--green)}
+/* One A4 landscape sheet (1123 x 794 at 96dpi), scaled to fit the page width. Below 900px it reflows as a normal page. */
+.stage{position:relative;width:100%;overflow:hidden;margin:0 0 18px;padding:0 0 26px}
+.a4{width:1123px;height:794px;transform-origin:0 0;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow-lift);padding:20px 24px 14px;display:flex;flex-direction:column;gap:10px;font-size:11.5px;line-height:1.38;overflow:hidden}
+.a4 p,.a4 li,.a4 ul{max-width:none;margin:0}
+.a4 h3{margin:0 0 7px;font:700 10.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.ah{display:flex;align-items:center;gap:14px;border-bottom:3px solid var(--green);padding-bottom:8px;flex:none}
+.ah img{height:30px;display:block}
+.ah .tt2{flex:1}
+.ah h2{margin:0;font:700 19px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.ah .sub{color:var(--muted);font-size:11.5px}
+.rag{display:inline-flex;align-items:center;gap:6px;font-weight:700;border-radius:999px;padding:4px 10px;white-space:nowrap;font-size:11px}
+.rag::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.rag.a{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line)}
+.rag.g{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok)}
+.head1{background:#0E4A47;color:#F8F5EE;border-radius:8px;padding:8px 14px;font:600 15px/1.3 Gambetta,Georgia,serif;flex:none}
+.nums{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;flex:none}
+.nums div{border:1px solid var(--line);border-top:3px solid var(--green);border-radius:8px;padding:6px 10px;background:var(--cream)}
+.nums b{display:block;font:700 21px/1.1 Gambetta,Georgia,serif;color:var(--green)}
+.nums span{color:var(--muted);font-size:11px}
+.nums .warn{border-top-color:var(--coral)}.nums .warn b{color:var(--coral)}
+.tlbox{border:1px solid var(--line);border-radius:8px;padding:8px 12px 8px;flex:none}
+.trow{display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;align-items:center}
+.trows{position:relative}
+.trows .trow{height:34px;border-top:1px solid var(--line)}
+.tl{font-weight:600;line-height:1.15}.tl small{display:block;font-weight:400;font-size:10px;color:var(--muted)}
+.tt{position:relative;height:100%}
+.axis,.axis .tt{height:30px}
+.mo span{position:absolute;top:0;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border-left:1px solid var(--line);padding-left:4px;height:30px}
+.tb{position:absolute;top:13px;height:17px;border-radius:4px;color:#F8F5EE;font-weight:700;font-size:10px;line-height:17px;padding:0 6px;overflow:hidden;white-space:nowrap;z-index:3}
+.tb.uat{background:#1F6B66}.tb.trn{background:#0E4A47}.tb.hyp{background:var(--sage);color:#1B2322}
+.dm{position:absolute;top:16px;width:11px;height:11px;background:var(--green);transform:rotate(45deg);margin-left:-5px;z-index:5}
+.dm.go{background:var(--coral)}.dm.gate{background:var(--amber)}
+.dl{position:absolute;top:13px;margin-left:11px;font-weight:700;font-size:10px;line-height:17px;white-space:nowrap;z-index:4}
+.dl.go{top:0;margin-left:-4px;line-height:12px;color:var(--coral)}
+.bands{position:absolute;inset:0;display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 10px;pointer-events:none}
+.bands .tt{grid-column:2}
+.hatch{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,var(--amber-bg),var(--amber-bg) 5px,transparent 5px,transparent 10px);border-left:1px dashed var(--amber-line);border-right:1px dashed var(--amber-line);z-index:1}
+.hatch em,.now em{position:absolute;font-style:normal;font-weight:700;font-size:9px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;line-height:1}
+.hatch em{top:-13px;left:-1px;color:var(--amber)}
+.now{position:absolute;top:-14px;bottom:0;border-left:2px solid var(--coral);z-index:2}
+.now em{top:0;left:4px;color:var(--coral)}
+.cols{display:grid;grid-template-columns:1fr 1.14fr 1fr 1fr;gap:10px;flex:1;min-height:0}
+.box{border:1px solid var(--line);border-radius:8px;padding:10px 12px;overflow:hidden;min-width:0}
+.box h4{margin:9px 0 4px;font:700 9.5px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.box ul{padding-left:1.1em}.box li{margin:0 0 3px}
+.stance{display:flex;height:20px;border-radius:5px;overflow:hidden;margin:0 0 5px;font-weight:700;font-size:10.5px;color:#F8F5EE;text-align:center;line-height:20px}
+.stance .c{background:#0E4A47}.stance .s{background:#1F6B66}.stance .k{background:#E7C47A;color:#4a3410}.stance .w{background:#E3A39B;color:#5a1d16}
+.skey{display:flex;flex-wrap:wrap;gap:2px 10px;font-size:10px;color:var(--muted)}
+.skey i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px}
+.move{display:flex;align-items:center;gap:6px;background:var(--mist);border-radius:6px;padding:5px 8px;margin:0 0 5px!important}
+.move .arr{color:var(--coral);font-weight:700}
+.heat{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:2px;font-size:10.5px;background:none;border:0;box-shadow:none}
+.heat thead th:not(:first-child){width:26px}
+.heat th,.heat td{padding:0;border:0;background:none}
+.heat thead th{font-weight:700;font-size:9.5px;color:var(--muted);text-align:center;padding-bottom:2px}
+.heat tbody th{text-align:left;font-weight:600;padding-right:4px;line-height:1.15;color:var(--ink);font-size:10.5px;letter-spacing:0;text-transform:none}
+.heat tbody th small{font-weight:400;color:var(--muted);font-size:10px}
+.heat td{height:23px;border-radius:3px;text-align:center;font-size:10px;font-weight:700}
+.heat td.iH{background:var(--red-bg);color:var(--red)}.heat td.iM{background:var(--amber-bg);color:var(--amber)}.heat td.iL{background:var(--mist);color:var(--muted)}
+.pkey{font-size:10px;color:var(--muted);margin-top:7px!important}
+.ws{list-style:none;padding:0!important}
+.ws li{display:grid;grid-template-columns:62px 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line);margin:0!important}
+.ws li:first-child{border-top:0;padding-top:0}
+.ws .rag{justify-self:start;align-self:start;padding:3px 7px;font-size:10px}
+.ws b{display:block}
+.rk{list-style:none;padding:0!important}
+.rk li{display:grid;grid-template-columns:34px 1fr;gap:6px;margin-bottom:4px!important}
+.rk .id{font-weight:700;color:var(--red)}
+.up{color:var(--coral);font-weight:700;white-space:nowrap}
+.af{display:flex;justify-content:space-between;gap:16px;color:var(--faint);font-size:10px;flex:none}
+.tl-narrow{display:none}
+@media (max-width:899px){
+ .stage{overflow:visible;padding:0}
+ .a4{width:auto;height:auto;transform:none!important;padding:14px;font-size:14px;box-shadow:var(--shadow)}
+ .ah{flex-wrap:wrap}.ah .sub{font-size:13px}.head1{font-size:16px}
+ .nums{grid-template-columns:repeat(2,minmax(0,1fr))}.nums span{font-size:13px}
+ .tlbox{display:none}.tl-narrow{display:block;border:1px solid var(--line);border-radius:8px;padding:10px 12px}.tl-narrow ol{padding-left:1.2em;margin:0}
+ .cols{grid-template-columns:1fr}
+ .a4 h3{font-size:12px}.box h4{font-size:11px}.heat,.skey,.pkey,.stance{font-size:12px}.heat tbody th small{font-size:12px}.ws .rag,.rag{font-size:11px}.ws li{grid-template-columns:74px 1fr}
+ .af{flex-direction:column;gap:2px;font-size:12px}
+}
+@page{size:A4 landscape;margin:0}
+@media print{
+ .topbar,.pagehead,.changed,footer.site,.sources,.pn,.printnote,.demo-nav{display:none!important}
+ .wrap{max-width:none;padding:0;margin:0}
+ .stage{height:794px!important;overflow:hidden;margin:0;padding:0}
+ .a4{transform:none!important;border:0;box-shadow:none}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* Executive one-pager: the original look (dark band, dot milestones, chevrons, amber tiles) on one A4 landscape sheet */
+.a4.ex1{gap:9px;padding:18px 22px 12px}
+.xh{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#16382B;color:#F8F5EE;border-radius:10px;padding:10px 16px;flex:none}
+.xh img{height:28px;display:block;background:#F8F5EE;border-radius:6px;padding:3px 7px}
+.xh .t{flex:1}
+.xh h2{color:#F8F5EE;margin:0;font:700 14px/1.2 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.xh p{color:#C9DACB;font-size:11.5px;margin:1px 0 0!important}
+.xh .asat{font-weight:600;font-size:12px;white-space:nowrap}
+.xh .st{font-weight:700;font-size:11px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.cd{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:0;overflow:hidden}
+.cd h3{font:700 10px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 7px}
+.cd h3.gap{margin-top:11px}
+.cd ul{margin:0;padding:0!important;list-style:none}
+.cd li{position:relative;padding-left:14px;margin:0 0 5px!important}
+.cd li::before{content:"";position:absolute;left:0;top:.52em;width:6px;height:6px;border-radius:50%;background:var(--green2)}
+.cd.sum{flex:none}
+.cd.sum li{font-size:12.5px;margin-bottom:3px!important}
+.cd.ms{flex:none;padding-bottom:6px}
+.eaxis{position:relative;height:78px;margin:0 14px}
+.eaxis .line{position:absolute;left:0;right:0;top:37px;height:4px;background:var(--line);border-radius:2px}
+.eaxis .done{position:absolute;left:0;top:37px;height:4px;width:10.6%;background:var(--green2);border-radius:2px}
+.mk{position:absolute;top:32px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid var(--paper);transform:translateX(-50%);box-shadow:0 0 0 1px var(--green)}
 .mk.ring{background:var(--paper);border:3px solid var(--green);box-shadow:none}
 .mk.gold{background:var(--amber);box-shadow:0 0 0 1px var(--amber)}
 .mk.now{background:var(--green2)}
-.lb{position:absolute;width:150px;font-size:12.5px;line-height:1.3;text-align:center;transform:translateX(-50%);color:var(--ink)}
-.lb b{display:block;font-size:12px;color:var(--green)}
-.lb.up{bottom:56px} .lb.dn{top:60px}
-.lb.l{transform:none;text-align:left} .lb.r{transform:translateX(-100%);text-align:right}
-.tl-list{display:none}
-@media(max-width:860px){.axis{display:none}.tl-list{display:block}}
-.main2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px;align-items:start}
-@media(max-width:900px){.main2{grid-template-columns:1fr}}
-.cd .q{font:600 20px/1.25 Gambetta,Georgia,serif;color:var(--green);margin:0 0 12px}
-.chev{display:flex;margin:0 0 14px}
-.chev div{flex:1;padding:12px 16px 12px 28px;color:#F8F5EE;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%,16px 50%);margin-left:-12px;background:var(--green2);min-width:0}
-.chev div:first-child{margin-left:0;padding-left:16px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,0 100%)}
-.chev div:nth-child(2){background:var(--green)}
-.chev div:nth-child(3){background:#16382B}
-.chev b{display:block;font:700 34px/1 Gambetta,Georgia,serif}
-.chev span{font-size:12.5px;display:block;margin-top:4px;line-height:1.25}
-@media(max-width:560px){.chev{flex-direction:column;gap:4px}.chev div,.chev div:first-child{margin:0;clip-path:none;border-radius:8px;padding:12px 16px}}
-.amb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
-@media(max-width:480px){.amb{grid-template-columns:1fr}}
-.amb div{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:10px;padding:10px 14px}
-.amb b{display:block;font:700 34px/1 Gambetta,Georgia,serif;color:var(--amber)}
-.amb span{font-size:13px;color:var(--ink)}
-.comm{border:2px dashed var(--faint);border-radius:12px;padding:12px 18px;background:transparent}
-.comm h3{font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}
-.comm div[contenteditable]{min-height:48px;font-size:14.5px;outline:none}
+.lb{position:absolute;width:130px;font-size:10.5px;line-height:1.25;text-align:center;transform:translateX(-50%)}
+.lb b{display:block;color:var(--green)}
+.lb.up{bottom:50px;color:var(--ink);font-weight:400;white-space:normal}.lb.dn{top:50px}
+.lb.l{transform:none;text-align:left;margin-left:-9px}.lb.r{transform:translateX(-100%);text-align:right;margin-left:9px}
+.cols.e3{grid-template-columns:1.08fr 1fr 1.05fr}
+.cd .q{font:600 15px/1.25 Gambetta,Georgia,serif;color:var(--green);margin:0 0 8px!important}
+.chev{display:flex;margin:0 0 9px}
+.chev div{flex:1;padding:8px 14px 8px 24px;color:#F8F5EE;clip-path:polygon(0 0,calc(100% - 13px) 0,100% 50%,calc(100% - 13px) 100%,0 100%,13px 50%);margin-left:-9px;background:var(--green2);min-width:0}
+.chev div:first-child{margin-left:0;padding-left:12px;clip-path:polygon(0 0,calc(100% - 13px) 0,100% 50%,calc(100% - 13px) 100%,0 100%)}
+.chev div:nth-child(1){background:#1F6B66}.chev div:nth-child(2){background:#0E4A47}.chev div:nth-child(3){background:#16382B}
+.chev b{display:block;font:700 23px/1 Gambetta,Georgia,serif}
+.chev span{font-size:10px;display:block;margin-top:3px;line-height:1.25}
+.amb{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 10px}
+.amb div{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:8px;padding:7px 11px}
+.amb b{display:block;font:700 23px/1 Gambetta,Georgia,serif;color:var(--amber)}
+.amb span{font-size:10.5px;color:#4a3410;display:block;margin-top:2px;line-height:1.3}
+.rag1{display:inline-block;font:700 10px/1 "General Sans",sans-serif;padding:3px 8px;border-radius:999px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line);margin-left:5px;vertical-align:middle;letter-spacing:0;text-transform:none}
+.flag1{background:var(--amber-bg);border:1px solid var(--amber-line);border-left:5px solid var(--amber);border-radius:8px;padding:8px 11px;margin-top:10px;color:#4a3410}
+.flag1 h3{color:var(--amber);margin-bottom:5px}
+.comm{border:2px dashed var(--faint);border-radius:10px;padding:7px 14px;flex:none;display:flex;gap:12px;align-items:baseline}
+.comm h3{font:700 10px/1.4 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:0;white-space:nowrap}
+.comm div[contenteditable]{flex:1;outline:none;min-height:16px}
 .comm div[contenteditable]:focus{background:var(--mist)}
-.rag{display:inline-block;font:700 12px/1 "General Sans",sans-serif;padding:5px 10px;border-radius:999px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-line);margin-left:6px;vertical-align:middle}
-.flag{background:var(--amber-bg);border:1px solid var(--amber-line);border-left:6px solid var(--amber);border-radius:12px;padding:12px 18px}
-.flag h3{font:700 11px/1 "General Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin:0 0 6px}
-.flag p{margin:0 0 6px;font-size:14.5px;max-width:none}
+.tl-list{display:none;margin:0!important;padding-left:1.2em!important}
+@media (max-width:899px){
+ .xh{flex-wrap:wrap}.xh p{font-size:13px}
+ .cd.sum li{font-size:15px}
+ .eaxis{display:none}.tl-list{display:block}
+ .chev{flex-direction:column;gap:4px}.chev div,.chev div:first-child{margin:0;clip-path:none;border-radius:8px;padding:10px 14px}.chev span,.amb span{font-size:13px}
+ .cd h3,.comm h3{font-size:11px}.comm{flex-direction:column;gap:4px}
+}
+@media print{.comm div[contenteditable]:focus{background:none}}
 </style></head><body>
 <header class="topbar"><a class="logo" href="../index.html" aria-label="Change Made Simple, home"><span class="wm"><span class="wm1">Change</span><span class="wm2">Made Simple</span></span></a><span class="product">The Change Partner</span><nav aria-label="Main"><a href="../index.html">Home</a><a href="../loop/index.html">The loop</a><a href="../outputs/index.html">The 22 outputs</a><a href="../sources/index.html">Sources</a></nav></header>
 <main class="wrap wide">
@@ -72,8 +166,8 @@
 <li>Your request in T5 for a one-page customer-experience scorecard before Wave 2 is now action A-28, due Fri 19 Feb.</li>
 </ul></details>
 
-<div class="ex">
-<div class="xh"><div><h2>Salesforce and Compass Assist readiness</h2><p>Project Compass | two waves: Victoria on 19 April, New South Wales on 7 June</p></div><div class="asat">As at Fri 29 Jan 2027</div></div>
+<div class="stage" id="stage"><article class="a4 ex1" id="sheet">
+<div class="xh"><img src="../assets/hb-logo.svg" alt="Hampton Bank"><div class="t"><h2>Salesforce and Compass Assist readiness</h2><p>Project Compass | two waves: Victoria on 19 April, New South Wales on 7 June</p></div><span class="asat">As at Fri 29 Jan 2027</span><span class="st">Status: Amber</span></div>
 
 <div class="cd sum"><h3>Summary</h3>
 <ul>
@@ -82,8 +176,8 @@
 <li>The one clash is the school holidays and Easter, which fall in the first two weeks of Victorian training. The handling is agreed.</li>
 </ul></div>
 
-<div class="cd"><h3>Milestones</h3>
-<div class="axis" aria-hidden="false">
+<div class="cd ms"><h3>Milestones</h3>
+<div class="eaxis">
 <div class="line"></div><div class="done"></div>
 <span class="mk" style="left:0"></span><div class="lb dn l" style="left:0"><b>Tue 12 Jan</b>Planning session</div>
 <span class="mk now" style="left:10.6%"></span><div class="lb up" style="left:10.6%"><b>Fri 29 Jan</b>This update</div>
@@ -101,7 +195,7 @@
 <li>Mon 19 Apr: Wave 1 go-live. Mon 7 Jun: Wave 2 go-live. Tue 22 Jun: business as usual.</li>
 </ul></div>
 
-<div class="main2">
+<div class="cols e3">
 <div class="cd">
 <h3>Progress to date</h3>
 <ul>
@@ -110,32 +204,37 @@
 <li>10 of 28 actions are done. 15 are open and 3 are overdue, the same three as last week.</li>
 <li>Compass Assist may draft written complaint responses; the complaints officer must edit and send them.</li>
 </ul>
-<h3 style="margin-top:14px">Current status <span class="rag">Amber</span></h3>
+<h3 class="gap">Next steps</h3>
+<ul>
+<li><b>Fri 5 Feb:</b> complaint categories mapped, guardrails test set and gate date confirmed in writing, and Isla Fraser names the other champions.</li>
+<li><b>Mon 8 to Fri 12 Feb:</b> UAT kick-off sessions. Docklands early and late trainer blocks confirmed by Fri 12 Feb.</li>
+<li><b>Fri 19 Feb:</b> one-page customer-experience scorecard outline to you (A-28).</li>
+</ul>
+</div>
+
+<div class="cd">
+<h3>Current status <span class="rag1">Amber</span></h3>
 <ul>
 <li>Both go-live dates hold. UAT starts Mon 8 Feb and signs off Wed 17 Mar.</li>
 <li>4 of 14 risks are rated High: bankers on spreadsheets, Compass Assist approval, shift cover and data migration.</li>
 <li>6 questions are open, including which legacy data comes across (due Fri 5 Feb).</li>
 <li>Richard Vance is now Conditional: he will engage if the pipeline view is better on day one.</li>
 </ul>
-<h3 style="margin-top:14px">Next steps</h3>
-<ul>
-<li>Fri 5 Feb: complaint categories mapped, guardrails test set and gate date confirmed in writing, and Isla Fraser names the other champions.</li>
-<li>Mon 8 to Fri 12 Feb: UAT kick-off sessions. Fri 12 Feb: Docklands early and late trainer blocks confirmed.</li>
-<li>Fri 19 Feb: one-page customer-experience scorecard outline to you (A-28).</li>
-</ul>
+<div class="flag1"><h3>School holiday flag</h3>
+<p>Go-live on Mon 19 April is clear. The first two of the three Wave 1 training weeks fall inside the school holidays and Easter, Fri 26 Mar to Sun 11 Apr. Steering kept the dates on 28 January and added early and late Docklands sessions, a branch first block in the week of 12 April, and make-ups on Wed 14 and Thu 15 April.</p></div>
 </div>
 
 <div class="cd">
 <h3>Scale of the change</h3>
 <p class="q">About 1,250 people became two waves</p>
 <div class="chev">
-<div><b>1,253</b><span>people in scope across 60 branches, 2 contact centre sites and head office</span></div>
+<div><b>1,253</b><span>people in scope across 60 branches and head office</span></div>
 <div><b>808</b><span>in Wave 1: Victoria and head office</span></div>
 <div><b>445</b><span>in Wave 2: New South Wales</span></div>
 </div>
 <div class="amb">
 <div><b>3</b><span>actions overdue out of 28. The same three as at 22 January.</span></div>
-<div><b>16</b><span>go/no-go criteria, up from 14, including pipelines pre-loaded for at least 90 percent of bankers by Fri 9 Apr.</span></div>
+<div><b>16</b><span>go/no-go criteria, up from 14, including banker pipelines pre-loaded by Fri 9 Apr.</span></div>
 </div>
 <ul>
 <li>Wave 1: Docklands 200, Victorian branches 340, Victorian bankers 45 and 223 head office staff.</li>
@@ -145,16 +244,27 @@
 </div>
 </div>
 
-<div class="flag"><h3>School holiday flag</h3>
-<p>Go-live on Mon 19 April is clear. It is the second Monday of Victorian Term 2. The first two of the three Wave 1 training weeks fall inside the school holidays and Easter, Fri 26 Mar to Sun 11 Apr. Leave, parents on rosters and contact centre shift cover are the effects.</p>
-<p>Steering decided on 28 January to keep the dates. Training starts Tue 30 Mar with early and late sessions for Docklands, a branch first block in the week of 12 April for people on leave, and make-up sessions on Wed 14 and Thu 15 April. Decision recorded in <a href="../sources/t5.html">T5</a>. New South Wales has no clash in its training or go-live window; <span class="tbc">TBC: confirm NSW school calendar</span>.</p></div>
-
 <div class="comm"><h3>Commentary for the presenter (editable)</h3>
 <div contenteditable="true" role="textbox" aria-label="Presenter commentary" spellcheck="true">Add a note for the briefing here. Nothing is saved when the page is closed.</div></div>
-</div>
 
-<p class="pn"><a href="07-change-on-a-page.html">Change on a page</a><a href="../index.html">All outputs</a></p>
-<p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t2.html">T2</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e1.html">E1 sponsor note</a>. Counts are from <a href="01-action-list.html">21 Action list</a>, <a href="03-risk-register.html">02 Risk register</a>, <a href="22-go-no-go.html">15 Go/no-go</a> and <a href="05-shared-facts.html">22 Shared facts</a>. Weekly detail: <a href="04-weekly-status.html">20 Weekly status</a>.</p>
+<div class="af"><span>Hampton Bank is a fictional company. Counts come from the action list, risk register, go/no-go checklist and shared facts.</span><span>Page 1 of 1</span></div>
+</article></div>
+<p class="small printnote">This page prints on one A4 landscape sheet.</p>
+
+<div class="pn"><a href="index.html">All outputs</a><a href="07-change-on-a-page.html">Next: Change on a page</a></div>
+<p class="sources">Sources: <a href="../sources/t1.html">T1</a>, <a href="../sources/t2.html">T2</a>, <a href="../sources/t3.html">T3</a>, <a href="../sources/t4.html">T4 business banking workshop</a>, <a href="../sources/t5.html">T5 steering catch-up</a>, <a href="../sources/e1.html">E1 sponsor note</a>. Counts are from the <a href="01-action-list.html">Action list</a>, <a href="03-risk-register.html">Risk register</a>, <a href="22-go-no-go.html">Go/no-go checklist</a> and <a href="05-shared-facts.html">Shared facts</a>. Weekly detail: <a href="04-weekly-status.html">Weekly status report</a>.</p>
 </main>
 <footer class="site">Hampton Bank is a fictional company. Demo by Change Made Simple.</footer>
-<script src="../assets/hb.js"></script></body></html>
+<script src="../assets/hb.js"></script>
+<script>
+(function(){
+  var stage=document.getElementById("stage"),sheet=document.getElementById("sheet");
+  function fit(){
+    if(window.innerWidth<900){stage.style.height="auto";sheet.style.transform="none";return;}
+    var s=Math.min(1,stage.clientWidth/1123);
+    sheet.style.transform="scale("+s+")";
+    stage.style.height=(794*s+26)+"px";
+  }
+  fit();window.addEventListener("resize",fit);
+})();
+</script></body></html>

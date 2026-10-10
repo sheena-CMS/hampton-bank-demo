@@ -3,7 +3,7 @@
 /* Hampton Bank output pages: green and cream */
 :root{
   --green:#0E4A47; --green2:#1F6B66; --sage:#CBD6D2; --mist:#E9EEEC;
-  --cream:#F8F5EE; --sand:#EFEAE0; --paper:#FFFFFF;
+  --page:#FFFFFF; --cream:#F8F5EE; --sand:#EFEAE0; --paper:#FFFFFF;
   --ink:#1B2322; --muted:#55625B; --faint:#85908A; --line:#D5DDD9;
   --coral:#C4442A; --amber:#9A6414; --amber-bg:#FBF0D9; --amber-line:#E7C47A;
   --red:#A63A2E; --red-bg:#F8E3DF; --red-line:#E3A39B;
@@ -13,14 +13,14 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --cream:#121A19; --paper:#1A2423; --sand:#243130; --mist:#1F2D2C; --ink:#ECE8DD; --muted:#A9B3AC; --faint:#7F8A83; --line:#2F3F3D;
+    --page:#121A19; --cream:#121A19; --paper:#1A2423; --sand:#243130; --mist:#1F2D2C; --ink:#ECE8DD; --muted:#A9B3AC; --faint:#7F8A83; --line:#2F3F3D;
     --green:#7CC4BD; --green2:#9AD3CC; --sage:#3B5B58; --coral:#F0866C;
     --amber:#E3B462; --amber-bg:#3A2F17; --amber-line:#6B5527; --red:#F0A196; --red-bg:#40201C; --red-line:#7A3A33; --ok:#7FD0A0; --ok-bg:#1D3326;
   }
 }
 *{box-sizing:border-box}
 html{scroll-padding-top:70px}
-body{margin:0;background:var(--cream);color:var(--ink);font:15px/1.6 "General Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;background:var(--page);color:var(--ink);font:15px/1.6 "General Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
 a{color:var(--green2)} a:hover{color:var(--green)}
 h1,h2,h3{font-family:Gambetta,Georgia,"Times New Roman",serif;color:var(--green);line-height:1.2;margin:0 0 .5em}
 h1{font-size:34px;font-weight:700;letter-spacing:-.01em}
