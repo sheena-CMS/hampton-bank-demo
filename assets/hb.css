@@ -164,12 +164,11 @@ details.changed summary:focus-visible{outline:3px solid var(--sage);outline-offs
 details.changed ul{margin:0;padding:2px 16px 12px 2.4em;max-width:none}
 details.changed li{font-size:14px}
 
-/* Fictional project strip on every Hampton Bank page. On screen it stays above the top bar; in print it becomes a faint diagonal watermark so the A4 sheets still fit one page. */
-body::before{content:"Hampton Bank - Fictional Project. Not a real company.";display:block;position:sticky;top:0;z-index:21;height:28px;box-sizing:border-box;overflow:hidden;white-space:nowrap;text-align:center;padding:0 12px;background:#E6E6E8;color:#3A3A3F;border-bottom:1px solid #CFCFD4;font:700 12.5px/27px "General Sans",system-ui,sans-serif;letter-spacing:.04em}
-.topbar{top:28px}
-html{scroll-padding-top:98px}
-@media (min-width:1101px){.demo-nav{top:88px;max-height:calc(100vh - 88px)}}
-@media (max-width:420px){body::before{font-size:11px;letter-spacing:.01em}}
+/* Fictional project strip along the Hampton Bank logo row on every page. In print it becomes a faint diagonal watermark. */
+.pagehead{position:relative}
+.hbbrand{box-sizing:border-box;width:100%;height:54px;padding:10px 16px;background:#E6E6E8;border:1px solid #D4D4D9;border-radius:8px;object-fit:contain;object-position:left center}
+.pagehead::before{content:"Fictional project. Not a real company.";position:absolute;top:0;right:16px;height:54px;font:700 12.5px/54px "General Sans",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#3A3A3F;white-space:nowrap}
+@media (max-width:560px){.pagehead::before{content:"Fictional project";font-size:11.5px}}
 @media print{
-  body::before{content:"Fictional project";position:fixed;inset:0;z-index:9999;height:auto;display:flex;align-items:center;justify-content:center;background:none;border:0;padding:0;font:700 96px/1 "General Sans",system-ui,sans-serif;letter-spacing:.02em;text-transform:uppercase;color:rgba(0,0,0,.07);transform:rotate(-24deg);pointer-events:none;white-space:nowrap;overflow:visible}
+  body::before{content:"Fictional project";position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;font:700 96px/1 "General Sans",system-ui,sans-serif;letter-spacing:.02em;text-transform:uppercase;color:rgba(0,0,0,.07);transform:rotate(-24deg);pointer-events:none;white-space:nowrap}
 }
