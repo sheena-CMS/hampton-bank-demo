@@ -96,8 +96,9 @@
     ['Test and go live', [['21-uat-schedule', 'UAT schedule'], ['22-go-no-go', 'Go/no-go checklist']]]
   ];
   var here = (location.pathname.split('/').pop() || '').replace(/\.html$/, '');
+  if (!here || here === 'index') return; /* the landing page already lists every output */
   var h = '<nav class="demo-nav" aria-label="All outputs"><p class="dn-title">Project Compass</p>' +
-    '<ul class="dn-top"><li><a href="../index.html">Home</a></li><li><a href="../loop/index.html">The loop</a></li><li><a href="../sources/index.html">Sources</a></li></ul>';
+    '<ul class="dn-top"><li><a href="../index.html">Home</a></li><li><a href="../loop/index.html">The loop</a></li><li><a href="index.html">All 22 outputs</a></li><li><a href="../sources/index.html">Sources</a></li></ul>';
   groups.forEach(function (g) {
     h += '<p class="dn-group">' + g[0] + '</p><ul>';
     g[1].forEach(function (p) {
