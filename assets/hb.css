@@ -48,6 +48,7 @@ small,.small{font-size:13px;color:var(--muted)}
 .verline{font-size:13px;color:var(--muted);margin:0 0 6px}
 .lede{font-size:17px;color:var(--ink);max-width:68ch}
 footer.site{border-top:1px solid var(--line);padding:18px 20px;text-align:center;font-size:13px;color:var(--muted);background:var(--paper)}
+footer.site .legal{display:block;margin-top:6px;font-size:12px;line-height:1.5}
 
 /* tabs */
 .tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:2px solid var(--line);margin:22px 0 20px}

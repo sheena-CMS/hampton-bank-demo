@@ -48,6 +48,7 @@ ul,ol{margin:0 0 1em;padding-left:1.2em;max-width:70ch}
 footer.site{background:var(--navy);color:var(--on-navy);text-align:center;padding:22px 20px;font-size:14px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer.site{background:#0d1020;color:#EFEAE2}}
 footer.site p{margin:0 auto;max-width:none}
+footer.site .legal{display:block;margin-top:6px;font-size:12px;line-height:1.5;opacity:.85}
 
 /* layout */
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
