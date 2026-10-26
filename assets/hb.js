@@ -1,4 +1,5 @@
-/* Hampton Bank demo: tabs, filters, expanders. No dependencies. */
+/* Hampton Bank demo: tabs, filters, expanders. No dependencies.
+   © 2026 Change Made Simple Pty Ltd. All rights reserved. Not to be copied or reused without written permission. */
 (function () {
   function qs(s, r) { return (r || document).querySelector(s); }
   function qsa(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
